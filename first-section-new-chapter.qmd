@@ -1,224 +1,333 @@
-# New Chapter
+# Fundamentals
+
+Welcome to Intermediate Python! Each week, we cover a chapter, which consists of a lesson and exercise. In the first week, we go over the goals of the course, and review data structures and data types that you have seen before from [Intro to Python](https://hutchdatascience.org/Intro_to_Python/). We also look at some new data structures and more properties of data structures.
+
+In [Intro to Python](https://hutchdatascience.org/Intro_to_Python/), you learned how to do basic data analysis such as subsetting a dataframe, looking at summary statistics, and visualizing your data. This was done in the context of a clean, Tidy dataframe. In this course, we focus on working with data "from the wild", in which the data comes in a more messy, un-Tidy form. Let's see what we will learn in the next 6 weeks together:
+
+## Goals of this course
+
+-   Continue building *programming fundamentals*: How to use complex data structures, create custom functions, and how to iterate repeated tasks.
+
+-   Continue exploration of *data science fundamentals*: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.
+
+## Motivation
+
+We will be looking at a dataset from Twitter that looks like the following:
+
+| Tweet_ID | Username       | Text                                      | Retweets | Likes | Timestamp           |
+|------------|------------|------------|------------|------------|------------|
+| 1        | julie81        | Party least receive say or single....     | 2        | 25    | 2023-01-30 11:00:51 |
+| 2        | richardhester  | Hotel still Congress may member staff.... | 35       | 29    | 2023-01-02 22:45:58 |
+| 3        | williamsjoseph | Nice be her debate industry that year.... | 51       | 25    | 2023-01-18 11:25:19 |
+
+Suppose that we want to do some text analysis on the "Text" column: We want to assign a sentiment score (a numerical value that measures the emotional tone or attitude expressed in text) to each tweet, based on all of the words it contains. For instance, a tweet about celebrating one's birthday will be assigned a positive sentiment score, and a tweet about getting fired from a job will be assigned a negative sentiment score.
+
+If we have a function that takes in a String of words, and output a sentiment score, that would be great. However, that function does not exist in the built-in libraries of Python and Pandas, so we will have to write our custom function!
+
+When we think about writing a custom function, we usually like to sketch out an outline what the function will do in English, and then try to translate it to Python code.
+
+Given an input String of words,
+
+-   Examine each word in the input string:
+
+    -   Associate the word with a sentiment score.
+
+    -   And keep track of this sentiment score.
+
+-   Take the average of all the sentiment scores,
+
+-   and return it as the output.
+
+How do we associate a word with a sentiment score? We need another function to do that:
+
+Given an input String with one word,
+
+-   Load in a "lookup dictionary" that assigns words to scores.
+
+-   Check whether the input string is in the dictionary. Some words, such as "the", won't have a sentiment score.
+
+-   If so, return the score of that word.
+
+Some concepts from this outline that we will learn the technical details include: writing a custom function, iterating through a data structure, and using "lookup dictionaries". Let's look at the Learning Objectives of the course:
 
 ## Learning Objectives
 
-Every chapter also needs Learning objectives.
+-   **Distinguish** the use cases of common data structures, such as Lists, Dictionaries, and Series.
 
-## Libraries
+-   **Recognize** and **describe** common iteration patterns on common data structures, such as counting and searching.
 
-For this chapter, we'll need the following packages attached:
+-   **Implement** "iterable" operations, including For-Loops and List Comprehensions, on data structures that can be iterated (Lists, Dictionaries, Series, and even Strings).
 
-*Remember to add [any additional packages you need to your course's own docker image](https://github.com/jhudsl/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image).
+-   **Implement** conditional statements when the program logic requires a branching structure.
 
-```{r}
-library(magrittr)
+-   **Create** simple, modular functions, including anonymous functions, that can be reused.
+
+-   **Describe** the difference between copying an object vs. referencing an object and how that could affect variables in a data analysis.
+
+## Data types in Python
+
+To get started, let's recall the fundamental data types in Python:
+
+| Data type name | **Data type shorthand** |      **Examples**       |
+|----------------|:-----------------------:|:-----------------------:|
+| Integer        |           int           |          2, 4           |
+| Float          |          float          |      3.5, -34.1009      |
+| String         |           str           | "hello", "234-234-8594" |
+| Boolean        |          bool           |       True, False       |
+
+There's a special data type called `None` in Python, in which is used as a placeholder. We will talk about it later this course.
+
+## Data Structures
+
+And fundamental data structures:
+
+-   List
+
+-   Dataframe
+
+-   Series
+
+-   **Dictionary**
+
+-   **Tuple**
+
+We will look at our new data structure, the Dictionary, carefully today. You will learn a little bit about Tuples in your exercise.
+
+## Objects in Python
+
+All of our Data Structures are organized under the Objects framework in Python. For each data structure type, we can examine:
+
+-   What does it contain (in terms of data)?
+
+-   What can it do (in terms of functions)?
+
+And if it "makes sense" to us, then it is well-designed Object.
+
+Formally, an **object** contains the following:
+
+-   **Value** that holds the essential data for the object.
+
+-   **Attributes** that hold subset or additional data for the object.
+
+-   Functions called **Methods** that are for the object and *have to* take in the variable referenced as an input.
+
+This organizing structure on an object applies to pretty much all Python data types and data structures.
+
+Let's see how this applies to the Dataframe:
+
+Suppose we have the following Dataframe:
+
+```{python}
+import pandas as pd
+
+simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
+                               'case_control': ["case", "case", "control", "control", "control"],
+                               'measurement1': [2.5, 3.5, 9, .1, 2.2],
+                               'measurement2': [0, 0, .5, .24, .003],
+                               'measurement3': [80, 2, 1, 1, 2]})
+simple_df
 ```
 
-## Topic of Section
+-   **Value**: the contents of the Dataframe, which is a tabular data format in columns and rows.
 
-You can write all your text in sections like this, using `##` to indicate a new header. you can use additional pound symbols to create lower levels of headers.
+-   **Attributes** that allow one to access subset of the data or additional data:
 
-See [here](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) for additional general information about how you can format text within R Markdown files. In addition, see [here](https://pandoc.org/MANUAL.html#pandocs-markdown) for more in depth and advanced options.
+    -   `simple_df.id` access the column "id", returning a Series object.
 
-### Subtopic
+    -   `simple_df.shape` access the the number of rows and columns.
 
-Here's a subheading (using three pound symbols) and some text in this subsection!
+    -   Subsetting via the bracket `.iloc[row_idx, col_idx]` or `.loc[row_idx, col_idx]` notation.
 
-## Code examples
+-   **Methods** that can be used on the object:
 
-You can demonstrate code like this:
+    -   `simple_df.head()` and `simple_df.tail()` access the first and last few elements of the Dataframe, respectively.
 
-```{r}
-output_dir <- file.path("resources", "code_output")
-if (!dir.exists(output_dir)) {
-  dir.create(output_dir)
-}
+    -   `simple_df.merge(another_df)` merges `simple_df` with another Dataframe `another_df`.
+
+We have some of our favorite attributes and methods of Dataframes [from Intro to Python here](https://docs.google.com/document/d/1si-4suESej1Vjopkv5KiI-hGylXk11osmO3oEfpYOuc/edit?tab=t.0).
+
+## Dictionary
+
+Today, we will introduce a new data structure, called the **Dictionary**. A dictionary is designed as a lookup table, organized in **key-value** pairs. You associate the key with a particular value, and use the key to find the value. You should consider using a dictionary when you are storing a collection of associations. Another way of saying this is that dictionaries are useful for storing and manipulating correspondence relationships.
+
+For instance, suppose that we want to associate common English words with a sentiment value:
+
+```{python}
+sentiment = {'happy': 8, 'sad': 2, 'joy': 7.5, 'embarrassed': 3.6, 'restless': 4.1, 'apathetic': 3.8, 'calm': 7}
+sentiment
 ```
 
-And make plots too:
+If we want to find the sentiment value of a word, we can look it up immediately via its key to access its value:
 
-```{r}
-hist_plot <- hist(iris$Sepal.Length)
+```{python}
+sentiment['joy']
 ```
 
-You can also save these plots to file:
+However, we cannot access the nth element of a Dictionary, as we are able to do with Lists and Series:
 
-```{r}
-png(file.path(output_dir, "test_plot.png"))
-hist_plot
-dev.off()
+```{python}
+#sentiment[0] error!
 ```
 
+If we didn't have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:
 
-## Image example
-
-How to include a Google slide. It's simplest to use the `ottrpal` package:
-
-```{r}
-#| fig-align: "center"
-#| fig-alt: "Major point!! example image"
-#| echo: false
-#| out-width: "100%"
-ottrpal::include_slide("https://docs.google.com/presentation/d/1Dw_rBb1hySN_76xh9-x5J2dWF_das9BAUjQigf2fN-E/edit#slide=id.g252f18e2576_1_0")
+```{python}
+sentiment_df = pd.DataFrame(data={'word': ["happy", "sad", "joy", "embarrassed", "restless", "apathetic", "calm"],
+                                  'sentiment': [8, 2, 7.5, 3.6, 4.1, 3.8, 7]})
+sentiment_df
 ```
 
-But if you have the slide or some other image locally downloaded you can also use HTML like this: 
+But to access a word's sentiment value, you have to write a complex syntax:
 
-<img src="resources/images/figure/1YmwKdIy9BeQ3EShgZhvtb3MgR8P6iDX4DfFD65W_gdQ_gcc4fbee202_0_141.png" title="Major point!! example image" alt="Major point!! example image" style="display: block; margin: auto; max-width: 100%; height: auto;" />
-
-
-## Video examples
-
-You may also want to embed videos in your course. If alternatively, you just want to include a link you can do so like this:
-
-Check out this [link to a video](https://www.youtube.com/embed/VOCYL-FNbr0) using markdown syntax.
-
-### Using `knitr`
-
-To embed videos in your course, you can use `knitr::include_url()` like this:
-Note that you should use `echo=FALSE` in the code chunk because we don't want the code part of this to show up. If you are unfamiliar with [how R Markdown code chunks work, read this](https://rmarkdown.rstudio.com/lesson-3.html).
-
-
-```{r}
-#| echo: false
-knitr::include_url("https://www.youtube.com/embed/VOCYL-FNbr0")
+```{python}
+sentiment_df.loc[sentiment_df.word == "joy", "sentiment"]
 ```
 
-### Using HTML
+Besides the cumbersome syntax, it is not very fast: the program has to find which row "joy" is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value *does not depend on the size of the dictionary,* whereas it does for the Dataframe implementation.
 
-<iframe src="https://www.youtube.com/embed/VOCYL-FNbr0" width="672" height="400px"></iframe>
+### Basic Rules of Dictionaries
 
-### Using `knitr`
+Here are some basic usage rules of Dictionaries:
 
-```{r, fig.align="center", echo=FALSE, out.width="100%"}
-knitr::include_url("https://drive.google.com/file/d/1mm72K4V7fqpgAfWkr6b7HTZrc3f-T6AV/preview")
+-   Only one value per key. No duplicate keys allowed.
+
+-   **Keys** must be of string, integer, float, boolean, or tuple.
+
+-   **Values** can be of any type, including data structures such as lists and dictionaries.
+
+If duplicated keys are given, then the last unique key is kept.
+
+```{hon}
+duplicated_keys = {'Student' : 97, 'Student': 88, 'Student' : 91}
+duplicated_keys
 ```
 
-### Using HTML
+It is quite common to have data structures within a dictionary. Notice that when we create a Dataframe from scratch, we give it a dictionary, where the column names are keys and columns are values. A Dataframe is built on top of a dictionary with more tools!
 
-<iframe src="https://drive.google.com/file/d/1mm72K4V7fqpgAfWkr6b7HTZrc3f-T6AV/preview" width="672" height="800px"></iframe>
+### Basic Usage of Dictionaries
 
-## Website Examples
+You can modify values of a corresponding key in a dictionary:
 
-Yet again you can use a link to a website like so:
-
-[A Website](https://yihui.org)
-
-You might want to have users open a website in a new tab by default, especially if they need to reference both the course and a resource at once.
-
-[A Website](https://yihui.org){target="_blank"}
-
-Or, you can embed some websites.
-
-### Using `knitr`
-
-This works:
-
-```{r, fig.align="center", echo=FALSE}
-knitr::include_url("https://yihui.org")
+```{python}
+sentiment['joy'] = sentiment['joy'] + 1
 ```
 
+You will get an error if you try to access a key that doesn't exist:
 
-### Using HTML
-
-<iframe src="https://yihui.org" width="672" height="400px"></iframe>
-
-
-## Stylized boxes
-
-Occasionally, you might find it useful to emphasize a particular piece of information. To help you do so, we have provided css code and images (no need for you to worry about that!) to create the following stylized boxes.
-
-You can use these boxes in your course with either of two options: using HTML code or Pandoc syntax.
-
-### Using `rmarkdown` container syntax
-
-The `rmarkdown` package allows for a different syntax to be converted to the HTML that you just saw and also allows for conversion to LaTeX. See the [Bookdown](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) documentation for more information. Note that Bookdown uses Pandoc.
-
-
-```
-::: {.notice}
-Note using rmarkdown syntax.
-
-:::
+```{python}
+#sentiment['dog']
 ```
 
-::: {.notice}
-Note using rmarkdown syntax.
+Alternatively, if you don't want to run the risk of getting an error, you can specify a default value using the `.get()` method. Here, we give a default neutral value of 5 if the key doesn't exist.
 
-:::
+```{python}
+sentiment.get("dog", 5)
+```
 
-As an example you might do something like this:
+If you don't specify a default value, and the key does not exist, you will get a special `None` data type.
 
-::: {.notice}
-Please click on the subsection headers in the left hand
-navigation bar (e.g., 2.1, 4.3) a second time to expand the
-table of contents and enable the `scroll_highlight` feature
-([see more](introduction.html#scroll-highlight))
-:::
+```{python}
+print(sentiment.get("dog"))
+```
 
+You can add more key-value pairs via `my_dict[new_key] = new_value` syntax. If the key already exists, the mapping for that key will simply be updated.
 
-### Using HTML
+```{python}
+sentiment['dog'] = 5
+```
 
-To add a warning box like the following use:
+### Application for Data Cleaning
 
-<div class = "notice">
-Followed by the text you want inside
-</div>
+Suppose that you want to do some data recoding. You want to look at the "case_control" column of `simple_df` and change "case" to "experiment" and "control" to "baseline". This correspondence relationship can be stored in a dictionary. You can use the `.replace()` method for Series objects with a dictionary as an input argument.
 
-This will create the following:
+```{python}
+simple_df.case_control.replace({"case": "experiment", "control": "baseline"})
+```
 
-<div class = "notice">
+## Converting between data types
 
-Followed by the text you want inside
+Often, we need to convert between data types and data structures. You should consider whether the conversion is:
 
-</div>
+1.  Permissible
+2.  Whether any information will be lost
 
-Here is a `<div class = "warning">` box:
+### Data types
 
-<div class = "warning">
+You can convert any number to a String.
 
-Note text
+```{python}
+age = 24.5
+str(age)
+```
 
-</div>
+Let's try to convert a String to a Float:
 
-Here is a `<div class = "github">` box:
+```{python}
+age = "24.5"
+float(age)
+```
 
-<div class = "github">
+But it is not permissible to convert to an Integer, as we don't know what to do with the decimals (we comment out code that will error, so that this page will render).
 
-GitHub text
+```{python}
+#int(age) returns an error
+```
 
-</div>
+And we cannot convert some Strings to any number.
 
+```{python}
+car = "prius"
+#float(prius) returns an error
+```
 
-Here is a `<div class = "dictionary">` box:
+Sometimes, we need to pay attention whether any information is lost in the conversion. Let's convert Float to Int:
 
-<div class = "dictionary">
+```{python}
+temperature = 98.6
+int(temperature)
+```
 
-dictionary text
+Notice that the conversion dropped the decimal point entirely.
 
-</div>
-
-
-Here is a `<div class = "reflection">` box:
-
-<div class = "reflection">
-
-reflection text
-
-</div>
-
-
-Here is a `<div class = "wip">` box:
-
-<div class = "wip">
-
-Work in Progress text
-
-</div>
+## Converting between data structures
 
 
-## Dropdown summaries
+When we look at a column, it is of the Series data structure.
 
-<details><summary> You can hide additional information in a dropdown menu </summary>
-Here's more words that are hidden.
-</details>
+```{python}
+simple_df['measurement1']
+```
+
+Let's convert it to a List:
+
+```{python}
+simple_df['measurement1'].to_list()
+```
+
+If you look at the [documentation of Series](https://pandas.pydata.org/docs/reference/series.html), there's a lot of other conversions you can do, in the `.to_*()` methods, such as `.to_string()`.
+
+When making these conversions, you might ask why isn't the column of a Dataframe just a List instead of a Series. The answer is that there are useful values, attributes, and methods about a Series that are more useful for data analysis compared to a List. You can compute `.mean()` to get the average value of a Series or `.plot()` to make a simple plot, but these methods doe not exist for a List. Series are also designed to compute on large datasets more efficiently than Lists. However, Lists can store elements from various data types, and can store Lists within Lists. When we make conversions, we think about what data structure is more appropriate than the other, which is a big theme of this course!
+
+## Is my variable a data type/structure?
+
+Often, you need to check whether your variable is a specific data type or structure. From Intro to Python, you learned about the `type()` function, such as:
+
+```{python}
+type(simple_df)
+```
+
+This is great, but the output of `type()` can be rather verbose, and is usually useful for printing and testing scenarios. To have a more concise, robust way of checking, we prefer the `isinstance()` function:
+
+```{python}
+isinstance(simple_df, pd.DataFrame)
+```
+
+This directly reference the Object's type, which is more clear.
+
+```{python}
+isinstance(simple_df, list)
+```
+
+## Exercises
+
+Exercise for week 1 can be found [here](https://colab.research.google.com/drive/1nskVV4XFDVjkN_6OIQJDtDettOEr-n5W?usp=sharing).
