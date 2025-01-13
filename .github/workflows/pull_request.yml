@@ -162,6 +162,8 @@ jobs:
           git fetch --all
           git checkout $branch_name
           git merge -s recursive --strategy-option=theirs origin/${{ github.head_ref }} --allow-unrelated-histories
+          quarto --version
+          quarto check
         shell: bash
 
       # Run bookdown rendering
@@ -175,8 +177,9 @@ jobs:
         id: quarto
         if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
         run: |
-          echo ${{needs.yaml-check.outputs.rendering_docker_image}}
-          Rscript -e "quarto::quarto_render('.')"
+          quarto check
+          quarto::quarto_render('.')
+        shell: Rscript
 
       # This checks on the steps before it and makes sure that they completed.
       # If the renders didn't complete we don't want to commit the file changes
