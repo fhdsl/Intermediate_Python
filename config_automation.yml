@@ -12,8 +12,10 @@ spell-check: yes
 style-code: yes
 # Test build the docker image if any docker-relevant files have been changed
 docker-test: no
-# Do we need to make the book txt file automatically? 
+# Do we need to make the book txt file automatically?
 make_book_txt: yes
+# Should URLs be tested periodically?
+url-check-periodically: yes
 
 ##### Renderings run upon merge to main branch #####
 # Rendering each platform's content
@@ -24,4 +26,3 @@ render-coursera: no
 # What docker image should be used for rendering?
 # The default is jhudsl/base_ottr:latest
 rendering_docker_image: 'jhudsl/ottr_jupyter:latest'
-
