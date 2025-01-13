@@ -174,7 +174,9 @@ jobs:
       - name: Render quarto version
         id: quarto
         if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
-        run: Rscript -e "quarto::quarto_render('.')"
+        run: |
+          echo ${{needs.yaml-check.outputs.rendering_docker_image}}
+          Rscript -e "quarto::quarto_render('.')"
 
       # This checks on the steps before it and makes sure that they completed.
       # If the renders didn't complete we don't want to commit the file changes
