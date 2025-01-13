@@ -177,7 +177,8 @@ jobs:
         id: quarto
         if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
         run: |
-          quarto check
+          library(quarto)
+          quarto_path()
           quarto::quarto_render('.')
         shell: Rscript {0}
 
