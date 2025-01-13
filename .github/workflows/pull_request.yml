@@ -179,7 +179,7 @@ jobs:
         run: |
           quarto check
           quarto::quarto_render('.')
-        shell: Rscript
+        shell: Rscript {0}
 
       # This checks on the steps before it and makes sure that they completed.
       # If the renders didn't complete we don't want to commit the file changes
