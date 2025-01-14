@@ -177,7 +177,6 @@ jobs:
         id: quarto
         if: ${{needs.yaml-check.outputs.toggle_website == 'quarto' }}
         run: |
-          install.packages("quarto", repos='http://cran.us.r-project.org')
           quarto::quarto_render('.')
         shell: Rscript {0}
 
