@@ -25,4 +25,4 @@ render-coursera: no
 
 # What docker image should be used for rendering?
 # The default is jhudsl/base_ottr:latest
-rendering_docker_image: 'jhudsl/ottr_jupyter:latest'
+rendering-docker-image: 'jhudsl/ottr_jupyter:main'
