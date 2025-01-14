@@ -1,0 +1,309 @@
+---
+title: "W1: Fundamentals"
+format: 
+  revealjs:
+    smaller: false
+    scrollable: true
+    echo: true
+output-location: fragment
+---
+
+## Welcome!
+
+## Introductions
+
+-   Who am I?
+
+. . .
+
+-   What is DaSL?
+
+. . .
+
+-   Who are you?
+
+    -   Name, pronouns, group you work in
+
+    -   What you want to get out of the class
+
+    -   Favorite winter activity
+
+## Goals of the course
+
+. . .
+
+-   Continue building *programming fundamentals*: How to use complex data structures, create custom functions, and how to iterate repeated tasks.
+
+. . .
+
+-   Continue exploration of *data science fundamentals*: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.
+
+## [A Motivating Example](https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing)
+
+[https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing](https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharinghttps://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing)
+
+## Content of the course
+
+1.  Fundamentals and Dictionaries
+2.  Iteration
+3.  Functions
+4.  Iteration styles
+5.  Assignment and References
+6.  Modules, Wrap-up
+
+## Format of the course
+
+. . .
+
+-   Hybrid, and recordings will be available.
+
+. . .
+
+-   1-2 hour exercises after each session are encouraged for practice; time at beginning of class provided to work on exercises.
+
+. . .
+
+-   Office Hours Fridays 10am - 11am PT.
+
+## Culture of the course
+
+. . .
+
+-   Challenge: We are learning a new language, but you already have a full-time job
+
+. . .
+
+-   *Teach not for mastery, but teach for empowerment to learn effectively.*
+
+## Culture of the course
+
+-   Challenge: We sometimes struggle with our data science in isolation, unaware that someone two doors down from us has gone through the same struggle.
+
+. . .
+
+-   *We learn and work better with our peers.*
+
+. . .
+
+-   *Know that if you have a question, other people will have it.*
+
+. . .
+
+We ask you to follow [Participation Guidelines](https://hutchdatascience.org/communitystudios/guidelines/) and [Code of Conduct](https://github.com/fhdsl/coc).
+
+## Ready?
+
+![](images/horst_community.png)
+
+## Data types
+
+| Data type name | **Data type shorthand** |      **Examples**       |
+|----------------|:-----------------------:|:-----------------------:|
+| Integer        |           int           |          2, 4           |
+| Float          |          float          |      3.5, -34.1009      |
+| String         |           str           | "hello", "234-234-8594" |
+| Boolean        |          bool           |       True, False       |
+
+## Data structures
+
+-   List
+
+-   Dataframe
+
+    -   Series
+
+-   **Dictionary**
+
+-   **Tuple\
+    **
+
+## Objects in Python
+
+*What does it contain?*
+
+-   **Value** that holds the essential data for the object.
+
+-   **Attributes** that hold subset of the data or additional data for the object.
+
+. . .
+
+*What can it do?*
+
+-   Functions called **Methods** specific to the data type and automatically takes the object as input.
+
+. . .
+
+This organizing structure on an object applies to pretty much all Python data types and data structures.
+
+## Lists as an Object
+
+*What does it contain?*
+
+-   **Value**: the contents of the list, such as `[2, 3, 4]`.
+
+. . .
+
+-   **Attributes**: subsetting via `[ ]`.
+
+. . .
+
+*What can it do (methods)?*
+
+-   `my_list.append(4)` appends 4 to the last element of `my_list`, but does not return anything.
+
+## Dataframe as an Object
+
+*What does it contain?*
+
+-   **Value**: the spreadsheet of data.
+
+. . .
+
+-   **Attributes**:
+
+    -   Columns of the data
+
+    -   `.columns`
+
+    -   `.shape`
+
+    -   `.iloc[ , ]` , `.loc[ , ]` for subsetting
+
+. . .
+
+*What can it do (methods)?*
+
+-   `.head()`
+
+-   `.tail()`
+
+## Dictionary
+
+A **dictionary** is designed as a lookup table, organized in **key-value** pairs. You associate the key with a particular value, and use the key to find the value.
+
+. . .
+
+```{python}
+sentiment = {'happy': 8, 'sad': 2, 'joy': 7.5, 'embarrassed': 3.6, 'restless': 4.1, 'apathetic': 3.8, 'calm': 7}
+sentiment
+```
+
+. . .
+
+You use a key to find its corresponding value:
+
+```{python}
+sentiment['joy']
+```
+
+. . .
+
+You cannot use a numerical index to find values, like you did for Lists!
+
+```{python}
+#sentiment[0]
+```
+
+## Rules of Dictionaries
+
+-   Only one value per key. No duplicate keys allowed.
+
+. . .
+
+-   **Keys** must be of string, integer, float, boolean, or tuple.
+
+. . .
+
+-   **Values** can be of any type, including data structures such as lists and dictionaries.
+
+. . .
+
+```{python}
+duplicated_keys = {'Student' : 97, 'Student': 88, 'Student' : 91}
+duplicated_keys
+```
+
+. . .
+
+```{python}
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004,
+    "likes": ["jumping", "skating", "laughing"]
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007,
+    "likes": ["swimming", "sleeping", "drawing", "fishing"]
+  }
+}
+```
+
+. . .
+
+```{python}
+myfamily["child2"]["likes"]
+```
+
+## Using key to find values
+
+```{python}
+sentiment['joy'] 
+```
+
+. . .
+
+```{python}
+sentiment['joy'] = sentiment['joy'] + 1
+```
+
+. . .
+
+If a key doesn't exist, you will get an error:
+
+```{python}
+#sentiment["rain"]
+```
+
+. . .
+
+If you don't want to run the risk of getting an error, you can specify a default value using the `.get()` method.
+
+```{python}
+sentiment.get("dog", "not found")
+```
+
+. . .
+
+```{python}
+print(sentiment.get("dog"))
+```
+
+## Adding new key-value pairs
+
+You can add more key-value pairs by defining it directly. If the key already exists, the mapping for that key will simply be updated.
+
+```{python}
+sentiment['dog'] = 5
+```
+
+## Application for Data Cleaning
+
+You want to take "case_control" column of `simple_df` and change "case" to "experiment" and "control" to "baseline".
+
+This correspondence relationship can be stored in a dictionary via `.replace()` method for Series:
+
+```{python}
+import pandas as pd
+
+simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
+                               'case_control': ["case", "case", "control", "control", "control"],
+                               'measurement1': [2.5, 3.5, 9, .1, 2.2],
+                               'measurement2': [0, 0, .5, .24, .003],
+                               'measurement3': [80, 2, 1, 1, 2]})
+```
+
+```{python}
+simple_df.case_control.replace({"case": "experiment", "control": "baseline"})
+```
