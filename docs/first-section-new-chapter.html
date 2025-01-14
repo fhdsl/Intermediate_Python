@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Quarto Based OTTR Course - 2&nbsp; New Chapter</title>
+
+
+<title>2&nbsp; Fundamentals – Quarto Based OTTR Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -53,7 +56,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,7 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,29 +102,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="style.css">
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New Chapter</span>
-</h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./first-section-new-chapter.html">First Section</a></li><li class="breadcrumb-item"><a href="./first-section-new-chapter.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="https://hutchdatascience.org/" class="sidebar-logo-link">
+      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Quarto Based OTTR Course</a> 
         <div class="sidebar-tools-main">
@@ -134,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto Based OTTR Course</span></a>
@@ -148,55 +165,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">First Section</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./first-section-new-chapter.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New Chapter</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentals</span></span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Second Section</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./second-section-new-chapter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">New Chapter</span></span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Third Section</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./third-section-new-chapter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">New Chapter</span></span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
@@ -210,54 +227,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</a></li>
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="header-section-number">2.2</span> Libraries</a></li>
-  <li>
-<a href="#topic-of-section" id="toc-topic-of-section" class="nav-link" data-scroll-target="#topic-of-section"><span class="header-section-number">2.3</span> Topic of Section</a>
+  <li><a href="#goals-of-this-course" id="toc-goals-of-this-course" class="nav-link active" data-scroll-target="#goals-of-this-course"><span class="header-section-number">2.1</span> Goals of this course</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">2.2</span> Motivation</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">2.3</span> Learning Objectives</a></li>
+  <li><a href="#data-types-in-python" id="toc-data-types-in-python" class="nav-link" data-scroll-target="#data-types-in-python"><span class="header-section-number">2.4</span> Data types in Python</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures"><span class="header-section-number">2.5</span> Data Structures</a></li>
+  <li><a href="#objects-in-python" id="toc-objects-in-python" class="nav-link" data-scroll-target="#objects-in-python"><span class="header-section-number">2.6</span> Objects in Python</a></li>
+  <li><a href="#dictionary" id="toc-dictionary" class="nav-link" data-scroll-target="#dictionary"><span class="header-section-number">2.7</span> Dictionary</a>
   <ul class="collapse">
-<li><a href="#subtopic" id="toc-subtopic" class="nav-link" data-scroll-target="#subtopic"><span class="header-section-number">2.3.1</span> Subtopic</a></li>
-  </ul>
-</li>
-  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples"><span class="header-section-number">2.4</span> Code examples</a></li>
-  <li><a href="#image-example" id="toc-image-example" class="nav-link" data-scroll-target="#image-example"><span class="header-section-number">2.5</span> Image example</a></li>
-  <li>
-<a href="#video-examples" id="toc-video-examples" class="nav-link" data-scroll-target="#video-examples"><span class="header-section-number">2.6</span> Video examples</a>
+  <li><a href="#basic-rules-of-dictionaries" id="toc-basic-rules-of-dictionaries" class="nav-link" data-scroll-target="#basic-rules-of-dictionaries"><span class="header-section-number">2.7.1</span> Basic Rules of Dictionaries</a></li>
+  <li><a href="#basic-usage-of-dictionaries" id="toc-basic-usage-of-dictionaries" class="nav-link" data-scroll-target="#basic-usage-of-dictionaries"><span class="header-section-number">2.7.2</span> Basic Usage of Dictionaries</a></li>
+  <li><a href="#application-for-data-cleaning" id="toc-application-for-data-cleaning" class="nav-link" data-scroll-target="#application-for-data-cleaning"><span class="header-section-number">2.7.3</span> Application for Data Cleaning</a></li>
+  </ul></li>
+  <li><a href="#converting-between-data-types" id="toc-converting-between-data-types" class="nav-link" data-scroll-target="#converting-between-data-types"><span class="header-section-number">2.8</span> Converting between data types</a>
   <ul class="collapse">
-<li><a href="#using-knitr" id="toc-using-knitr" class="nav-link" data-scroll-target="#using-knitr"><span class="header-section-number">2.6.1</span> Using <code>knitr</code></a></li>
-  <li><a href="#using-html" id="toc-using-html" class="nav-link" data-scroll-target="#using-html"><span class="header-section-number">2.6.2</span> Using HTML</a></li>
-  <li><a href="#using-knitr-1" id="toc-using-knitr-1" class="nav-link" data-scroll-target="#using-knitr-1"><span class="header-section-number">2.6.3</span> Using <code>knitr</code></a></li>
-  <li><a href="#using-html-1" id="toc-using-html-1" class="nav-link" data-scroll-target="#using-html-1"><span class="header-section-number">2.6.4</span> Using HTML</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">2.8.1</span> Data types</a></li>
+  </ul></li>
+  <li><a href="#converting-between-data-structures" id="toc-converting-between-data-structures" class="nav-link" data-scroll-target="#converting-between-data-structures"><span class="header-section-number">2.9</span> Converting between data structures</a></li>
+  <li><a href="#is-my-variable-a-data-typestructure" id="toc-is-my-variable-a-data-typestructure" class="nav-link" data-scroll-target="#is-my-variable-a-data-typestructure"><span class="header-section-number">2.10</span> Is my variable a data type/structure?</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.11</span> Exercises</a></li>
   </ul>
-</li>
-  <li>
-<a href="#website-examples" id="toc-website-examples" class="nav-link" data-scroll-target="#website-examples"><span class="header-section-number">2.7</span> Website Examples</a>
-  <ul class="collapse">
-<li><a href="#using-knitr-2" id="toc-using-knitr-2" class="nav-link" data-scroll-target="#using-knitr-2"><span class="header-section-number">2.7.1</span> Using <code>knitr</code></a></li>
-  <li><a href="#using-html-2" id="toc-using-html-2" class="nav-link" data-scroll-target="#using-html-2"><span class="header-section-number">2.7.2</span> Using HTML</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#stylized-boxes" id="toc-stylized-boxes" class="nav-link" data-scroll-target="#stylized-boxes"><span class="header-section-number">2.8</span> Stylized boxes</a>
-  <ul class="collapse">
-<li><a href="#using-rmarkdown-container-syntax" id="toc-using-rmarkdown-container-syntax" class="nav-link" data-scroll-target="#using-rmarkdown-container-syntax"><span class="header-section-number">2.8.1</span> Using <code>rmarkdown</code> container syntax</a></li>
-  <li><a href="#using-html-3" id="toc-using-html-3" class="nav-link" data-scroll-target="#using-html-3"><span class="header-section-number">2.8.2</span> Using HTML</a></li>
-  </ul>
-</li>
-  <li><a href="#dropdown-summaries" id="toc-dropdown-summaries" class="nav-link" data-scroll-target="#dropdown-summaries"><span class="header-section-number">2.9</span> Dropdown summaries</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/first-section-new-chapter.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/first-section-new-chapter.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New Chapter</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./first-section-new-chapter.html">First Section</a></li><li class="breadcrumb-item"><a href="./first-section-new-chapter.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentals</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentals</span></h1>
 </div>
 
 
@@ -271,191 +277,508 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="learning-objectives" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="learning-objectives">
-<span class="header-section-number">2.1</span> Learning Objectives</h2>
-<p>Every chapter also needs Learning objectives.</p>
-</section><section id="libraries" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="libraries">
-<span class="header-section-number">2.2</span> Libraries</h2>
-<p>For this chapter, we’ll need the following packages attached:</p>
-<p>*Remember to add <a href="https://github.com/jhudsl/OTTR_Template/wiki/Using-Docker#starting-a-new-docker-image">any additional packages you need to your course’s own docker image</a>.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="topic-of-section" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="topic-of-section">
-<span class="header-section-number">2.3</span> Topic of Section</h2>
-<p>You can write all your text in sections like this, using <code>##</code> to indicate a new header. you can use additional pound symbols to create lower levels of headers.</p>
-<p>See <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">here</a> for additional general information about how you can format text within R Markdown files. In addition, see <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">here</a> for more in depth and advanced options.</p>
-<section id="subtopic" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="subtopic">
-<span class="header-section-number">2.3.1</span> Subtopic</h3>
-<p>Here’s a subheading (using three pound symbols) and some text in this subsection!</p>
-</section></section><section id="code-examples" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="code-examples">
-<span class="header-section-number">2.4</span> Code examples</h2>
-<p>You can demonstrate code like this:</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"resources"</span>, <span class="st">"code_output"</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.exists</a></span><span class="op">(</span><span class="va">output_dir</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="va">output_dir</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>And make plots too:</p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hist_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</header>
+
+
+<p>Welcome to Intermediate Python! Each week, we cover a chapter, which consists of a lesson and exercise. In the first week, we go over the goals of the course, and review data structures and data types that you have seen before from <a href="https://hutchdatascience.org/Intro_to_Python/">Intro to Python</a>. We also look at some new data structures and more properties of data structures.</p>
+<p>In <a href="https://hutchdatascience.org/Intro_to_Python/">Intro to Python</a>, you learned how to do basic data analysis such as subsetting a dataframe, looking at summary statistics, and visualizing your data. This was done in the context of a clean, Tidy dataframe. In this course, we focus on working with data “from the wild”, in which the data comes in a more messy, un-Tidy form. Let’s see what we will learn in the next 6 weeks together:</p>
+<section id="goals-of-this-course" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="goals-of-this-course"><span class="header-section-number">2.1</span> Goals of this course</h2>
+<ul>
+<li><p>Continue building <em>programming fundamentals</em>: How to use complex data structures, create custom functions, and how to iterate repeated tasks.</p></li>
+<li><p>Continue exploration of <em>data science fundamentals</em>: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.</p></li>
+</ul>
+</section>
+<section id="motivation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="motivation"><span class="header-section-number">2.2</span> Motivation</h2>
+<p>We will be looking at a dataset from Twitter that looks like the following:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tweet_ID</th>
+<th>Username</th>
+<th>Text</th>
+<th>Retweets</th>
+<th>Likes</th>
+<th>Timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>julie81</td>
+<td>Party least receive say or single….</td>
+<td>2</td>
+<td>25</td>
+<td>2023-01-30 11:00:51</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>richardhester</td>
+<td>Hotel still Congress may member staff….</td>
+<td>35</td>
+<td>29</td>
+<td>2023-01-02 22:45:58</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>williamsjoseph</td>
+<td>Nice be her debate industry that year….</td>
+<td>51</td>
+<td>25</td>
+<td>2023-01-18 11:25:19</td>
+</tr>
+</tbody>
+</table>
+<p>Suppose that we want to do some text analysis on the “Text” column: We want to assign a sentiment score (a numerical value that measures the emotional tone or attitude expressed in text) to each tweet, based on all of the words it contains. For instance, a tweet about celebrating one’s birthday will be assigned a positive sentiment score, and a tweet about getting fired from a job will be assigned a negative sentiment score.</p>
+<p>If we have a function that takes in a String of words, and output a sentiment score, that would be great. However, that function does not exist in the built-in libraries of Python and Pandas, so we will have to write our custom function!</p>
+<p>When we think about writing a custom function, we usually like to sketch out an outline what the function will do in English, and then try to translate it to Python code.</p>
+<p>Given an input String of words,</p>
+<ul>
+<li><p>Examine each word in the input string:</p>
+<ul>
+<li><p>Associate the word with a sentiment score.</p></li>
+<li><p>And keep track of this sentiment score.</p></li>
+</ul></li>
+<li><p>Take the average of all the sentiment scores,</p></li>
+<li><p>and return it as the output.</p></li>
+</ul>
+<p>How do we associate a word with a sentiment score? We need another function to do that:</p>
+<p>Given an input String with one word,</p>
+<ul>
+<li><p>Load in a “lookup dictionary” that assigns words to scores.</p></li>
+<li><p>Check whether the input string is in the dictionary. Some words, such as “the”, won’t have a sentiment score.</p></li>
+<li><p>If so, return the score of that word.</p></li>
+</ul>
+<p>Some concepts from this outline that we will learn the technical details include: writing a custom function, iterating through a data structure, and using “lookup dictionaries”. Let’s look at the Learning Objectives of the course:</p>
+</section>
+<section id="learning-objectives" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.3</span> Learning Objectives</h2>
+<ul>
+<li><p><strong>Distinguish</strong> the use cases of common data structures, such as Lists, Dictionaries, and Series.</p></li>
+<li><p><strong>Recognize</strong> and <strong>describe</strong> common iteration patterns on common data structures, such as counting and searching.</p></li>
+<li><p><strong>Implement</strong> “iterable” operations, including For-Loops and List Comprehensions, on data structures that can be iterated (Lists, Dictionaries, Series, and even Strings).</p></li>
+<li><p><strong>Implement</strong> conditional statements when the program logic requires a branching structure.</p></li>
+<li><p><strong>Create</strong> simple, modular functions, including anonymous functions, that can be reused.</p></li>
+<li><p><strong>Describe</strong> the difference between copying an object vs.&nbsp;referencing an object and how that could affect variables in a data analysis.</p></li>
+</ul>
+</section>
+<section id="data-types-in-python" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="data-types-in-python"><span class="header-section-number">2.4</span> Data types in Python</h2>
+<p>To get started, let’s recall the fundamental data types in Python:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data type name</th>
+<th style="text-align: center;"><strong>Data type shorthand</strong></th>
+<th style="text-align: center;"><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Integer</td>
+<td style="text-align: center;">int</td>
+<td style="text-align: center;">2, 4</td>
+</tr>
+<tr class="even">
+<td>Float</td>
+<td style="text-align: center;">float</td>
+<td style="text-align: center;">3.5, -34.1009</td>
+</tr>
+<tr class="odd">
+<td>String</td>
+<td style="text-align: center;">str</td>
+<td style="text-align: center;">“hello”, “234-234-8594”</td>
+</tr>
+<tr class="even">
+<td>Boolean</td>
+<td style="text-align: center;">bool</td>
+<td style="text-align: center;">True, False</td>
+</tr>
+</tbody>
+</table>
+<p>There’s a special data type called <code>None</code> in Python, in which is used as a placeholder. We will talk about it later this course.</p>
+</section>
+<section id="data-structures" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="data-structures"><span class="header-section-number">2.5</span> Data Structures</h2>
+<p>And fundamental data structures:</p>
+<ul>
+<li><p>List</p></li>
+<li><p>Dataframe</p></li>
+<li><p>Series</p></li>
+<li><p><strong>Dictionary</strong></p></li>
+<li><p><strong>Tuple</strong></p></li>
+</ul>
+<p>We will look at our new data structure, the Dictionary, carefully today. You will learn a little bit about Tuples in your exercise.</p>
+</section>
+<section id="objects-in-python" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="objects-in-python"><span class="header-section-number">2.6</span> Objects in Python</h2>
+<p>All of our Data Structures are organized under the Objects framework in Python. For each data structure type, we can examine:</p>
+<ul>
+<li><p>What does it contain (in terms of data)?</p></li>
+<li><p>What can it do (in terms of functions)?</p></li>
+</ul>
+<p>And if it “makes sense” to us, then it is well-designed Object.</p>
+<p>Formally, an <strong>object</strong> contains the following:</p>
+<ul>
+<li><p><strong>Value</strong> that holds the essential data for the object.</p></li>
+<li><p><strong>Attributes</strong> that hold subset or additional data for the object.</p></li>
+<li><p>Functions called <strong>Methods</strong> that are for the object and <em>have to</em> take in the variable referenced as an input.</p></li>
+</ul>
+<p>This organizing structure on an object applies to pretty much all Python data types and data structures.</p>
+<p>Let’s see how this applies to the Dataframe:</p>
+<p>Suppose we have the following Dataframe:</p>
+<div id="a5fb33c3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>simple_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'id'</span>: [<span class="st">"AAA"</span>, <span class="st">"BBB"</span>, <span class="st">"CCC"</span>, <span class="st">"DDD"</span>, <span class="st">"EEE"</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'case_control'</span>: [<span class="st">"case"</span>, <span class="st">"case"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>],</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'measurement1'</span>: [<span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="dv">9</span>, <span class="fl">.1</span>, <span class="fl">2.2</span>],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'measurement2'</span>: [<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">.5</span>, <span class="fl">.24</span>, <span class="fl">.003</span>],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'measurement3'</span>: [<span class="dv">80</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>]})</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>simple_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
-<figure class="figure"><p><img src="resources/images/figure/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">case_control</th>
+<th data-quarto-table-cell-role="th">measurement1</th>
+<th data-quarto-table-cell-role="th">measurement2</th>
+<th data-quarto-table-cell-role="th">measurement3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AAA</td>
+<td>case</td>
+<td>2.5</td>
+<td>0.000</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>BBB</td>
+<td>case</td>
+<td>3.5</td>
+<td>0.000</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>CCC</td>
+<td>control</td>
+<td>9.0</td>
+<td>0.500</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>DDD</td>
+<td>control</td>
+<td>0.1</td>
+<td>0.240</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>EEE</td>
+<td>control</td>
+<td>2.2</td>
+<td>0.003</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
-<p>You can also save these plots to file:</p>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/png.html">png</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">output_dir</span>, <span class="st">"test_plot.png"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">hist_plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><strong>Value</strong>: the contents of the Dataframe, which is a tabular data format in columns and rows.</p></li>
+<li><p><strong>Attributes</strong> that allow one to access subset of the data or additional data:</p>
+<ul>
+<li><p><code>simple_df.id</code> access the column “id”, returning a Series object.</p></li>
+<li><p><code>simple_df.shape</code> access the the number of rows and columns.</p></li>
+<li><p>Subsetting via the bracket <code>.iloc[row_idx, col_idx]</code> or <code>.loc[row_idx, col_idx]</code> notation.</p></li>
+</ul></li>
+<li><p><strong>Methods</strong> that can be used on the object:</p>
+<ul>
+<li><p><code>simple_df.head()</code> and <code>simple_df.tail()</code> access the first and last few elements of the Dataframe, respectively.</p></li>
+<li><p><code>simple_df.merge(another_df)</code> merges <code>simple_df</code> with another Dataframe <code>another_df</code>.</p></li>
+</ul></li>
+</ul>
+<p>We have some of our favorite attributes and methods of Dataframes <a href="https://docs.google.com/document/d/1si-4suESej1Vjopkv5KiI-hGylXk11osmO3oEfpYOuc/edit?tab=t.0">from Intro to Python here</a>.</p>
+</section>
+<section id="dictionary" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="dictionary"><span class="header-section-number">2.7</span> Dictionary</h2>
+<p>Today, we will introduce a new data structure, called the <strong>Dictionary</strong>. A dictionary is designed as a lookup table, organized in <strong>key-value</strong> pairs. You associate the key with a particular value, and use the key to find the value. You should consider using a dictionary when you are storing a collection of associations. Another way of saying this is that dictionaries are useful for storing and manipulating correspondence relationships.</p>
+<p>For instance, suppose that we want to associate common English words with a sentiment value:</p>
+<div id="1c342ded" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sentiment <span class="op">=</span> {<span class="st">'happy'</span>: <span class="dv">8</span>, <span class="st">'sad'</span>: <span class="dv">2</span>, <span class="st">'joy'</span>: <span class="fl">7.5</span>, <span class="st">'embarrassed'</span>: <span class="fl">3.6</span>, <span class="st">'restless'</span>: <span class="fl">4.1</span>, <span class="st">'apathetic'</span>: <span class="fl">3.8</span>, <span class="st">'calm'</span>: <span class="dv">7</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sentiment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>{'happy': 8,
+ 'sad': 2,
+ 'joy': 7.5,
+ 'embarrassed': 3.6,
+ 'restless': 4.1,
+ 'apathetic': 3.8,
+ 'calm': 7}</code></pre>
+</div>
+</div>
+<p>If we want to find the sentiment value of a word, we can look it up immediately via its key to access its value:</p>
+<div id="ff7504c4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'joy'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>7.5</code></pre>
+</div>
+</div>
+<p>However, we cannot access the nth element of a Dictionary, as we are able to do with Lists and Series:</p>
+<div id="07148268" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sentiment[0] error!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If we didn’t have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:</p>
+<div id="d61ccfe8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sentiment_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'word'</span>: [<span class="st">"happy"</span>, <span class="st">"sad"</span>, <span class="st">"joy"</span>, <span class="st">"embarrassed"</span>, <span class="st">"restless"</span>, <span class="st">"apathetic"</span>, <span class="st">"calm"</span>],</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">'sentiment'</span>: [<span class="dv">8</span>, <span class="dv">2</span>, <span class="fl">7.5</span>, <span class="fl">3.6</span>, <span class="fl">4.1</span>, <span class="fl">3.8</span>, <span class="dv">7</span>]})</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sentiment_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">word</th>
+<th data-quarto-table-cell-role="th">sentiment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>happy</td>
+<td>8.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>sad</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>joy</td>
+<td>7.5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>embarrassed</td>
+<td>3.6</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>restless</td>
+<td>4.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>apathetic</td>
+<td>3.8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>calm</td>
+<td>7.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>But to access a word’s sentiment value, you have to write a complex syntax:</p>
+<div id="79109da6" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sentiment_df.loc[sentiment_df.word <span class="op">==</span> <span class="st">"joy"</span>, <span class="st">"sentiment"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>2    7.5
+Name: sentiment, dtype: float64</code></pre>
+</div>
+</div>
+<p>Besides the cumbersome syntax, it is not very fast: the program has to find which row “joy” is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value <em>does not depend on the size of the dictionary,</em> whereas it does for the Dataframe implementation.</p>
+<section id="basic-rules-of-dictionaries" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="basic-rules-of-dictionaries"><span class="header-section-number">2.7.1</span> Basic Rules of Dictionaries</h3>
+<p>Here are some basic usage rules of Dictionaries:</p>
+<ul>
+<li><p>Only one value per key. No duplicate keys allowed.</p></li>
+<li><p><strong>Keys</strong> must be of string, integer, float, boolean, or tuple.</p></li>
+<li><p><strong>Values</strong> can be of any type, including data structures such as lists and dictionaries.</p></li>
+</ul>
+<p>If duplicated keys are given, then the last unique key is kept.</p>
+<pre class="{hon}"><code>duplicated_keys = {'Student' : 97, 'Student': 88, 'Student' : 91}
+duplicated_keys</code></pre>
+<p>It is quite common to have data structures within a dictionary. Notice that when we create a Dataframe from scratch, we give it a dictionary, where the column names are keys and columns are values. A Dataframe is built on top of a dictionary with more tools!</p>
+</section>
+<section id="basic-usage-of-dictionaries" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="basic-usage-of-dictionaries"><span class="header-section-number">2.7.2</span> Basic Usage of Dictionaries</h3>
+<p>You can modify values of a corresponding key in a dictionary:</p>
+<div id="12cc2d90" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'joy'</span>] <span class="op">=</span> sentiment[<span class="st">'joy'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You will get an error if you try to access a key that doesn’t exist:</p>
+<div id="654dccfd" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sentiment['dog']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, if you don’t want to run the risk of getting an error, you can specify a default value using the <code>.get()</code> method. Here, we give a default neutral value of 5 if the key doesn’t exist.</p>
+<div id="c4d13e61" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sentiment.get(<span class="st">"dog"</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>5</code></pre>
+</div>
+</div>
+<p>If you don’t specify a default value, and the key does not exist, you will get a special <code>None</code> data type.</p>
+<div id="8b7c773d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sentiment.get(<span class="st">"dog"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>$breaks
-[1] 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0
+<pre><code>None</code></pre>
+</div>
+</div>
+<p>You can add more key-value pairs via <code>my_dict[new_key] = new_value</code> syntax. If the key already exists, the mapping for that key will simply be updated.</p>
+<div id="bdab04a5" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'dog'</span>] <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="application-for-data-cleaning" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="application-for-data-cleaning"><span class="header-section-number">2.7.3</span> Application for Data Cleaning</h3>
+<p>Suppose that you want to do some data recoding. You want to look at the “case_control” column of <code>simple_df</code> and change “case” to “experiment” and “control” to “baseline”. This correspondence relationship can be stored in a dictionary. You can use the <code>.replace()</code> method for Series objects with a dictionary as an input argument.</p>
+<div id="d0b10cd7" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>simple_df.case_control.replace({<span class="st">"case"</span>: <span class="st">"experiment"</span>, <span class="st">"control"</span>: <span class="st">"baseline"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>0    experiment
+1    experiment
+2      baseline
+3      baseline
+4      baseline
+Name: case_control, dtype: object</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="converting-between-data-types" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="converting-between-data-types"><span class="header-section-number">2.8</span> Converting between data types</h2>
+<p>Often, we need to convert between data types and data structures. You should consider whether the conversion is:</p>
+<ol type="1">
+<li>Permissible</li>
+<li>Whether any information will be lost</li>
+</ol>
+<section id="data-types" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="data-types"><span class="header-section-number">2.8.1</span> Data types</h3>
+<p>You can convert any number to a String.</p>
+<div id="3e991fe1" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="fl">24.5</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>'24.5'</code></pre>
+</div>
+</div>
+<p>Let’s try to convert a String to a Float:</p>
+<div id="f56819ec" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="st">"24.5"</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>24.5</code></pre>
+</div>
+</div>
+<p>But it is not permissible to convert to an Integer, as we don’t know what to do with the decimals (we comment out code that will error, so that this page will render).</p>
+<div id="9bf23835" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#int(age) returns an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And we cannot convert some Strings to any number.</p>
+<div id="a52cf17d" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>car <span class="op">=</span> <span class="st">"prius"</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#float(prius) returns an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sometimes, we need to pay attention whether any information is lost in the conversion. Let’s convert Float to Int:</p>
+<div id="a60d75cb" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">98.6</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(temperature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>98</code></pre>
+</div>
+</div>
+<p>Notice that the conversion dropped the decimal point entirely.</p>
+</section>
+</section>
+<section id="converting-between-data-structures" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="converting-between-data-structures"><span class="header-section-number">2.9</span> Converting between data structures</h2>
+<p>When we look at a column, it is of the Series data structure.</p>
+<div id="4d68a94d" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>simple_df[<span class="st">'measurement1'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>0    2.5
+1    3.5
+2    9.0
+3    0.1
+4    2.2
+Name: measurement1, dtype: float64</code></pre>
+</div>
+</div>
+<p>Let’s convert it to a List:</p>
+<div id="aa4e20d6" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>simple_df[<span class="st">'measurement1'</span>].to_list()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>[2.5, 3.5, 9.0, 0.1, 2.2]</code></pre>
+</div>
+</div>
+<p>If you look at the <a href="https://pandas.pydata.org/docs/reference/series.html">documentation of Series</a>, there’s a lot of other conversions you can do, in the <code>.to_*()</code> methods, such as <code>.to_string()</code>.</p>
+<p>When making these conversions, you might ask why isn’t the column of a Dataframe just a List instead of a Series. The answer is that there are useful values, attributes, and methods about a Series that are more useful for data analysis compared to a List. You can compute <code>.mean()</code> to get the average value of a Series or <code>.plot()</code> to make a simple plot, but these methods doe not exist for a List. Series are also designed to compute on large datasets more efficiently than Lists. However, Lists can store elements from various data types, and can store Lists within Lists. When we make conversions, we think about what data structure is more appropriate than the other, which is a big theme of this course!</p>
+</section>
+<section id="is-my-variable-a-data-typestructure" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="is-my-variable-a-data-typestructure"><span class="header-section-number">2.10</span> Is my variable a data type/structure?</h2>
+<p>Often, you need to check whether your variable is a specific data type or structure. From Intro to Python, you learned about the <code>type()</code> function, such as:</p>
+<div id="946f77d8" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(simple_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>pandas.core.frame.DataFrame</code></pre>
+</div>
+</div>
+<p>This is great, but the output of <code>type()</code> can be rather verbose, and is usually useful for printing and testing scenarios. To have a more concise, robust way of checking, we prefer the <code>isinstance()</code> function:</p>
+<div id="09ba9853" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">isinstance</span>(simple_df, pd.DataFrame)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>This directly reference the Object’s type, which is more clear.</p>
+<div id="ee2289d9" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">isinstance</span>(simple_df, <span class="bu">list</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>False</code></pre>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.11</span> Exercises</h2>
+<p>Exercise for week 1 can be found <a href="https://colab.research.google.com/drive/1nskVV4XFDVjkN_6OIQJDtDettOEr-n5W?usp=sharing">here</a>.</p>
 
-$counts
-[1]  5 27 27 30 31 18  6  6
 
-$density
-[1] 0.06666667 0.36000000 0.36000000 0.40000000 0.41333333 0.24000000 0.08000000
-[8] 0.08000000
+</section>
 
-$mids
-[1] 4.25 4.75 5.25 5.75 6.25 6.75 7.25 7.75
-
-$xname
-[1] "iris$Sepal.Length"
-
-$equidist
-[1] TRUE
-
-attr(,"class")
-[1] "histogram"</code></pre>
-</div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>png 
-  2 </code></pre>
-</div>
-</div>
-</section><section id="image-example" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="image-example">
-<span class="header-section-number">2.5</span> Image example</h2>
-<p>How to include a Google slide. It’s simplest to use the <code>ottrpal</code> package:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="resources/images/figure//1Dw_rBb1hySN_76xh9-x5J2dWF_das9BAUjQigf2fN-E_g252f18e2576_1_0.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Major point!! example image"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>But if you have the slide or some other image locally downloaded you can also use HTML like this:</p>
-<p><img src="resources/images/figure/1YmwKdIy9BeQ3EShgZhvtb3MgR8P6iDX4DfFD65W_gdQ_gcc4fbee202_0_141.png" title="Major point!! example image" alt="Major point!! example image" style="display: block; margin: auto; max-width: 100%; height: auto;"></p>
-</section><section id="video-examples" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="video-examples">
-<span class="header-section-number">2.6</span> Video examples</h2>
-<p>You may also want to embed videos in your course. If alternatively, you just want to include a link you can do so like this:</p>
-<p>Check out this <a href="https://www.youtube.com/embed/VOCYL-FNbr0">link to a video</a> using markdown syntax.</p>
-<section id="using-knitr" class="level3" data-number="2.6.1"><h3 data-number="2.6.1" class="anchored" data-anchor-id="using-knitr">
-<span class="header-section-number">2.6.1</span> Using <code>knitr</code>
-</h3>
-<p>To embed videos in your course, you can use <code><a href="https://rdrr.io/pkg/knitr/man/include_url.html">knitr::include_url()</a></code> like this: Note that you should use <code>echo=FALSE</code> in the code chunk because we don’t want the code part of this to show up. If you are unfamiliar with <a href="https://rmarkdown.rstudio.com/lesson-3.html">how R Markdown code chunks work, read this</a>.</p>
-<div class="cell">
-<iframe src="https://www.youtube.com/embed/VOCYL-FNbr0" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-</section><section id="using-html" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="using-html">
-<span class="header-section-number">2.6.2</span> Using HTML</h3>
-<iframe src="https://www.youtube.com/embed/VOCYL-FNbr0" width="672" height="400px">
-</iframe>
-</section><section id="using-knitr-1" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="using-knitr-1">
-<span class="header-section-number">2.6.3</span> Using <code>knitr</code>
-</h3>
-<div class="cell" data-layout-align="center">
-<iframe src="https://drive.google.com/file/d/1mm72K4V7fqpgAfWkr6b7HTZrc3f-T6AV/preview" width="100%" height="400px" data-external="1">
-</iframe>
-</div>
-</section><section id="using-html-1" class="level3" data-number="2.6.4"><h3 data-number="2.6.4" class="anchored" data-anchor-id="using-html-1">
-<span class="header-section-number">2.6.4</span> Using HTML</h3>
-<iframe src="https://drive.google.com/file/d/1mm72K4V7fqpgAfWkr6b7HTZrc3f-T6AV/preview" width="672" height="800px">
-</iframe>
-</section></section><section id="website-examples" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="website-examples">
-<span class="header-section-number">2.7</span> Website Examples</h2>
-<p>Yet again you can use a link to a website like so:</p>
-<p><a href="https://yihui.org">A Website</a></p>
-<p>You might want to have users open a website in a new tab by default, especially if they need to reference both the course and a resource at once.</p>
-<p><a href="https://yihui.org" target="_blank">A Website</a></p>
-<p>Or, you can embed some websites.</p>
-<section id="using-knitr-2" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="using-knitr-2">
-<span class="header-section-number">2.7.1</span> Using <code>knitr</code>
-</h3>
-<p>This works:</p>
-<div class="cell" data-layout-align="center">
-<iframe src="https://yihui.org" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-</section><section id="using-html-2" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="using-html-2">
-<span class="header-section-number">2.7.2</span> Using HTML</h3>
-<iframe src="https://yihui.org" width="672" height="400px">
-</iframe>
-</section></section><section id="stylized-boxes" class="level2" data-number="2.8"><h2 data-number="2.8" class="anchored" data-anchor-id="stylized-boxes">
-<span class="header-section-number">2.8</span> Stylized boxes</h2>
-<p>Occasionally, you might find it useful to emphasize a particular piece of information. To help you do so, we have provided css code and images (no need for you to worry about that!) to create the following stylized boxes.</p>
-<p>You can use these boxes in your course with either of two options: using HTML code or Pandoc syntax.</p>
-<section id="using-rmarkdown-container-syntax" class="level3" data-number="2.8.1"><h3 data-number="2.8.1" class="anchored" data-anchor-id="using-rmarkdown-container-syntax">
-<span class="header-section-number">2.8.1</span> Using <code>rmarkdown</code> container syntax</h3>
-<p>The <code>rmarkdown</code> package allows for a different syntax to be converted to the HTML that you just saw and also allows for conversion to LaTeX. See the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">Bookdown</a> documentation for more information. Note that Bookdown uses Pandoc.</p>
-<pre><code>::: {.notice}
-Note using rmarkdown syntax.
-
-:::</code></pre>
-<div class="notice">
-<p>Note using rmarkdown syntax.</p>
-</div>
-<p>As an example you might do something like this:</p>
-<div class="notice">
-<p>Please click on the subsection headers in the left hand navigation bar (e.g., 2.1, 4.3) a second time to expand the table of contents and enable the <code>scroll_highlight</code> feature (<a href="introduction.html#scroll-highlight">see more</a>)</p>
-</div>
-</section><section id="using-html-3" class="level3" data-number="2.8.2"><h3 data-number="2.8.2" class="anchored" data-anchor-id="using-html-3">
-<span class="header-section-number">2.8.2</span> Using HTML</h3>
-<p>To add a warning box like the following use:</p>
-<div class="notice">
-<p>Followed by the text you want inside</p>
-</div>
-<p>This will create the following:</p>
-<div class="notice">
-<p>Followed by the text you want inside</p>
-</div>
-<p>Here is a <code>&lt;div class = "warning"&gt;</code> box:</p>
-<div class="warning">
-<p>Note text</p>
-</div>
-<p>Here is a <code>&lt;div class = "github"&gt;</code> box:</p>
-<div class="github">
-<p>GitHub text</p>
-</div>
-<p>Here is a <code>&lt;div class = "dictionary"&gt;</code> box:</p>
-<div class="dictionary">
-<p>dictionary text</p>
-</div>
-<p>Here is a <code>&lt;div class = "reflection"&gt;</code> box:</p>
-<div class="reflection">
-<p>reflection text</p>
-</div>
-<p>Here is a <code>&lt;div class = "wip"&gt;</code> box:</p>
-<div class="wip">
-<p>Work in Progress text</p>
-</div>
-</section></section><section id="dropdown-summaries" class="level2" data-number="2.9"><h2 data-number="2.9" class="anchored" data-anchor-id="dropdown-summaries">
-<span class="header-section-number">2.9</span> Dropdown summaries</h2>
-<details><summary>
-You can hide additional information in a dropdown menu
-</summary>
-Here’s more words that are hidden.
-</details>
-
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -490,18 +813,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -533,7 +845,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -541,7 +875,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -868,7 +1202,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./intro.html" class="pagination-link" aria-label="Introduction to the Course">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the Course</span></span>
       </a>          
@@ -880,7 +1216,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>This book was built with <a href="https://quarto.org/" style="color: #fff;">Quarto</a> using <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #fff;">OTTR</a>.</p>
 </div>   
@@ -889,7 +1226,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/first-section-new-chapter.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/">
       <i class="bi bi-github" role="img">
 </i> 
@@ -902,9 +1239,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

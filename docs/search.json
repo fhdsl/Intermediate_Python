@@ -52,100 +52,133 @@
   {
     "objectID": "first-section-new-chapter.html",
     "href": "first-section-new-chapter.html",
-    "title": "\n2  New Chapter\n",
+    "title": "2  Fundamentals",
     "section": "",
-    "text": "2.1 Learning Objectives\nEvery chapter also needs Learning objectives.",
+    "text": "2.1 Goals of this course",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#libraries",
-    "href": "first-section-new-chapter.html#libraries",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.2 Libraries",
-    "text": "2.2 Libraries\nFor this chapter, we’ll need the following packages attached:\n*Remember to add any additional packages you need to your course’s own docker image.\n\nlibrary(magrittr)",
+    "objectID": "first-section-new-chapter.html#goals-of-this-course",
+    "href": "first-section-new-chapter.html#goals-of-this-course",
+    "title": "2  Fundamentals",
+    "section": "",
+    "text": "Continue building programming fundamentals: How to use complex data structures, create custom functions, and how to iterate repeated tasks.\nContinue exploration of data science fundamentals: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#topic-of-section",
-    "href": "first-section-new-chapter.html#topic-of-section",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.3 Topic of Section",
-    "text": "2.3 Topic of Section\nYou can write all your text in sections like this, using ## to indicate a new header. you can use additional pound symbols to create lower levels of headers.\nSee here for additional general information about how you can format text within R Markdown files. In addition, see here for more in depth and advanced options.\n\n2.3.1 Subtopic\nHere’s a subheading (using three pound symbols) and some text in this subsection!",
+    "objectID": "first-section-new-chapter.html#motivation",
+    "href": "first-section-new-chapter.html#motivation",
+    "title": "2  Fundamentals",
+    "section": "2.2 Motivation",
+    "text": "2.2 Motivation\nWe will be looking at a dataset from Twitter that looks like the following:\n\n\n\n\n\n\n\n\n\n\n\nTweet_ID\nUsername\nText\nRetweets\nLikes\nTimestamp\n\n\n\n\n1\njulie81\nParty least receive say or single….\n2\n25\n2023-01-30 11:00:51\n\n\n2\nrichardhester\nHotel still Congress may member staff….\n35\n29\n2023-01-02 22:45:58\n\n\n3\nwilliamsjoseph\nNice be her debate industry that year….\n51\n25\n2023-01-18 11:25:19\n\n\n\nSuppose that we want to do some text analysis on the “Text” column: We want to assign a sentiment score (a numerical value that measures the emotional tone or attitude expressed in text) to each tweet, based on all of the words it contains. For instance, a tweet about celebrating one’s birthday will be assigned a positive sentiment score, and a tweet about getting fired from a job will be assigned a negative sentiment score.\nIf we have a function that takes in a String of words, and output a sentiment score, that would be great. However, that function does not exist in the built-in libraries of Python and Pandas, so we will have to write our custom function!\nWhen we think about writing a custom function, we usually like to sketch out an outline what the function will do in English, and then try to translate it to Python code.\nGiven an input String of words,\n\nExamine each word in the input string:\n\nAssociate the word with a sentiment score.\nAnd keep track of this sentiment score.\n\nTake the average of all the sentiment scores,\nand return it as the output.\n\nHow do we associate a word with a sentiment score? We need another function to do that:\nGiven an input String with one word,\n\nLoad in a “lookup dictionary” that assigns words to scores.\nCheck whether the input string is in the dictionary. Some words, such as “the”, won’t have a sentiment score.\nIf so, return the score of that word.\n\nSome concepts from this outline that we will learn the technical details include: writing a custom function, iterating through a data structure, and using “lookup dictionaries”. Let’s look at the Learning Objectives of the course:",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#code-examples",
-    "href": "first-section-new-chapter.html#code-examples",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.4 Code examples",
-    "text": "2.4 Code examples\nYou can demonstrate code like this:\n\noutput_dir &lt;- file.path(\"resources\", \"code_output\")\nif (!dir.exists(output_dir)) {\n  dir.create(output_dir)\n}\n\nAnd make plots too:\n\nhist_plot &lt;- hist(iris$Sepal.Length)\n\n\n\n\n\n\n\nYou can also save these plots to file:\n\npng(file.path(output_dir, \"test_plot.png\"))\nhist_plot\n\n$breaks\n[1] 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0\n\n$counts\n[1]  5 27 27 30 31 18  6  6\n\n$density\n[1] 0.06666667 0.36000000 0.36000000 0.40000000 0.41333333 0.24000000 0.08000000\n[8] 0.08000000\n\n$mids\n[1] 4.25 4.75 5.25 5.75 6.25 6.75 7.25 7.75\n\n$xname\n[1] \"iris$Sepal.Length\"\n\n$equidist\n[1] TRUE\n\nattr(,\"class\")\n[1] \"histogram\"\n\ndev.off()\n\npng \n  2",
+    "objectID": "first-section-new-chapter.html#learning-objectives",
+    "href": "first-section-new-chapter.html#learning-objectives",
+    "title": "2  Fundamentals",
+    "section": "2.3 Learning Objectives",
+    "text": "2.3 Learning Objectives\n\nDistinguish the use cases of common data structures, such as Lists, Dictionaries, and Series.\nRecognize and describe common iteration patterns on common data structures, such as counting and searching.\nImplement “iterable” operations, including For-Loops and List Comprehensions, on data structures that can be iterated (Lists, Dictionaries, Series, and even Strings).\nImplement conditional statements when the program logic requires a branching structure.\nCreate simple, modular functions, including anonymous functions, that can be reused.\nDescribe the difference between copying an object vs. referencing an object and how that could affect variables in a data analysis.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#image-example",
-    "href": "first-section-new-chapter.html#image-example",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.5 Image example",
-    "text": "2.5 Image example\nHow to include a Google slide. It’s simplest to use the ottrpal package:\n\n\n\n\n\n\n\n\nBut if you have the slide or some other image locally downloaded you can also use HTML like this:",
+    "objectID": "first-section-new-chapter.html#data-types-in-python",
+    "href": "first-section-new-chapter.html#data-types-in-python",
+    "title": "2  Fundamentals",
+    "section": "2.4 Data types in Python",
+    "text": "2.4 Data types in Python\nTo get started, let’s recall the fundamental data types in Python:\n\n\n\nData type name\nData type shorthand\nExamples\n\n\n\n\nInteger\nint\n2, 4\n\n\nFloat\nfloat\n3.5, -34.1009\n\n\nString\nstr\n“hello”, “234-234-8594”\n\n\nBoolean\nbool\nTrue, False\n\n\n\nThere’s a special data type called None in Python, in which is used as a placeholder. We will talk about it later this course.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#video-examples",
-    "href": "first-section-new-chapter.html#video-examples",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.6 Video examples",
-    "text": "2.6 Video examples\nYou may also want to embed videos in your course. If alternatively, you just want to include a link you can do so like this:\nCheck out this link to a video using markdown syntax.\n\n2.6.1 Using knitr\n\nTo embed videos in your course, you can use knitr::include_url() like this: Note that you should use echo=FALSE in the code chunk because we don’t want the code part of this to show up. If you are unfamiliar with how R Markdown code chunks work, read this.\n\n\n\n\n\n2.6.2 Using HTML\n\n\n\n2.6.3 Using knitr\n\n\n\n\n\n\n2.6.4 Using HTML",
+    "objectID": "first-section-new-chapter.html#data-structures",
+    "href": "first-section-new-chapter.html#data-structures",
+    "title": "2  Fundamentals",
+    "section": "2.5 Data Structures",
+    "text": "2.5 Data Structures\nAnd fundamental data structures:\n\nList\nDataframe\nSeries\nDictionary\nTuple\n\nWe will look at our new data structure, the Dictionary, carefully today. You will learn a little bit about Tuples in your exercise.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#website-examples",
-    "href": "first-section-new-chapter.html#website-examples",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.7 Website Examples",
-    "text": "2.7 Website Examples\nYet again you can use a link to a website like so:\nA Website\nYou might want to have users open a website in a new tab by default, especially if they need to reference both the course and a resource at once.\nA Website\nOr, you can embed some websites.\n\n2.7.1 Using knitr\n\nThis works:\n\n\n\n\n\n2.7.2 Using HTML",
+    "objectID": "first-section-new-chapter.html#objects-in-python",
+    "href": "first-section-new-chapter.html#objects-in-python",
+    "title": "2  Fundamentals",
+    "section": "2.6 Objects in Python",
+    "text": "2.6 Objects in Python\nAll of our Data Structures are organized under the Objects framework in Python. For each data structure type, we can examine:\n\nWhat does it contain (in terms of data)?\nWhat can it do (in terms of functions)?\n\nAnd if it “makes sense” to us, then it is well-designed Object.\nFormally, an object contains the following:\n\nValue that holds the essential data for the object.\nAttributes that hold subset or additional data for the object.\nFunctions called Methods that are for the object and have to take in the variable referenced as an input.\n\nThis organizing structure on an object applies to pretty much all Python data types and data structures.\nLet’s see how this applies to the Dataframe:\nSuppose we have the following Dataframe:\n\nimport pandas as pd\n\nsimple_df = pd.DataFrame(data={'id': [\"AAA\", \"BBB\", \"CCC\", \"DDD\", \"EEE\"],\n                               'case_control': [\"case\", \"case\", \"control\", \"control\", \"control\"],\n                               'measurement1': [2.5, 3.5, 9, .1, 2.2],\n                               'measurement2': [0, 0, .5, .24, .003],\n                               'measurement3': [80, 2, 1, 1, 2]})\nsimple_df\n\n\n\n\n\n\n\n\nid\ncase_control\nmeasurement1\nmeasurement2\nmeasurement3\n\n\n\n\n0\nAAA\ncase\n2.5\n0.000\n80\n\n\n1\nBBB\ncase\n3.5\n0.000\n2\n\n\n2\nCCC\ncontrol\n9.0\n0.500\n1\n\n\n3\nDDD\ncontrol\n0.1\n0.240\n1\n\n\n4\nEEE\ncontrol\n2.2\n0.003\n2\n\n\n\n\n\n\n\n\nValue: the contents of the Dataframe, which is a tabular data format in columns and rows.\nAttributes that allow one to access subset of the data or additional data:\n\nsimple_df.id access the column “id”, returning a Series object.\nsimple_df.shape access the the number of rows and columns.\nSubsetting via the bracket .iloc[row_idx, col_idx] or .loc[row_idx, col_idx] notation.\n\nMethods that can be used on the object:\n\nsimple_df.head() and simple_df.tail() access the first and last few elements of the Dataframe, respectively.\nsimple_df.merge(another_df) merges simple_df with another Dataframe another_df.\n\n\nWe have some of our favorite attributes and methods of Dataframes from Intro to Python here.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#stylized-boxes",
-    "href": "first-section-new-chapter.html#stylized-boxes",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.8 Stylized boxes",
-    "text": "2.8 Stylized boxes\nOccasionally, you might find it useful to emphasize a particular piece of information. To help you do so, we have provided css code and images (no need for you to worry about that!) to create the following stylized boxes.\nYou can use these boxes in your course with either of two options: using HTML code or Pandoc syntax.\n\n2.8.1 Using rmarkdown container syntax\nThe rmarkdown package allows for a different syntax to be converted to the HTML that you just saw and also allows for conversion to LaTeX. See the Bookdown documentation for more information. Note that Bookdown uses Pandoc.\n::: {.notice}\nNote using rmarkdown syntax.\n\n:::\n\nNote using rmarkdown syntax.\n\nAs an example you might do something like this:\n\nPlease click on the subsection headers in the left hand navigation bar (e.g., 2.1, 4.3) a second time to expand the table of contents and enable the scroll_highlight feature (see more)\n\n\n2.8.2 Using HTML\nTo add a warning box like the following use:\n\nFollowed by the text you want inside\n\nThis will create the following:\n\nFollowed by the text you want inside\n\nHere is a &lt;div class = \"warning\"&gt; box:\n\nNote text\n\nHere is a &lt;div class = \"github\"&gt; box:\n\nGitHub text\n\nHere is a &lt;div class = \"dictionary\"&gt; box:\n\ndictionary text\n\nHere is a &lt;div class = \"reflection\"&gt; box:\n\nreflection text\n\nHere is a &lt;div class = \"wip\"&gt; box:\n\nWork in Progress text",
+    "objectID": "first-section-new-chapter.html#dictionary",
+    "href": "first-section-new-chapter.html#dictionary",
+    "title": "2  Fundamentals",
+    "section": "2.7 Dictionary",
+    "text": "2.7 Dictionary\nToday, we will introduce a new data structure, called the Dictionary. A dictionary is designed as a lookup table, organized in key-value pairs. You associate the key with a particular value, and use the key to find the value. You should consider using a dictionary when you are storing a collection of associations. Another way of saying this is that dictionaries are useful for storing and manipulating correspondence relationships.\nFor instance, suppose that we want to associate common English words with a sentiment value:\n\nsentiment = {'happy': 8, 'sad': 2, 'joy': 7.5, 'embarrassed': 3.6, 'restless': 4.1, 'apathetic': 3.8, 'calm': 7}\nsentiment\n\n{'happy': 8,\n 'sad': 2,\n 'joy': 7.5,\n 'embarrassed': 3.6,\n 'restless': 4.1,\n 'apathetic': 3.8,\n 'calm': 7}\n\n\nIf we want to find the sentiment value of a word, we can look it up immediately via its key to access its value:\n\nsentiment['joy']\n\n7.5\n\n\nHowever, we cannot access the nth element of a Dictionary, as we are able to do with Lists and Series:\n\n#sentiment[0] error!\n\nIf we didn’t have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:\n\nsentiment_df = pd.DataFrame(data={'word': [\"happy\", \"sad\", \"joy\", \"embarrassed\", \"restless\", \"apathetic\", \"calm\"],\n                                  'sentiment': [8, 2, 7.5, 3.6, 4.1, 3.8, 7]})\nsentiment_df\n\n\n\n\n\n\n\n\nword\nsentiment\n\n\n\n\n0\nhappy\n8.0\n\n\n1\nsad\n2.0\n\n\n2\njoy\n7.5\n\n\n3\nembarrassed\n3.6\n\n\n4\nrestless\n4.1\n\n\n5\napathetic\n3.8\n\n\n6\ncalm\n7.0\n\n\n\n\n\n\n\nBut to access a word’s sentiment value, you have to write a complex syntax:\n\nsentiment_df.loc[sentiment_df.word == \"joy\", \"sentiment\"]\n\n2    7.5\nName: sentiment, dtype: float64\n\n\nBesides the cumbersome syntax, it is not very fast: the program has to find which row “joy” is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value does not depend on the size of the dictionary, whereas it does for the Dataframe implementation.\n\n2.7.1 Basic Rules of Dictionaries\nHere are some basic usage rules of Dictionaries:\n\nOnly one value per key. No duplicate keys allowed.\nKeys must be of string, integer, float, boolean, or tuple.\nValues can be of any type, including data structures such as lists and dictionaries.\n\nIf duplicated keys are given, then the last unique key is kept.\nduplicated_keys = {'Student' : 97, 'Student': 88, 'Student' : 91}\nduplicated_keys\nIt is quite common to have data structures within a dictionary. Notice that when we create a Dataframe from scratch, we give it a dictionary, where the column names are keys and columns are values. A Dataframe is built on top of a dictionary with more tools!\n\n\n2.7.2 Basic Usage of Dictionaries\nYou can modify values of a corresponding key in a dictionary:\n\nsentiment['joy'] = sentiment['joy'] + 1\n\nYou will get an error if you try to access a key that doesn’t exist:\n\n#sentiment['dog']\n\nAlternatively, if you don’t want to run the risk of getting an error, you can specify a default value using the .get() method. Here, we give a default neutral value of 5 if the key doesn’t exist.\n\nsentiment.get(\"dog\", 5)\n\n5\n\n\nIf you don’t specify a default value, and the key does not exist, you will get a special None data type.\n\nprint(sentiment.get(\"dog\"))\n\nNone\n\n\nYou can add more key-value pairs via my_dict[new_key] = new_value syntax. If the key already exists, the mapping for that key will simply be updated.\n\nsentiment['dog'] = 5\n\n\n\n2.7.3 Application for Data Cleaning\nSuppose that you want to do some data recoding. You want to look at the “case_control” column of simple_df and change “case” to “experiment” and “control” to “baseline”. This correspondence relationship can be stored in a dictionary. You can use the .replace() method for Series objects with a dictionary as an input argument.\n\nsimple_df.case_control.replace({\"case\": \"experiment\", \"control\": \"baseline\"})\n\n0    experiment\n1    experiment\n2      baseline\n3      baseline\n4      baseline\nName: case_control, dtype: object",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
-    "objectID": "first-section-new-chapter.html#dropdown-summaries",
-    "href": "first-section-new-chapter.html#dropdown-summaries",
-    "title": "\n2  New Chapter\n",
-    "section": "\n2.9 Dropdown summaries",
-    "text": "2.9 Dropdown summaries\n\nYou can hide additional information in a dropdown menu\n\nHere’s more words that are hidden.",
+    "objectID": "first-section-new-chapter.html#converting-between-data-types",
+    "href": "first-section-new-chapter.html#converting-between-data-types",
+    "title": "2  Fundamentals",
+    "section": "2.8 Converting between data types",
+    "text": "2.8 Converting between data types\nOften, we need to convert between data types and data structures. You should consider whether the conversion is:\n\nPermissible\nWhether any information will be lost\n\n\n2.8.1 Data types\nYou can convert any number to a String.\n\nage = 24.5\nstr(age)\n\n'24.5'\n\n\nLet’s try to convert a String to a Float:\n\nage = \"24.5\"\nfloat(age)\n\n24.5\n\n\nBut it is not permissible to convert to an Integer, as we don’t know what to do with the decimals (we comment out code that will error, so that this page will render).\n\n#int(age) returns an error\n\nAnd we cannot convert some Strings to any number.\n\ncar = \"prius\"\n#float(prius) returns an error\n\nSometimes, we need to pay attention whether any information is lost in the conversion. Let’s convert Float to Int:\n\ntemperature = 98.6\nint(temperature)\n\n98\n\n\nNotice that the conversion dropped the decimal point entirely.",
     "crumbs": [
       "First Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>New Chapter</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "first-section-new-chapter.html#converting-between-data-structures",
+    "href": "first-section-new-chapter.html#converting-between-data-structures",
+    "title": "2  Fundamentals",
+    "section": "2.9 Converting between data structures",
+    "text": "2.9 Converting between data structures\nWhen we look at a column, it is of the Series data structure.\n\nsimple_df['measurement1']\n\n0    2.5\n1    3.5\n2    9.0\n3    0.1\n4    2.2\nName: measurement1, dtype: float64\n\n\nLet’s convert it to a List:\n\nsimple_df['measurement1'].to_list()\n\n[2.5, 3.5, 9.0, 0.1, 2.2]\n\n\nIf you look at the documentation of Series, there’s a lot of other conversions you can do, in the .to_*() methods, such as .to_string().\nWhen making these conversions, you might ask why isn’t the column of a Dataframe just a List instead of a Series. The answer is that there are useful values, attributes, and methods about a Series that are more useful for data analysis compared to a List. You can compute .mean() to get the average value of a Series or .plot() to make a simple plot, but these methods doe not exist for a List. Series are also designed to compute on large datasets more efficiently than Lists. However, Lists can store elements from various data types, and can store Lists within Lists. When we make conversions, we think about what data structure is more appropriate than the other, which is a big theme of this course!",
+    "crumbs": [
+      "First Section",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "first-section-new-chapter.html#is-my-variable-a-data-typestructure",
+    "href": "first-section-new-chapter.html#is-my-variable-a-data-typestructure",
+    "title": "2  Fundamentals",
+    "section": "2.10 Is my variable a data type/structure?",
+    "text": "2.10 Is my variable a data type/structure?\nOften, you need to check whether your variable is a specific data type or structure. From Intro to Python, you learned about the type() function, such as:\n\ntype(simple_df)\n\npandas.core.frame.DataFrame\n\n\nThis is great, but the output of type() can be rather verbose, and is usually useful for printing and testing scenarios. To have a more concise, robust way of checking, we prefer the isinstance() function:\n\nisinstance(simple_df, pd.DataFrame)\n\nTrue\n\n\nThis directly reference the Object’s type, which is more clear.\n\nisinstance(simple_df, list)\n\nFalse",
+    "crumbs": [
+      "First Section",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
+    ]
+  },
+  {
+    "objectID": "first-section-new-chapter.html#exercises",
+    "href": "first-section-new-chapter.html#exercises",
+    "title": "2  Fundamentals",
+    "section": "2.11 Exercises",
+    "text": "2.11 Exercises\nExercise for week 1 can be found here.",
+    "crumbs": [
+      "First Section",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Fundamentals</span>"
     ]
   },
   {
