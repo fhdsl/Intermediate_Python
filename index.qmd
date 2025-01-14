@@ -1,14 +1,23 @@
-# Quarto Based OTTR Course {.unnumbered}
+# About this course {.unnumbered}
 
-This course is part of a series of courses for the [Informatics Technology for Cancer Research (ITCR)](https://itcr.cancer.gov/) called the Informatics Technology for Cancer Research Education Resource. This material was created by the ITCR Training Network (ITN)  which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant:  [National Cancer Institute (NCI)](https://www.cancer.gov/)  UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at [www.itcrtraining.org](www.itcrtraining.org) for more information.
+The course continues building programming fundamentals in Python programming and data analysis. You will learn how to make use of complex data structures, iterate repeated tasks that scales naturally, and create your own functions. You will apply these skills to develop a custom data analysis.
 
+## Target Audience
 
-## Available Course Formats
+The course is intended for researchers who want to continue learning the fundamentals of Python programming and how to write custom data analysis functions when dealing with messy datasets. The audience should know how to work with Lists and Pandas Dataframes and conduct basic data analysis, and/or have taken our [Intro to Python](https://hutchdatascience.org/Intro_to_Python/) course.
 
-This course is available in multiple formats which allows you to take it in the way that best suites your needs. You can take it for certificate which can be for free or fee.
+## Learning Objectives
 
-- The material for this course can be viewed without login requirement on this [website](https://www.ottrproject.org/). This format might be most appropriate for you if you rely on screen-reader technology.
-- This course can be taken for [free certification through Leanpub](https://leanpub.com/).
-- This course can be taken on [Coursera for certification here](https://www.coursera.org/) (but it is not available for free on Coursera).
-- Our courses are open source, you can find the [source material for this course on GitHub](https://github.com/fhdsl/OTTR_Quarto).
+-   **Understand and distinguish** the use case of data structures to store different types of data.
 
+-   **Implement** code to Iterate over a collection (such as files, elements of a column, or a list of objects) to batch process each item.
+
+-   **Implement** code that has a branching structure depending on input data's condition.
+
+-   **Create** simple, modular functions that can be reused.
+
+-   **Describe** the difference between copying an object vs. referencing an object and how that could affect variables in a data analysis.
+
+## Offerings
+
+This course is taught on a regular basis at [Fred Hutch Cancer Center](https://www.fredhutch.org/) through the [Data Science Lab](https://hutchdatascience.org/). Announcements of course offering can be found [here](https://hutchdatascience.org/training/).

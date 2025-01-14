@@ -1,0 +1,284 @@
+# Reference vs. Copy
+
+Python organizes its objects in two ways: they can be **mutable**, or **immutable**. A mutable object can be modified after it has been defined, and an immutable object cannot be modified after it has been defined.
+
+Examples of mutable data include: Lists,, Dictionaries, DataFrames, and Series. Examples of immutable data include: Tuples, and actually all the primitive data types, such as String, Integer, Float, Boolean. (If `x = 3`, then you can reassign `x = 4`, but you are not changing the actual value of `3`.)
+
+There are some interesting properties of mutable objects that we need to pay close attention to, in particular to assigning variables to each other.
+
+In our style of writing code, we have been modifying our objects as we go, like this:
+
+```{python}
+a = [1, 2, 3]
+a.append(4)
+print(a)
+```
+
+However, consider the following pattern in which we assign `b` to `a` and then perform the append method on `b`.
+
+```{python}
+a = [1, 2, 3]
+b = a
+b.append(4)
+print(b)
+```
+
+Let's look at `a` also:
+
+```{python}
+print(a)
+```
+
+Strange, `a` was modified also! What's going on?
+
+## Assignment by Reference (for mutable objects)
+
+When we created the variable `a` to equal the list `[1, 2, 3]`, it is tempting to say, "the variable 'a' is a list with value \[1, 2, 3\]", but that is technically incorrect!
+
+The correct way: "the variable 'a' is a **reference** to a list with value \[1, 2, 3\]".
+
+We now make a distinction between the variable and the object: the variable gives the **reference** information to the object, and other variables can reference the same object also! When we evaluated `b = a`, we told `b` to reference thee same object as `a`, so modifying `b` modified `a` also.
+
+This **reference** information tells us where the object is stored in the working memory of the computer, usually in the address form of a number.
+
+Let's see this in action:
+
+```{=html}
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a%0Ab.append%284%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"
+
+</iframe>
+```
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a%0Ab.append%284%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+What is happening behind the scenes:
+
+1.  `a = [1, 2, 3]`
+    1.  The list with value \[1, 2, 3\] is created in the memory of the computer, with a particular memory address, say 999.
+    2.  The variable `a` holds the reference to that memory address, 999.
+2.  `b = a`
+    1.  The variable `b` has the same memory address as `a`, 999.
+3.  `b.append(4)`
+    1.  Access the list that is addressed as 999 and append 4 to it.
+4.  `print(a)`, `print(b)`
+    1.  Both `a` and `b` have the same address and will access the same object.
+
+We can look at the memory address of our variables via the `id()` function:
+
+```{python}
+id(a), id(b)
+```
+
+They are the same.
+
+Here is another visual way to think about this:
+
+![If you imagine variables are like boxes, you can\'t make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.](images/references.png)If you imagine variables are like boxes, you can't make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.
+
+### An object isn't unique
+
+Let's see another example, using Dictionaries this time:
+
+```{python}
+charles = {'name': 'Charles L. Dodgson', 'born': 1832}
+lewis = charles
+id(charles), id(lewis)
+```
+
+```{python}
+lewis['balance'] = 950
+charles
+```
+
+As expected, we see that Charles also has a balance of 950, because both variables have the same reference to the same object.
+
+Now, suppose we create a variable `alex` with a reference to a dictionary with the *same value*:
+
+```{python}
+alex = {'name': 'Charles L. Dodgson', 'born': 1832, 'balance': 950}
+```
+
+What do we expect?
+
+```{python}
+id(lewis), id(charles), id(alex)
+```
+
+This shows that you can have objects of the same values, that is:
+
+```{python}
+lewis == alex
+```
+
+but they are distinct objects that are stored in a different part of the memory. Therefore you can modify `alex`, but `lewis` and `charles` won't be changed.
+
+Let's see this step-by-step:
+
+```{=html}
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=charles%20%3D%20%7B'name'%3A%20'Charles%20L.%20Dodgson',%20'born'%3A%201832%7D%0Alewis%20%3D%20charles%0Alewis%5B'balance'%5D%20%3D%20950%0Aalex%20%3D%20%7B'name'%3A%20'Charles%20L.%20Dodgson',%20'born'%3A%201832,%20'balance'%3A%20950%7D%0Aalex%5B'balnce'%5D%20%3D%200&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"
+
+</iframe>
+```
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=charles%20%3D%20%7B'name'%3A%20'Charles%20L.%20Dodgson',%20'born'%3A%201832%7D%0Alewis%20%3D%20charles%0Alewis%5B'balance'%5D%20%3D%20950%0Aalex%20%3D%20%7B'name'%3A%20'Charles%20L.%20Dodgson',%20'born'%3A%201832,%20'balance'%3A%20950%7D%0Aalex%5B'balnce'%5D%20%3D%200&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+Here's another illustration of the situation:
+
+![If you imagine variables are like boxes, you can't make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.](images/references2.png)
+
+### Copying an object
+
+Sometimes, you want an actual copy of an object, not a reference to the object as we have seen before. Most objects have a `.copy()` method that will allow you to create a copy of it:
+
+```{python}
+a = [1, 2, 3]
+b = a.copy()
+b.append(4)
+```
+
+Now, `a` and `b` are distinct!
+
+```{python}
+print("a:", a)
+print("b:", b)
+```
+
+```{=html}
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a.copy%28%29%0Ab.append%284%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"
+
+</iframe>
+```
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a.copy%28%29%0Ab.append%284%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+### Shallow vs. Deep copy
+
+There's a subtle problem with making copies of an object. Recall that you can put objects within lists, such as a list within a list. Well, that list within a list is a reference, so you can get some strange, unexpected situations:
+
+```{python}
+sub_list = ["apple", "pineapple"]
+a = [sub_list, 1, 2]
+
+b = a.copy()
+b.append(3)
+b[0].append("pear")
+```
+
+```{python}
+print("a:", a)
+print("b:", b)
+```
+
+This is strange, because `b` is a copy of `a`, yet when we appended to the sublist in `b`, it still modified `a`'s sublist! This is because the `.copy()` still kept the sublist pointing to the same object. This is called "shallow copy", in which any nested objects' references are still kept the same. To ensure that we get a entire new copy for nested objects, we can make a "deep copy", via the `copy.deepcopy(x)` function.
+
+Let's visualize what shallow copy looks like:
+
+```{=html}
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=sub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20a.copy%28%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+```
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=sub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20a.copy%28%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+Here is how we use `copy.deepcopy(x)`:
+
+```{python}
+import copy
+sub_list = ["apple", "pineapple"]
+a = [sub_list, 1, 2]
+
+b = copy.deepcopy(a)
+b.append(3)
+b[0].append("pear")
+
+print("a:", a)
+print("b:", b)
+```
+
+Let's visualize what shallow deep copy looks like:
+
+```{=html}
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=import%20copy%0Asub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20copy.deepcopy%28a%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+```
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=import%20copy%0Asub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20copy.deepcopy%28a%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Notes on Dataframes
+
+When we work with Pandas Dataframes, variables are also assigned by reference: suppose we have a small dataframe `simple_df`:
+
+```{python}
+import pandas as pd
+import numpy as np
+
+simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
+                               'case_control': ["case", "case", "control", "control", "control"],
+                               'measurement1': [2.5, 3.5, 9, .1, 2.2],
+                               'measurement2': [0, 0, .5, .24, .003],
+                               'measurement3': [80, 2, 1, 1, 2]})
+```
+
+We assign `analysis_df` as `simple_df`, and log-transform the column "measurement1", and see how it affects both dataframes:
+
+```{python}
+analysis_df = simple_df
+analysis_df.measurement1 = np.log(analysis_df.measurement1)
+print(analysis_df)
+```
+
+```{python}
+print(simple_df)
+```
+
+To prevent this behavior, we can use the [`.copy()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html) method:
+
+```{python}
+simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
+                               'case_control': ["case", "case", "control", "control", "control"],
+                               'measurement1': [2.5, 3.5, 9, .1, 2.2],
+                               'measurement2': [0, 0, .5, .24, .003],
+                               'measurement3': [80, 2, 1, 1, 2]})
+                               
+analysis_df = simple_df.copy()
+analysis_df.measurement1 = np.log(analysis_df.measurement1)
+print(analysis_df)
+```
+
+So `simple_df` does not change:
+
+```{python}
+print(simple_df)
+```
+
+### Copy vs. Reference in Dataframe operations and methods
+
+However, some Dataframe operations and methods will automatically give you a copy, while others give you a reference.
+
+For instance, when we subset via `.loc`, it returns a copy:
+
+```{python}
+case_df = simple_df.loc[simple_df.case_control == "case"]
+case_df.loc[:, 'measurement1'] = 5
+print(case_df)
+```
+
+```{python}
+print(simple_df)
+```
+
+However, if you subset to one specific column, it gives you a reference:
+
+```{python}
+m1 = simple_df["measurement1"]
+m1[0] = 5
+print(m1)
+```
+
+```{python}
+print(simple_df)
+```
+
+This pattern is called ["Chained Assignment"](https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html#copy-on-write-chained-assignment), which means doing two bracket subsetting one after the other.
+
+This behavior is super inconsistent and confusing, as it's hard to predict when you will get a reference and when you get a copy. More details of this behavior can be [found here](https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html). Future versions of Pandas Dataframe will remove these confusion, but for now, when you are modifying Dataframes, consider making a copy when you are unsure what its behaviors are when assigning variables to Dataframes.
+
+## Exercises
+
+Exercise for week 5 can be found [here](https://colab.research.google.com/drive/1re65RfslckVFiQB_utWNyppd3kx0PLPH?usp=sharing).

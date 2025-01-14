@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: Quarto Based OTTR Course
-  author: Howard Baek
-  date: "4/3/2024"
+  title: Intermediate Python
+  author: Chris Lo
+  date: "1/14/2025"
   favicon: img/favicon.ico
 
   page-navigation: true
@@ -16,17 +16,11 @@ book:
 
   chapters:
     - index.qmd
-    - intro.qmd
-    - part: "First Section"
-      chapters:
-        - first-section-new-chapter.qmd
-    - part: "Second Section"
-      chapters:
-        - second-section-new-chapter.qmd
-    - part: "Third Section"
-      chapters:
-        - third-section-new-chapter.qmd
-    - conclusion.qmd
+    - 01-Fundamentals.qmd
+    - 02-Iteration.qmd
+    - 03-Functions.qmd
+    - 04-Iteration_Styles.qmd
+    - 05-Reference_vs_Copy.qmd
     - references.qmd
 
   sidebar:

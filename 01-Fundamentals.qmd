@@ -52,21 +52,19 @@ Some concepts from this outline that we will learn the technical details include
 
 ## Learning Objectives
 
--   **Distinguish** the use cases of common data structures, such as Lists, Dictionaries, and Series.
+-   **Understand and distinguish** the use case of data structures to store different types of data.
 
--   **Recognize** and **describe** common iteration patterns on common data structures, such as counting and searching.
+-   **Implement** code to Iterate over a collection (such as files, elements of a column, or a list of objects) to batch process each item.
 
--   **Implement** "iterable" operations, including For-Loops and List Comprehensions, on data structures that can be iterated (Lists, Dictionaries, Series, and even Strings).
+-   **Implement** code that has a branching structure depending on input data's condition.
 
--   **Implement** conditional statements when the program logic requires a branching structure.
-
--   **Create** simple, modular functions, including anonymous functions, that can be reused.
+-   **Create** simple, modular functions that can be reused.
 
 -   **Describe** the difference between copying an object vs. referencing an object and how that could affect variables in a data analysis.
 
 ## Data types in Python
 
-To get started, let's recall the fundamental data types in Python:
+To get started, let's recall the primitive data types in Python:
 
 | Data type name | **Data type shorthand** |      **Examples**       |
 |----------------|:-----------------------:|:-----------------------:|
@@ -146,6 +144,8 @@ simple_df
 
 We have some of our favorite attributes and methods of Dataframes [from Intro to Python here](https://docs.google.com/document/d/1si-4suESej1Vjopkv5KiI-hGylXk11osmO3oEfpYOuc/edit?tab=t.0).
 
+To be even more precise, even primitive data types, such as an Integer, is considered an Object in Python. We just typically access its Value, but don't interact with its underlying Attributes and Methods.
+
 ## Dictionary
 
 Today, we will introduce a new data structure, called the **Dictionary**. A dictionary is designed as a lookup table, organized in **key-value** pairs. You associate the key with a particular value, and use the key to find the value. You should consider using a dictionary when you are storing a collection of associations. Another way of saying this is that dictionaries are useful for storing and manipulating correspondence relationships.
@@ -168,22 +168,6 @@ However, we cannot access the nth element of a Dictionary, as we are able to do 
 ```{python}
 #sentiment[0] error!
 ```
-
-If we didn't have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:
-
-```{python}
-sentiment_df = pd.DataFrame(data={'word': ["happy", "sad", "joy", "embarrassed", "restless", "apathetic", "calm"],
-                                  'sentiment': [8, 2, 7.5, 3.6, 4.1, 3.8, 7]})
-sentiment_df
-```
-
-But to access a word's sentiment value, you have to write a complex syntax:
-
-```{python}
-sentiment_df.loc[sentiment_df.word == "joy", "sentiment"]
-```
-
-Besides the cumbersome syntax, it is not very fast: the program has to find which row "joy" is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value *does not depend on the size of the dictionary,* whereas it does for the Dataframe implementation.
 
 ### Basic Rules of Dictionaries
 
@@ -291,7 +275,6 @@ Notice that the conversion dropped the decimal point entirely.
 
 ## Converting between data structures
 
-
 When we look at a column, it is of the Series data structure.
 
 ```{python}
@@ -331,3 +314,21 @@ isinstance(simple_df, list)
 ## Exercises
 
 Exercise for week 1 can be found [here](https://colab.research.google.com/drive/1nskVV4XFDVjkN_6OIQJDtDettOEr-n5W?usp=sharing).
+
+## Appendix: Why Dictionaries?
+
+If we didn't have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:
+
+```{python}
+sentiment_df = pd.DataFrame(data={'word': ["happy", "sad", "joy", "embarrassed", "restless", "apathetic", "calm"],
+                                  'sentiment': [8, 2, 7.5, 3.6, 4.1, 3.8, 7]})
+sentiment_df
+```
+
+But to access a word's sentiment value, you have to write a complex syntax:
+
+```{python}
+sentiment_df.loc[sentiment_df.word == "joy", "sentiment"]
+```
+
+Besides the cumbersome syntax, it is not very fast: the program has to find which row "joy" is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value *does not depend on the size of the dictionary,* whereas it does for the Dataframe implementation.

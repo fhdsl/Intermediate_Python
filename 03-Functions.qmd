@@ -1,0 +1,114 @@
+# Functions
+
+After learning how to use other people's functions, it's time to write our own! We will look at the anatomy of how a function is constructed, and see bunch of examples in action.
+
+![Source: <https://moffett4understandingmath.com/wp-content/uploads/2017/06/function-machine.png>](https://moffett4understandingmath.com/wp-content/uploads/2017/06/function-machine.png){width="300"}
+
+First, we remind ourselves why we write functions in the first place. We write functions for two main, often overlapping, reasons:
+
+1.  Following DRY (Don't Repeat Yourself) principle: If you find yourself repeating similar patterns of code, you should write a function that executes that pattern. This saves time and the risk of mistakes.
+
+2.  Create modular structure and abstraction: Having all of your code in one place becomes increasingly complicated as your program grows. Think of the function as a mini-program that can perform without the rest of the program. Organizing your code by functions gives modular structure, as well as abstraction: you only need to know the function name, inputs, and output to use it and don't have to worry how it works.
+
+Some advice on writing functions:
+
+-   Code that has a well-defined set of inputs and outputs make a good function.
+
+-   A function should do only one, well-defined task.
+
+## Anatomy of a function definition
+
+This is how you define a function:
+
+```         
+def <function name>(<input arguments>):
+    """ documentation string """
+    code block
+    return <variable>
+```
+
+-   `<function name>` is the function's name you are creating.
+
+-   `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+
+-   `""" documentation string """` describes what the function is doing. It is considered optional but highly recommended.
+
+-   `code block` performs the action of the function, typically using the input arguments of the function.
+
+-   `return <variable>` it the output of the function.
+
+Here's an simple example to define a function that adds two numbers together:
+
+```{python}
+def add_numbers(num1, num2):
+  """ Adds two input numbers together. """
+  result = num1 + num2
+  return result
+```
+
+When this code is run, `add_numbers()` is stored in the environment, but the function is never run. To run the function,
+
+```{python}
+add_numbers(3, 4)
+```
+
+When the function is called, the input values 3 and 4 are reassigned to function input arguments `num1` and `num2` to be used within the function.
+
+We need to introduce the concept of local and global environments to distinguish variables used only for a function from variables used for the entire program.
+
+## Local and global environments
+
+Within a function, all input arguments and any new variables defined are stored in a "**local environment**", and is only accessible within the function's body. The overall environment of the program is called the "**global environment**" and can be also accessed within the function.
+
+The reason of having some of this "privacy" in the local environment is to make functions modular - they are independent little tools that should not interact with the rest of the global environment. Imagine someone writing a tool that they want to give someone else to use, but the tool depends on your environment, vice versa.
+
+To illustrate the distinguish between a the local and global environment, the following tool allows you to step through Python code execution line-by-line and see the relationship between order of execution, variables, and environments. The "Global frame" refers to the global environment, and "add_numbers" refer to the local environment for the function `add_numbers()`.
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20num1%20%2B%20num2%0A%20%20return%20result%0A%20%20%0Aadd_numbers%283,%204%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=def%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20num1%20%2B%20num2%0A%20%20return%20result%0A%20%20%0Aadd_numbers%283,%204%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Function arguments create modularity
+
+First time writers of functions might ask: why are variables we use for the arguments of a function *reassigned* for function arguments in the local environment? Here is an example when that process is skipped - what are the consequences?
+
+```{python}
+x = 3
+y = 4
+def add_numbers(num1, num2):
+  """ Adds two input numbers together. """
+  result = x + y
+  return result
+```
+
+Let's try this function out for a few values:
+
+```{python}
+add_numbers(x, y)
+```
+
+```{python}
+add_numbers(10, -5)
+```
+
+Why is this happening? Let's try to step through this interactively:
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=x%20%3D%203%0Ay%20%3D%204%0A%0Adef%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20x%20%2B%20y%0A%20%20return%20result%0A%20%20%0Aadd_numbers%28x,%20y%29%0A%0Aadd_numbers%2810,%20-5%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=x%20%3D%203%0Ay%20%3D%204%0A%0Adef%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20x%20%2B%20y%0A%20%20return%20result%0A%20%20%0Aadd_numbers%28x,%20y%29%0A%0Aadd_numbers%2810,%20-5%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+The function did not work as expected because we used hard-coded variables (`x`, `y`) from the global environment and not function argument variables unique to the function use!
+
+## In-Class Exercises
+
+-   Write a function, `my_abs(x)` that computes the absolute value of an input numeric value and returns it. Use cases: `my_abs(-3) = 3`, `my_abs(0) = 0`, `my_abs(33) = 33`. You will need to use conditional statements within the body of the function.
+
+-   Write a function, `my_abs_iterated(x)` that takes in a list of numerical values and use `my_abs(x)` to take the absolute value of each element. Use cases: `my_abs_itereated([3, -9, 2]) = [3, -9, 2]`.
+
+## Exercises
+
+Exercise for week 3 can be found [here](https://colab.research.google.com/drive/1d07xM-0vCFNVFoJF32yBMvNtUsGjC_n3?usp=sharing).
