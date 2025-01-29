@@ -1,0 +1,80 @@
+{
+    "CD14+ Mono": ["FCN1", "CD14"],
+    "CD16+ Mono": ["TCF7L2", "FCGR3A", "LYN"],
+    "ID2-hi myeloid prog": [
+        "CD14",
+        "ID2",
+        "VCAN",
+        "S100A9",
+        "CLEC12A",
+        "KLF4",
+        "PLAUR"
+    ],
+    "cDC1": ["CLEC9A", "CADM1"],
+    "cDC2": [
+        "CST3",
+        "COTL1",
+        "LYZ",
+        "DMXL2",
+        "CLEC10A",
+        "FCER1A"
+    ], 
+    "Normoblast": ["SLC4A1", "SLC25A37", "HBB", "HBA2", "HBA1", "TFRC"],
+    "Erythroblast": ["MKI67", "HBA1", "HBB"],
+    "Proerythroblast": [
+        "CDK6",
+        "SYNGR1",
+        "HBM",
+        "GYPA"
+    ],
+    "NK": ["GNLY", "NKG7", "CD247", "GRIK4", "FCER1G", "TYROBP", "KLRG1", "FCGR3A"],
+    "ILC": ["ID2", "PLCG2", "GNLY", "SYNE1"],
+    "Lymph prog": [
+        "VPREB1",
+        "MME",
+        "EBF1",
+        "SSBP2",
+        "BACH2",
+        "CD79B",
+        "IGHM",
+        "PAX5",
+        "PRKCE",
+        "DNTT",
+        "IGLL1"
+    ],
+    "Naive CD20+ B": ["MS4A1", "IL4R", "IGHD", "FCRL1", "IGHM"],
+    "B1 B": [
+        "MS4A1",
+        "SSPN",
+        "ITGB1",
+        "EPHA4",
+        "COL4A4",
+        "PRDM1",
+        "IRF4",
+        "CD38",
+        "XBP1",
+        "PAX5",
+        "BCL11A",
+        "BLK",
+        "IGHD",
+        "IGHM",
+        "ZNF215"
+    ],
+    "Transitional B": ["MME", "CD38", "CD24", "ACSM3", "MSI2"],
+    "Plasma cells": ["MZB1", "HSP90B1", "FNDC3B", "PRDM1", "IGKC", "JCHAIN"],
+    "Plasmablast": ["XBP1", "RF4", "PRDM1", "PAX5"],
+    "CD4+ T activated": ["CD4", "IL7R", "TRBC2", "ITGB1"],
+    "CD4+ T naive": ["CD4", "IL7R", "TRBC2", "CCR7"],
+    "CD8+ T": ["CD8A", "CD8B", "GZMK", "GZMA", "CCL5", "GZMB", "GZMH", "GZMA"],
+    "T activation": ["CD69", "CD38"],
+    "T naive": ["LEF1", "CCR7", "TCF7"],
+    "pDC": ["GZMB", "IL3RA", "COBLL1", "TCF4"],
+    "G/M prog": ["MPO", "BCL2", "KCNQ5", "CSF3R"],
+    "HSC": ["NRIP1", "MECOM", "PROM1", "NKAIN2", "CD34"],
+    "MK/E prog": [
+        "ZNF385D",
+        "ITGA2B",
+        "RYR3",
+        "PLCB1"
+    ]
+}
