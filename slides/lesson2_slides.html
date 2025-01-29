@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lesson1_slides_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lesson1_slides_files/libs/quarto-html/tabby.min.js"></script>
-<script src="lesson1_slides_files/libs/quarto-html/popper.min.js"></script>
-<script src="lesson1_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="lesson1_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="lesson1_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lesson1_slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="lesson1_slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="lesson2_slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lesson2_slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lesson2_slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="lesson2_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lesson2_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lesson2_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lesson2_slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="lesson2_slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>W1: Fundamentals</title>
+  <title>W2: Iteration</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="lesson1_slides_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="lesson1_slides_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="lesson2_slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lesson2_slides_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,11 +94,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lesson1_slides_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="lesson1_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="lesson1_slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="lesson1_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="lesson1_slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="lesson2_slides_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="lesson2_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lesson2_slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lesson2_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lesson2_slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -385,511 +385,365 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">W1: Fundamentals</h1>
+  <h1 class="title">W2: Iteration</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="welcome" class="slide level2">
-<h2>Welcome!</h2>
-<p>Please sign up for Google Classroom (<a href="https://classroom.google.com/c/NzQ0NjM1Njg1NTQ4?cjc=cbdp7dy">link</a>) if you haven’t already.</p>
-</section>
-<section id="introductions" class="slide level2">
-<h2>Introductions</h2>
+<section id="iterable-data-structures" class="slide level2">
+<h2>Iterable Data Structures</h2>
+<p>It turns out that we can iterate over <em>many</em> types of data structures in Python:</p>
 <ul>
-<li>Who am I?</li>
+<li>List</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>What is DaSL?</li>
+<li>Tuple</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><p>Who are you?</p>
-<ul>
-<li><p>Name, pronouns, group you work in</p></li>
-<li><p>What you want to get out of the class</p></li>
-<li><p>Something that keeps you going in the winter!</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="goals-of-the-course" class="slide level2">
-<h2>Goals of the course</h2>
-<div class="fragment">
-<ul>
-<li>Continue building <em>programming fundamentals</em>: How to use complex data structures, write your own functions, and how to iterate repeated tasks.</li>
+<li>Dictionary</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Continue exploration of <em>data science fundamentals</em>: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.</li>
+<li>String (yes, actually!)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>DataFrame, Series (but not common)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ranges (to be introduced in exercises)</li>
 </ul>
 </div>
 </section>
-<section id="a-motivating-example" class="slide level2">
-<h2><a href="https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing">A Motivating Example</a></h2>
-<p><a href="https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharinghttps://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing">https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing</a></p>
-</section>
-<section id="content-of-the-course" class="slide level2 scrollable">
-<h2>Content of the course</h2>
-<ol type="1">
-<li>Fundamentals and Dictionaries</li>
-<li>Iteration</li>
-<li>Functions</li>
-<li>Iteration styles</li>
-<li>Assignment and References</li>
-<li>Mid-winter break! (for Seattle Public Schools)</li>
-<li>Modules, Wrap-up</li>
-<li>Optional: Data-a-thon Friday March 14, Learning Communities</li>
-</ol>
-<p>Full course page here: <a href="https://hutchdatascience.org/Intermediate_Python/" class="uri">https://hutchdatascience.org/Intermediate_Python/</a></p>
-</section>
-<section id="format-of-the-course" class="slide level2">
-<h2>Format of the course</h2>
+<section id="iterable-data-structures-can-do" class="slide level2">
+<h2>Iterable data structures can do…</h2>
+<ul>
+<li>Access elements or subset of the data structure via the bracket <code>[ ]</code> operator.</li>
+</ul>
 <div class="fragment">
 <ul>
-<li>Hybrid, and recordings will be available.</li>
+<li>Use the <code>in</code>, <code>not in</code> statements to check for presence of an element in the data structure.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>1-2 hour exercises after each session are encouraged for practice; time at beginning of class provided to work on exercises.</li>
+<li>Examine the length via <code>len()</code>.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Office Hours Fridays 10am - 11am PT.</li>
+<li>Iterate through the data structure via a <strong>For-Loop.</strong></li>
 </ul>
 </div>
 </section>
-<section id="culture-of-the-course" class="slide level2">
-<h2>Culture of the course</h2>
+<section id="for-loops" class="slide level2 scrollable">
+<h2>For Loops</h2>
+<p>Here is what the syntax looks like:</p>
 <div class="fragment">
-<ul>
-<li>Challenge: We are learning a new language, but you already have a full-time job</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><em>Teach not for mastery, but teach for empowerment to learn effectively.</em></li>
-</ul>
-</div>
-</section>
-<section id="culture-of-the-course-1" class="slide level2">
-<h2>Culture of the course</h2>
-<ul>
-<li>Challenge: We sometimes struggle with our data science in isolation, unaware that someone two doors down from us has gone through the same struggle.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><em>We learn and work better with our peers.</em></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><em>Know that if you have a question, other people will have it.</em></li>
-</ul>
-</div>
-<div class="fragment">
-<p>We ask you to follow <a href="https://hutchdatascience.org/communitystudios/guidelines/">Participation Guidelines</a> and <a href="https://github.com/fhdsl/coc">Code of Conduct</a>.</p>
-</div>
-</section>
-<section id="ready" class="slide level2">
-<h2>Ready?</h2>
-
-<img data-src="images/horst_community.png" class="r-stretch"></section>
-<section id="data-types" class="slide level2">
-<h2>Data types</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Data type name</th>
-<th style="text-align: center;"><strong>Data type shorthand</strong></th>
-<th style="text-align: center;"><strong>Examples</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Integer</td>
-<td style="text-align: center;">int</td>
-<td style="text-align: center;">2, 4</td>
-</tr>
-<tr class="even">
-<td>Float</td>
-<td style="text-align: center;">float</td>
-<td style="text-align: center;">3.5, -34.1009</td>
-</tr>
-<tr class="odd">
-<td>String</td>
-<td style="text-align: center;">str</td>
-<td style="text-align: center;">“hello”, “234-234-8594”</td>
-</tr>
-<tr class="even">
-<td>Boolean</td>
-<td style="text-align: center;">bool</td>
-<td style="text-align: center;">True, False</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>There is a special <code>None</code> data type that shows up when nothing is returned from an expression.</p>
-</div>
-</section>
-<section id="data-structures" class="slide level2">
-<h2>Data structures</h2>
-<ul>
-<li><p>List</p></li>
-<li><p>Dataframe</p></li>
-<li><p><strong>Dictionary</strong></p></li>
-<li><p><strong>Tuple<br>
-</strong></p></li>
-</ul>
-</section>
-<section id="objects-in-python" class="slide level2">
-<h2>Objects in Python</h2>
-<p><em>What does it contain?</em></p>
-<div class="fragment">
-<ul>
-<li><strong>Value</strong> that holds the essential data for the object.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Attributes</strong> that hold subset of the data or additional data for the object.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><em>What can it do?</em></p>
-<ul>
-<li>Functions called <strong>Methods</strong> specific to the data type and automatically takes the object as input.</li>
-</ul>
-</div>
-<div class="fragment">
-<p>This organizing structure on an object applies to pretty much all Python data types and data structures.</p>
-</div>
-</section>
-<section id="lists-as-an-object" class="slide level2">
-<h2>Lists as an Object</h2>
-<p><em>What does it contain?</em></p>
-<ul>
-<li><strong>Value</strong>: the contents of the list, such as <code>[2, 3, 4]</code>.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Attributes</strong>: subsetting via <code>[ ]</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><em>What can it do (methods)?</em></p>
-<ul>
-<li><code>my_list.append(4)</code> appends 4 to the last element of <code>my_list</code>, but does not return anything.</li>
-</ul>
-</div>
-<div class="fragment">
-<p>What’s the difference between a method and a function?</p>
-</div>
-</section>
-<section id="dataframe-as-an-object" class="slide level2">
-<h2>Dataframe as an Object</h2>
-<p><em>What does it contain?</em></p>
-<ul>
-<li><strong>Value</strong>: the spreadsheet of data.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p><strong>Attributes</strong>:</p>
-<ul>
-<li><p>Columns of the data</p></li>
-<li><p><code>.columns</code></p></li>
-<li><p><code>.shape</code></p></li>
-<li><p><code>.iloc[ , ]</code> , <code>.loc[ , ]</code> for subsetting</p>
-<ul>
-<li><a href="https://colab.research.google.com/drive/1NmFx2tK0coi2O44eldz8RHDH6POOmAFE?usp=sharing">a technical syntax guide</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<p><em>What can it do (methods)?</em></p>
-<ul>
-<li><p><code>.head()</code></p></li>
-<li><p><code>.tail()</code></p></li>
-</ul>
-</div>
-</section>
-<section id="break" class="slide level2">
-<h2>Break!</h2>
-<p>A quick survey to get us started: <a href="https://forms.gle/U6atGeMHdjQuvTK67" class="uri">https://forms.gle/U6atGeMHdjQuvTK67</a></p>
-</section>
-<section id="dictionary" class="slide level2">
-<h2>Dictionary</h2>
-<p>A <strong>dictionary</strong> is designed as a lookup table, organized in <strong>key-value</strong> pairs. You associate the key with a particular value, and use the key to find the value.</p>
-<div class="fragment">
-<div id="d2596e12" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>sentiment <span class="op">=</span> {<span class="st">'happy'</span>: <span class="dv">8</span>, <span class="st">'sad'</span>: <span class="dv">2</span>, <span class="st">'joy'</span>: <span class="fl">7.5</span>, <span class="st">'embarrassed'</span>: <span class="fl">3.6</span>, <span class="st">'restless'</span>: <span class="fl">4.1</span>, <span class="st">'apathetic'</span>: <span class="fl">3.8</span>, <span class="st">'calm'</span>: <span class="dv">7</span>}</span>
-<span id="cb1-2"><a href=""></a>sentiment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ec46b420" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="cf">for</span> rate <span class="kw">in</span> heartrates:</span>
+<span id="cb1-4"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Current heartrate:"</span>, rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>{'happy': 8,
- 'sad': 2,
- 'joy': 7.5,
- 'embarrassed': 3.6,
- 'restless': 4.1,
- 'apathetic': 3.8,
- 'calm': 7}</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current heartrate: 68
+Current heartrate: 54
+Current heartrate: 72
+Current heartrate: 66
+Current heartrate: 90
+Current heartrate: 102</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p>You use a key to find its corresponding value:</p>
-<div id="db81dea1" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>sentiment[<span class="st">'joy'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Assign <code>heartrates</code> as a list.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Enter For-Loop: <code>rate</code> is assigned to the next element of <code>heartrates</code>. If it is the first time, <code>rate</code> is assigned as the first element of <code>heartrates</code>.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>The “block of code” in the indented section is run, and the <code>rate</code> is printed.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li>Steps 2 and 3 are repeated until the last element of <code>heartrates</code>.</li>
+</ol>
+</div>
+</section>
+<section id="taking-the-sum-of-a-list" class="slide level2">
+<h2>Taking the sum of a list</h2>
+<div id="fcdc8384" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb3-2"><a href=""></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="cf">for</span> rate <span class="kw">in</span> heartrates:</span>
+<span id="cb3-5"><a href=""></a>  total <span class="op">=</span> total <span class="op">+</span> rate</span>
+<span id="cb3-6"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Current total:"</span>, total)</span>
+<span id="cb3-7"><a href=""></a>  </span>
+<span id="cb3-8"><a href=""></a><span class="bu">print</span>(<span class="st">"Final total:"</span>, total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>7.5</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current total: 68
+Current total: 122
+Current total: 194
+Current total: 260
+Current total: 350
+Current total: 452
+Current total: 501
+Final total: 501</code></pre>
 </div>
 </div>
-</div>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Atotal%20%3D%200%0A%0Afor%20rate%20in%20heartrates%3A%0A%20%20total%20%3D%20total%20%2B%20rate%0A%20%20print%28%22Current%20total%3A%22,%20total%29%0A%20%20%0Aprint%28%22Final%20total%3A%22,%20total%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+</iframe>
+<p>If it doesn’t load properly, here is the <a href="https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Atotal%20%3D%200%0A%0Afor%20rate%20in%20heartrates%3A%0A%20%20total%20%3D%20total%20%2B%20rate%0A%20%20print%28%22Current%20total%3A%22,%20total%29%0A%20%20%0Aprint%28%22Final%20total%3A%22,%20total%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">link</a>.</p>
+</section>
+<section id="modifying-each-element-while-iterating" class="slide level2">
+<h2>Modifying each element while iterating</h2>
+<p>Sometimes you want to modify each element of an iterable data structure.</p>
 <div class="fragment">
-<p>You cannot use a numerical index to find values, like you did for Lists!</p>
-<div id="f057d899" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co">#sentiment[0]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cb4fae56" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">import</span> math</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Before:"</span>, heartrates)</span>
+<span id="cb5-4"><a href=""></a></span>
+<span id="cb5-5"><a href=""></a><span class="cf">for</span> rate <span class="kw">in</span> heartrates:</span>
+<span id="cb5-6"><a href=""></a>  rate <span class="op">=</span> math.log(rate)</span>
+<span id="cb5-7"><a href=""></a>  </span>
+<span id="cb5-8"><a href=""></a><span class="bu">print</span>(<span class="st">"After:"</span>, heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="3">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>Before: [68, 54, 72, 66, 90, 102, 49]
+After: [68, 54, 72, 66, 90, 102, 49]</code></pre>
 </div>
+</div>
+</div>
+<div class="fragment">
+<p>What happened?</p>
+</div>
+<div class="fragment">
+<p><code>rate = math.log(rate)</code> changes the value of rate, but it is not connected to <code>heartrates</code> anymore.</p>
+</div>
+<div class="fragment">
+<p>Instead, we need to change <code>heartrates[index]</code>, where <code>index</code> is an integer that goes through all the indicies of <code>heartrates</code>.</p>
 </div>
 </section>
-<section id="rules-of-dictionaries" class="slide level2">
-<h2>Rules of Dictionaries</h2>
-<ul>
-<li>Only one value per key. No duplicate keys allowed.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Keys</strong> must be of string, integer, float, boolean, or tuple.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Values</strong> can be of any type, including data structures such as lists and dictionaries.</li>
-</ul>
-</div>
-<div class="fragment">
-<div id="e1a68e9e" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>duplicated_keys <span class="op">=</span> {<span class="st">'Student'</span> : <span class="dv">97</span>, <span class="st">'Student'</span>: <span class="dv">88</span>, <span class="st">'Student'</span> : <span class="dv">91</span>}</span>
-<span id="cb6-2"><a href=""></a>duplicated_keys</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="modifying-each-element-while-iterating-take-2" class="slide level2">
+<h2>Modifying each element while iterating, take 2</h2>
+<p>Use <code>enumerate()</code> function to get a list of tuples containing index and values:</p>
+<div id="c906395e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb7-2"><a href=""></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">enumerate</span>(heartrates)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>{'Student': 91}</code></pre>
-</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[(0, 68), (1, 54), (2, 72), (3, 66), (4, 90), (5, 102), (6, 49)]</code></pre>
 </div>
 </div>
 <div class="fragment">
-<div id="08db2aa9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>child <span class="op">=</span> {<span class="st">"name"</span> : <span class="st">"Emil"</span>, <span class="st">"year"</span> : <span class="dv">2004</span>, <span class="st">"likes"</span>: [<span class="st">"jumping"</span>, <span class="st">"skating"</span>, <span class="st">"laughing"</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="beb3d825" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="cf">for</span> index, value <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb9-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Index:"</span>, index, <span class="st">"   value:"</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="5">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>Index: 0    value: 68
+Index: 1    value: 54
+Index: 2    value: 72
+Index: 3    value: 66
+Index: 4    value: 90
+Index: 5    value: 102
+Index: 6    value: 49</code></pre>
 </div>
 </div>
-<div class="fragment">
-<div id="806dcc4b" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>child[<span class="st">"likes"</span>][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>'skating'</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Data stored in nested dictionaries are often represented as JSON files. Here’s a <a href="https://realpython.com/python-json/">guide on using JSON files in Python</a>.</p>
 </div>
 </section>
-<section id="using-key-to-find-values" class="slide level2">
-<h2>Using key to find values</h2>
-<div id="c6c047aa" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>sentiment[<span class="st">'joy'</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="modifying-each-element-while-iterating-take-2-1" class="slide level2">
+<h2>Modifying each element while iterating, take 2</h2>
+<div id="ef191978" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Before:"</span>, heartrates)</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a><span class="cf">for</span> index, value <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb11-4"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Index:"</span>, index, <span class="st">"   value:"</span>, value)</span>
+<span id="cb11-5"><a href=""></a>  heartrates[index] <span class="op">=</span> math.log(value)</span>
+<span id="cb11-6"><a href=""></a></span>
+<span id="cb11-7"><a href=""></a><span class="bu">print</span>(<span class="st">"After:"</span>, heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>Before: [68, 54, 72, 66, 90, 102, 49]
+Index: 0    value: 68
+Index: 1    value: 54
+Index: 2    value: 72
+Index: 3    value: 66
+Index: 4    value: 90
+Index: 5    value: 102
+Index: 6    value: 49
+After: [4.219507705176107, 3.9889840465642745, 4.276666119016055, 4.189654742026425, 4.499809670330265, 4.624972813284271, 3.8918202981106265]</code></pre>
+</div>
+</div>
+<div class="fragment">
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+</iframe>
+<p>If it doesn’t load properly, here is the <a href="https://pythontutor.com/render.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">link</a>.</p>
+</div>
+</section>
+<section id="conditional-statements" class="slide level2 scrollable">
+<h2>Conditional Statements</h2>
+<p>Suppose you are recoding <code>heartrates</code>, and the numerical values should be “low” if it is between 0 and 60, “medium” if it is between 60 and 100, “high” if it is above 100, and “unknown” otherwise (when it is below 0 or other data type).</p>
+<p>Here is how the syntax looks like:</p>
+<pre><code>if &lt;expression1&gt;:
+    block of code 1
+elif &lt;expression2&gt;:
+    block of code 2
+else:
+    block of code 3
+
+block of code 4    </code></pre>
+<div class="fragment">
+<p>There are three possible ways the code can run:</p>
+<ol type="1">
+<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>True</code>, then <code>block of code 1</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>False</code>, then it will ask if <code>&lt;expression2&gt;</code> is <code>True</code> or not. If <code>True</code>, then <code>block of code 2</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>If <code>&lt;expression1&gt;</code> and <code>&lt;expression2&gt;</code> are both evaluated as <code>False</code>, then <code>block of code 3</code> is run. When done, it will continue to <code>block of code 4</code>.</li>
+</ol>
+</div>
+<div class="fragment">
+<p>An important takeaway is that <em>only one block of code can be run</em>.</p>
+</div>
+</section>
+<section id="data-recoding-conditional-statement" class="slide level2">
+<h2>Data Recoding Conditional Statement</h2>
+<div id="d6fb1310" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb14-2"><a href=""></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
+<span id="cb14-3"><a href=""></a><span class="bu">print</span>(rate)</span>
+<span id="cb14-4"><a href=""></a></span>
+<span id="cb14-5"><a href=""></a><span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb14-6"><a href=""></a>  rate <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb14-7"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb14-8"><a href=""></a>  rate <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb14-9"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb14-10"><a href=""></a>  rate <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb14-11"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb14-12"><a href=""></a>  rate <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb14-13"><a href=""></a>  </span>
+<span id="cb14-14"><a href=""></a><span class="bu">print</span>(rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>7.5</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>68
+medium</code></pre>
 </div>
 </div>
-<div class="fragment">
-<div id="ffcdb910" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>sentiment[<span class="st">'joy'</span>] <span class="op">=</span> sentiment[<span class="st">'joy'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="variations-of-conditional-statements" class="slide level2">
+<h2>Variations of Conditional Statements</h2>
+<p>If-statement:</p>
+<div id="3928f0f3" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
+<span id="cb16-2"><a href=""></a></span>
+<span id="cb16-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb16-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb16-5"><a href=""></a>  </span>
+<span id="cb16-6"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="8">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>12</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>If a key doesn’t exist, you will get an error:</p>
-<div id="640480f3" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co">#sentiment["dog"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If-else if-statement</p>
+<div id="ebd323fb" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>x <span class="op">=</span> <span class="fl">.25</span></span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb18-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb18-5"><a href=""></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb18-6"><a href=""></a>  x <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> x</span>
+<span id="cb18-7"><a href=""></a>  </span>
+<span id="cb18-8"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="9">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>4.0</code></pre>
+</div>
 </div>
 </div>
 <div class="fragment">
-<p>If you don’t want to run the risk of getting an error, you can specify a default value using the <code>.get()</code> method.</p>
-<div id="c08b151c" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>sentiment.get(<span class="st">"dog"</span>, <span class="st">"not found"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If-else-statement</p>
+<div id="ce9c53e5" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
+<span id="cb20-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
+<span id="cb20-3"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb20-4"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Did not find 102."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>'not found'</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Found 102.</code></pre>
 </div>
 </div>
 </div>
-<div class="fragment">
-<div id="e4b7baff" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="bu">print</span>(sentiment.get(<span class="st">"dog"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data-recoding-with-for-loop" class="slide level2">
+<h2>Data Recoding with For-Loop</h2>
+<div id="60792f09" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
+<span id="cb22-2"><a href=""></a></span>
+<span id="cb22-3"><a href=""></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb22-4"><a href=""></a>  <span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb22-5"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb22-6"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb22-7"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb22-8"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb22-9"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb22-10"><a href=""></a>  <span class="cf">else</span>:</span>
+<span id="cb22-11"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb22-12"><a href=""></a>    </span>
+<span id="cb22-13"><a href=""></a><span class="bu">print</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
-<pre><code>None</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-new-key-value-pairs" class="slide level2">
-<h2>Adding new key-value pairs</h2>
-<p>You can add more key-value pairs by defining it directly. If the key already exists, the mapping for that key will simply be updated.</p>
-<div id="85e75b40" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>sentiment[<span class="st">'dog'</span>] <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment" data-execution_count="12">
-
-</div>
-</section>
-<section id="application-creating-a-dataframe" class="slide level2">
-<h2>Application: Creating a Dataframe</h2>
-<p>You can create a Dataframe using a Dictionary. The key represent column names, and the value is a List containing the column’s values:</p>
-<div id="0b5ea6cd" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb20-2"><a href=""></a></span>
-<span id="cb20-3"><a href=""></a>simple_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'id'</span>: [<span class="st">"AAA"</span>, <span class="st">"BBB"</span>, <span class="st">"CCC"</span>, <span class="st">"DDD"</span>, <span class="st">"EEE"</span>],</span>
-<span id="cb20-4"><a href=""></a>                               <span class="st">'case_control'</span>: [<span class="st">"case"</span>, <span class="st">"case"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>],</span>
-<span id="cb20-5"><a href=""></a>                               <span class="st">'measurement1'</span>: [<span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="dv">9</span>, <span class="fl">.1</span>, <span class="fl">2.2</span>],</span>
-<span id="cb20-6"><a href=""></a>                               <span class="st">'measurement2'</span>: [<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">.5</span>, <span class="fl">.24</span>, <span class="fl">.003</span>],</span>
-<span id="cb20-7"><a href=""></a>                               <span class="st">'measurement3'</span>: [<span class="dv">80</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>]})</span>
-<span id="cb20-8"><a href=""></a>                               </span>
-<span id="cb20-9"><a href=""></a>simple_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment" data-execution_count="13">
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">case_control</th>
-<th data-quarto-table-cell-role="th">measurement1</th>
-<th data-quarto-table-cell-role="th">measurement2</th>
-<th data-quarto-table-cell-role="th">measurement3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>AAA</td>
-<td>case</td>
-<td>2.5</td>
-<td>0.000</td>
-<td>80</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>BBB</td>
-<td>case</td>
-<td>3.5</td>
-<td>0.000</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>CCC</td>
-<td>control</td>
-<td>9.0</td>
-<td>0.500</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>DDD</td>
-<td>control</td>
-<td>0.1</td>
-<td>0.240</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>EEE</td>
-<td>control</td>
-<td>2.2</td>
-<td>0.003</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="application-data-recoding" class="slide level2">
-<h2>Application: Data Recoding</h2>
-<p>You want to take “case_control” column of <code>simple_df</code> and change “case” to “experiment” and “control” to “baseline”.</p>
-<p>This correspondence relationship can be stored in a dictionary via <code>.replace()</code> method for Series:</p>
-<div id="d134965b" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>simple_df.case_control.replace({<span class="st">"case"</span>: <span class="st">"experiment"</span>, <span class="st">"control"</span>: <span class="st">"baseline"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment" data-execution_count="14">
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>0    experiment
-1    experiment
-2      baseline
-3      baseline
-4      baseline
-Name: case_control, dtype: object</code></pre>
+<pre><code>['medium', 'low', 'medium', 'medium', 'medium', 'high']</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>You can do something similar to recode the column names of a Dataframe via the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html">.rename()</a> method.</p>
+<p>Let’s see this in action step by step:</p>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+</iframe>
+<p>If it doesn’t load properly, you can find it <a href="https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">here</a></p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -901,19 +755,19 @@ Name: case_control, dtype: object</code></pre>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="lesson1_slides_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="lesson1_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="lesson1_slides_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="lesson1_slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lesson2_slides_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

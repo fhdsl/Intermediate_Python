@@ -10,6 +10,8 @@ output-location: fragment
 
 ## Welcome!
 
+Please sign up for Google Classroom ([link](https://classroom.google.com/c/NzQ0NjM1Njg1NTQ4?cjc=cbdp7dy)) if you haven't already.
+
 ## Introductions
 
 -   Who am I?
@@ -26,13 +28,13 @@ output-location: fragment
 
     -   What you want to get out of the class
 
-    -   Favorite winter activity
+    -   Something that keeps you going in the winter!
 
 ## Goals of the course
 
 . . .
 
--   Continue building *programming fundamentals*: How to use complex data structures, create custom functions, and how to iterate repeated tasks.
+-   Continue building *programming fundamentals*: How to use complex data structures, write your own functions, and how to iterate repeated tasks.
 
 . . .
 
@@ -49,7 +51,11 @@ output-location: fragment
 3.  Functions
 4.  Iteration styles
 5.  Assignment and References
-6.  Modules, Wrap-up
+6.  Mid-winter break! (for Seattle Public Schools)
+7.  Modules, Wrap-up
+8.  Optional: Data-a-thon Friday March 14, Learning Communities
+
+Full course page here: <https://hutchdatascience.org/Intermediate_Python/>
 
 ## Format of the course
 
@@ -104,13 +110,15 @@ We ask you to follow [Participation Guidelines](https://hutchdatascience.org/com
 | String         |           str           | "hello", "234-234-8594" |
 | Boolean        |          bool           |       True, False       |
 
+. . .
+
+There is a special `None` data type that shows up when nothing is returned from an expression.
+
 ## Data structures
 
 -   List
 
 -   Dataframe
-
-    -   Series
 
 -   **Dictionary**
 
@@ -121,7 +129,11 @@ We ask you to follow [Participation Guidelines](https://hutchdatascience.org/com
 
 *What does it contain?*
 
+. . .
+
 -   **Value** that holds the essential data for the object.
+
+. . .
 
 -   **Attributes** that hold subset of the data or additional data for the object.
 
@@ -151,6 +163,10 @@ This organizing structure on an object applies to pretty much all Python data ty
 
 -   `my_list.append(4)` appends 4 to the last element of `my_list`, but does not return anything.
 
+. . .
+
+What's the difference between a method and a function?
+
 ## Dataframe as an Object
 
 *What does it contain?*
@@ -169,6 +185,8 @@ This organizing structure on an object applies to pretty much all Python data ty
 
     -   `.iloc[ , ]` , `.loc[ , ]` for subsetting
 
+        -   [a technical syntax guide](https://colab.research.google.com/drive/1NmFx2tK0coi2O44eldz8RHDH6POOmAFE?usp=sharing)
+
 . . .
 
 *What can it do (methods)?*
@@ -176,6 +194,10 @@ This organizing structure on an object applies to pretty much all Python data ty
 -   `.head()`
 
 -   `.tail()`
+
+## Break!
+
+A quick survey to get us started: <https://forms.gle/U6atGeMHdjQuvTK67>
 
 ## Dictionary
 
@@ -226,25 +248,18 @@ duplicated_keys
 . . .
 
 ```{python}
-myfamily = {
-  "child1" : {
-    "name" : "Emil",
-    "year" : 2004,
-    "likes": ["jumping", "skating", "laughing"]
-  },
-  "child2" : {
-    "name" : "Tobias",
-    "year" : 2007,
-    "likes": ["swimming", "sleeping", "drawing", "fishing"]
-  }
-}
+child = {"name" : "Emil", "year" : 2004, "likes": ["jumping", "skating", "laughing"]}
 ```
 
 . . .
 
 ```{python}
-myfamily["child2"]["likes"]
+child["likes"][1]
 ```
+
+. . .
+
+Data stored in nested dictionaries are often represented as JSON files. Here's a [guide on using JSON files in Python](https://realpython.com/python-json/).
 
 ## Using key to find values
 
@@ -263,7 +278,7 @@ sentiment['joy'] = sentiment['joy'] + 1
 If a key doesn't exist, you will get an error:
 
 ```{python}
-#sentiment["rain"]
+#sentiment["dog"]
 ```
 
 . . .
@@ -288,11 +303,9 @@ You can add more key-value pairs by defining it directly. If the key already exi
 sentiment['dog'] = 5
 ```
 
-## Application for Data Cleaning
+## Application: Creating a Dataframe
 
-You want to take "case_control" column of `simple_df` and change "case" to "experiment" and "control" to "baseline".
-
-This correspondence relationship can be stored in a dictionary via `.replace()` method for Series:
+You can create a Dataframe using a Dictionary. The key represent column names, and the value is a List containing the column's values:
 
 ```{python}
 import pandas as pd
@@ -302,8 +315,20 @@ simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
                                'measurement1': [2.5, 3.5, 9, .1, 2.2],
                                'measurement2': [0, 0, .5, .24, .003],
                                'measurement3': [80, 2, 1, 1, 2]})
+                               
+simple_df
 ```
+
+## Application: Data Recoding
+
+You want to take "case_control" column of `simple_df` and change "case" to "experiment" and "control" to "baseline".
+
+This correspondence relationship can be stored in a dictionary via `.replace()` method for Series:
 
 ```{python}
 simple_df.case_control.replace({"case": "experiment", "control": "baseline"})
 ```
+
+. . .
+
+You can do something similar to recode the column names of a Dataframe via the [.rename()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html) method.
