@@ -8,6 +8,12 @@ format:
 output-location: fragment
 ---
 
+## List vs. Dictionary
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
+
 ## Iterable Data Structures
 
 It turns out that we can iterate over *many* types of data structures in Python:
@@ -146,6 +152,7 @@ for index, value in enumerate(heartrates):
 ## Modifying each element while iterating, take 2
 
 ```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
 print("Before:", heartrates)
 
 for index, value in enumerate(heartrates):
@@ -284,3 +291,7 @@ Let's see this in action step by step:
 </iframe>
 
 If it doesn't load properly, you can find it [here](https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
+
+## How's the pace going for you?
+
+<https://forms.gle/cat6UjqYUuPiq8XG7>

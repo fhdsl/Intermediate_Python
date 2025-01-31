@@ -18,9 +18,10 @@ book:
     - index.qmd
     - 01-Fundamentals.qmd
     - 02-Iteration.qmd
-    - 03-Functions.qmd
-    - 04-Iteration_Styles.qmd
-    - 05-Reference_vs_Copy.qmd
+    - 03-Conditionals.qmd
+    - 04-Functions.qmd
+    - 05-Iteration_Styles.qmd
+    - 06-Reference_vs_Copy.qmd
     - references.qmd
 
   sidebar:
