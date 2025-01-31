@@ -1,0 +1,108 @@
+# Conditional Statements
+
+As we develop more complex code, it is quite common to want to have your code do different things depending on the value. For instance, suppose you are recoding `heartrates`, and the numerical values should be "low" if it is between 0 and 60, "medium" if it is between 60 and 100, "high" if it is above 100, and "unknown" otherwise (when it is below 0 or other data type).
+
+Stepping back, we have been working with a *linear* way of executing code - we have unconditionally executing every line of code in our program. Here, we are create a "control flow" via **conditional statements** in which the your code will run a certain section *if* some conditions are met.
+
+Here is how the syntax looks like for conditional statements:
+
+```         
+if <expression1>:
+    block of code 1
+elif <expression2>:
+    block of code 2
+else:
+    block of code 3
+
+block of code 4    
+```
+
+There are three possible ways the code can run:
+
+1.  If `<expression1>` is evaluated as `True`, then `block of code 1` will be run. When done, it will continue to `block of code 4`.
+2.  If `<expression1>` is evaluated as `False`, then it will ask if `<expression2>` is `True` or not. If `True`, then `block of code 2` will be run. When done, it will continue to `block of code 4`.
+3.  If `<expression1>` and `<expression2>` are both evaluated as `False`, then `block of code 3` is run. When done, it will continue to `block of code 4`.
+
+An important takeaway is that *only one block of code can be run*.
+
+Let's see how this apply to the data recoding example. Let's just assume the data we want to recode is just a single value in a variable `rate`, not the entire list `heartrates`:
+
+```{python}
+rate = heartrates[0]
+print(rate)
+
+if rate > 0 and rate <= 60:
+  rate = "low"
+elif rate > 60 and rate <= 100:
+  rate = "medium"
+elif rate > 100:
+  rate = "high"
+else:
+  rate = "unknown"
+  
+print(rate)
+```
+
+You don't always need multiple `if`, `elif`, `else` statements when writing conditional statements. In its simplest form, a conditional statement requires only an `if` clause:
+
+```{python}
+x = -12
+
+if x < 0:
+  x = x * -1
+  
+print(x)
+```
+
+Then, you can add an `elif` or `else` statement, if you like. Here's `if`-`elif`:
+
+```{python}
+x = .25
+
+if x < 0:
+  x = x * -1
+elif x >= 0 and x < 1:
+  x = 1 / x
+  
+print(x)
+
+```
+
+Here's `if`-`else`. The `in` statement asks whether an element (102) is found in an iterable data structure `heartrates`, and returns `True` if so:
+
+```{python}
+if 102 in heartrates:
+  print("Found 102.")
+else:
+  print("Did not find 102.")
+```
+
+Finally, let's put the data recoding example within a For-Loop:
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for index, rate in enumerate(heartrates):
+  if rate > 0 and rate <= 60:
+    heartrates[index] = "low"
+  elif rate > 60 and rate <= 100:
+    heartrates[index] = "medium"
+  elif rate > 100:
+    heartrates[index] = "high"
+  else:
+    heartrates[index] = "unknown"
+    
+print(heartrates)
+```
+
+Let's see this in action step by step:
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, you can find it [here](https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
+
+## Exercises
+
+Exercise for week 3 can be found [here](https://colab.research.google.com/drive/1kPVyALVVn7__x0q6kfE9PKRpGNQgtu0a?usp=sharing).

@@ -220,6 +220,16 @@ You can add more key-value pairs via `my_dict[new_key] = new_value` syntax. If t
 sentiment['dog'] = 5
 ```
 
+### Dictionary vs. List
+
+Both data types help you organize values, and they differ how you access the values. You access a list's values via a numerical index, and you access a dictionary's values via a key.
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
+
+Source: <https://open.oregonstate.education/computationalbiology/chapter/dictionaries/>
+
 ### Application for Data Cleaning
 
 Suppose that you want to do some data recoding. You want to look at the "case_control" column of `simple_df` and change "case" to "experiment" and "control" to "baseline". This correspondence relationship can be stored in a dictionary. You can use the `.replace()` method for Series objects with a dictionary as an input argument.
@@ -314,21 +324,3 @@ isinstance(simple_df, list)
 ## Exercises
 
 Exercise for week 1 can be found [here](https://colab.research.google.com/drive/1nskVV4XFDVjkN_6OIQJDtDettOEr-n5W?usp=sharing).
-
-## Appendix: Why Dictionaries?
-
-If we didn't have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:
-
-```{python}
-sentiment_df = pd.DataFrame(data={'word': ["happy", "sad", "joy", "embarrassed", "restless", "apathetic", "calm"],
-                                  'sentiment': [8, 2, 7.5, 3.6, 4.1, 3.8, 7]})
-sentiment_df
-```
-
-But to access a word's sentiment value, you have to write a complex syntax:
-
-```{python}
-sentiment_df.loc[sentiment_df.word == "joy", "sentiment"]
-```
-
-Besides the cumbersome syntax, it is not very fast: the program has to find which row "joy" is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value *does not depend on the size of the dictionary,* whereas it does for the Dataframe implementation.
