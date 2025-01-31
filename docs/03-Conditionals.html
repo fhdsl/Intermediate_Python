@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Chris Lo">
-<meta name="dcterms.date" content="2025-01-14">
 
-<title>Intermediate Python</title>
+<title>3&nbsp; Conditional Statements – Intermediate Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Fundamentals.html" rel="next">
+<link href="./04-Functions.html" rel="next">
+<link href="./02-Iteration.html" rel="prev">
 <link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About this course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-Conditionals.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this course</span></a>
   </div>
 </li>
@@ -135,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-Conditionals.html" class="sidebar-item-text sidebar-link">
+  <a href="./03-Conditionals.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></span></a>
   </div>
 </li>
@@ -173,40 +206,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link active" data-scroll-target="#about-this-course">About this course</a>
-  <ul class="collapse">
-  <li><a href="#target-audience" id="toc-target-audience" class="nav-link" data-scroll-target="#target-audience">Target Audience</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#offerings" id="toc-offerings" class="nav-link" data-scroll-target="#offerings">Offerings</a></li>
-  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises"><span class="header-section-number">3.1</span> Exercises</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/03-Conditionals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intermediate Python</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Chris Lo </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 14, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -216,29 +232,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about-this-course" class="level1 unnumbered">
-<h1 class="unnumbered">About this course</h1>
-<p>The course continues building programming fundamentals in Python programming and data analysis. You will learn how to make use of complex data structures, iterate repeated tasks that scales naturally, and create your own functions. You will apply these skills to develop a custom data analysis.</p>
-<section id="target-audience" class="level2">
-<h2 class="anchored" data-anchor-id="target-audience">Target Audience</h2>
-<p>The course is intended for researchers who want to continue learning the fundamentals of Python programming and how to write custom data analysis functions when dealing with messy datasets. The audience should know how to work with Lists and Pandas Dataframes and conduct basic data analysis, and/or have taken our <a href="https://hutchdatascience.org/Intro_to_Python/">Intro to Python</a> course.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<ul>
-<li><p><strong>Understand and distinguish</strong> the use case of data structures to store different types of data.</p></li>
-<li><p><strong>Implement</strong> code to Iterate over a collection (such as files, elements of a column, or a list of objects) to&nbsp;batch process each item.</p></li>
-<li><p><strong>Implement</strong> code that has a branching structure depending on input data’s condition.</p></li>
-<li><p><strong>Create</strong> simple, modular functions that can be reused.</p></li>
-<li><p><strong>Describe</strong> the difference between copying an object vs.&nbsp;referencing an object and how that could affect variables in a data analysis.</p></li>
-</ul>
-</section>
-<section id="offerings" class="level2">
-<h2 class="anchored" data-anchor-id="offerings">Offerings</h2>
-<p>This course is taught on a regular basis at <a href="https://www.fredhutch.org/">Fred Hutch Cancer Center</a> through the <a href="https://hutchdatascience.org/">Data Science Lab</a>. Announcements of course offering can be found <a href="https://hutchdatascience.org/training/">here</a>.</p>
+<p>As we develop more complex code, it is quite common to want to have your code do different things depending on the value. For instance, suppose you are recoding <code>heartrates</code>, and the numerical values should be “low” if it is between 0 and 60, “medium” if it is between 60 and 100, “high” if it is above 100, and “unknown” otherwise (when it is below 0 or other data type).</p>
+<p>Stepping back, we have been working with a <em>linear</em> way of executing code - we have unconditionally executing every line of code in our program. Here, we are create a “control flow” via <strong>conditional statements</strong> in which the your code will run a certain section <em>if</em> some conditions are met.</p>
+<p>Here is how the syntax looks like for conditional statements:</p>
+<pre><code>if &lt;expression1&gt;:
+    block of code 1
+elif &lt;expression2&gt;:
+    block of code 2
+else:
+    block of code 3
+
+block of code 4    </code></pre>
+<p>There are three possible ways the code can run:</p>
+<ol type="1">
+<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>True</code>, then <code>block of code 1</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
+<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>False</code>, then it will ask if <code>&lt;expression2&gt;</code> is <code>True</code> or not. If <code>True</code>, then <code>block of code 2</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
+<li>If <code>&lt;expression1&gt;</code> and <code>&lt;expression2&gt;</code> are both evaluated as <code>False</code>, then <code>block of code 3</code> is run. When done, it will continue to <code>block of code 4</code>.</li>
+</ol>
+<p>An important takeaway is that <em>only one block of code can be run</em>.</p>
+<p>Let’s see how this apply to the data recoding example. Let’s just assume the data we want to recode is just a single value in a variable <code>rate</code>, not the entire list <code>heartrates</code>:</p>
+<div id="c4a30a66" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rate)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>68
+medium</code></pre>
+</div>
+</div>
+<p>You don’t always need multiple <code>if</code>, <code>elif</code>, <code>else</code> statements when writing conditional statements. In its simplest form, a conditional statement requires only an <code>if</code> clause:</p>
+<div id="54334cc7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>12</code></pre>
+</div>
+</div>
+<p>Then, you can add an <code>elif</code> or <code>else</code> statement, if you like. Here’s <code>if</code>-<code>elif</code>:</p>
+<div id="d395dc95" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">.25</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> x</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4.0</code></pre>
+</div>
+</div>
+<p>Here’s <code>if</code>-<code>else</code>. The <code>in</code> statement asks whether an element (102) is found in an iterable data structure <code>heartrates</code>, and returns <code>True</code> if so:</p>
+<div id="75238fa6" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Did not find 102."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Found 102.</code></pre>
+</div>
+</div>
+<p>Finally, let’s put the data recoding example within a For-Loop:</p>
+<div id="21d20559" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['medium', 'low', 'medium', 'medium', 'medium', 'high']</code></pre>
+</div>
+</div>
+<p>Let’s see this in action step by step:</p>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+</iframe>
+<p>If it doesn’t load properly, you can find it <a href="https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">here</a></p>
+<section id="exercises" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.1</span> Exercises</h2>
+<p>Exercise for week 3 can be found <a href="https://colab.research.google.com/drive/1kPVyALVVn7__x0q6kfE9PKRpGNQgtu0a?usp=sharing">here</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -669,10 +766,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./02-Iteration.html" class="pagination-link" aria-label="Iteration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Iteration</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Fundamentals.html" class="pagination-link" aria-label="Fundamentals">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-Functions.html" class="pagination-link" aria-label="Functions">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -684,7 +784,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;">CC-BY. </a> <br> All other materials <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #fff;"> CC-BY </a> unless noted otherwise.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/03-Conditionals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

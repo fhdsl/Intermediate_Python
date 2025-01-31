@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-Functions.html" rel="next">
+<link href="./03-Conditionals.html" rel="next">
 <link href="./01-Fundamentals.html" rel="prev">
 <link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -168,20 +168,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  <a href="./03-Conditionals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-Iteration_Styles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Iteration Styles</span></span></a>
+  <a href="./04-Functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-Reference_vs_Copy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Reference vs.&nbsp;Copy</span></span></a>
+  <a href="./05-Iteration_Styles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Iteration Styles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Reference_vs_Copy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reference vs.&nbsp;Copy</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -207,7 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example-iterating-through-a-list-and-summing-its-total" id="toc-example-iterating-through-a-list-and-summing-its-total" class="nav-link" data-scroll-target="#example-iterating-through-a-list-and-summing-its-total"><span class="header-section-number">2.2.2</span> Example: Iterating through a List and summing its total</a></li>
   <li><a href="#example-modifying-each-element-while-iterating" id="toc-example-modifying-each-element-while-iterating" class="nav-link" data-scroll-target="#example-modifying-each-element-while-iterating"><span class="header-section-number">2.2.3</span> Example: Modifying each element while iterating</a></li>
   </ul></li>
-  <li><a href="#conditional-statements" id="toc-conditional-statements" class="nav-link" data-scroll-target="#conditional-statements"><span class="header-section-number">2.3</span> Conditional Statements</a></li>
+  <li><a href="#for-loops-on-other-iterable-data-structures" id="toc-for-loops-on-other-iterable-data-structures" class="nav-link" data-scroll-target="#for-loops-on-other-iterable-data-structures"><span class="header-section-number">2.3</span> For-Loops on other iterable data structures</a>
+  <ul class="collapse">
+  <li><a href="#tuple" id="toc-tuple" class="nav-link" data-scroll-target="#tuple"><span class="header-section-number">2.3.1</span> Tuple</a></li>
+  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string"><span class="header-section-number">2.3.2</span> String</a></li>
+  <li><a href="#dictionary" id="toc-dictionary" class="nav-link" data-scroll-target="#dictionary"><span class="header-section-number">2.3.3</span> Dictionary</a></li>
+  <li><a href="#ranges" id="toc-ranges" class="nav-link" data-scroll-target="#ranges"><span class="header-section-number">2.3.4</span> Ranges</a></li>
+  </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.4</span> Exercises</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/02-Iteration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -235,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Today, we will look at how we iterate through data structures. Consider a the following list:</p>
-<div id="4f051efc" class="cell" data-execution_count="1">
+<div id="a0956b4e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>heartrates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -254,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>String (yes, actually!)</p></li>
 <li><p>Series (but not recommended)</p></li>
 <li><p>DataFrame</p></li>
-<li><p>Ranges (to be introduced in exercises)</p></li>
+<li><p>Ranges</p></li>
 <li><p>Dictionary</p></li>
 </ul>
 <p>When a data structure is considered iterable, there are a few things you can do with it:</p>
@@ -274,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-iterating-through-a-list" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="example-iterating-through-a-list"><span class="header-section-number">2.2.1</span> Example: Iterating through a List</h3>
 <p>The following code will iterate through each element of the list <code>heartrates</code> and print out each element:</p>
-<div id="9012ef48" class="cell" data-execution_count="2">
+<div id="3a4412c0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> rate <span class="kw">in</span> heartrates:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Current heartrate:"</span>, rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -287,7 +299,7 @@ Current heartrate: 90
 Current heartrate: 102</code></pre>
 </div>
 </div>
-<p>Here is what the Python interpretor is doing:</p>
+<p>Here is what the Python interpreter is doing:</p>
 <ol type="1">
 <li>Assign <code>heartrates</code> as a list.</li>
 <li>Enter For-Loop: <code>rate</code> is assigned to the next element of <code>heartrates</code>. If it is the first time, <code>rate</code> is assigned as the first element of <code>heartrates</code>.</li>
@@ -299,7 +311,7 @@ Current heartrate: 102</code></pre>
 <section id="example-iterating-through-a-list-and-summing-its-total" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="example-iterating-through-a-list-and-summing-its-total"><span class="header-section-number">2.2.2</span> Example: Iterating through a List and summing its total</h3>
 <p>The following code will add up all the elements of a list:</p>
-<div id="857ed249" class="cell" data-execution_count="3">
+<div id="26e23601" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -328,7 +340,7 @@ Final total: 501</code></pre>
 <section id="example-modifying-each-element-while-iterating" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="example-modifying-each-element-while-iterating"><span class="header-section-number">2.2.3</span> Example: Modifying each element while iterating</h3>
 <p>Sometimes you want to modify each element of an iterable data structure. However, if you modify the variable that is changing in the For-Loop, it won’t change the original value in the data structure.</p>
-<div id="bdc29f8c" class="cell" data-execution_count="4">
+<div id="f24b1491" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before:"</span>, heartrates)</span>
@@ -344,7 +356,7 @@ After: [68, 54, 72, 66, 90, 102, 49]</code></pre>
 </div>
 <p>The code <code>rate = math.log(rate)</code> changes the value of rate, but it is not connected to <code>heartrates</code> anymore. Instead, we need to change <code>heartrates[index]</code>, where <code>index</code> is an integer that goes through all the indicies of <code>heartrates</code>.</p>
 <p>We can do this with the <code>enumerate()</code> function:</p>
-<div id="0fd5f8ed" class="cell" data-execution_count="5">
+<div id="a04b428f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Before:"</span>, heartrates)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -367,7 +379,7 @@ After: [4.219507705176107, 3.9889840465642745, 4.276666119016055, 4.189654742026
 </div>
 </div>
 <p>What’s going on here? The <code>enumerate()</code> function returns something that resembles a list of tuples for us to iterate through, where the first element of the tuple is the iteration index, and the second element of the tuple is the iteration element. We access this tuple through the short-hand <code>index, m</code> at the start of the For-Loop. Let’s see what <code>enumerate()</code> looks like:</p>
-<div id="aeb0c9b3" class="cell" data-execution_count="6">
+<div id="d1d44073" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">enumerate</span>(heartrates)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[(0, 4.219507705176107), (1, 3.9889840465642745), (2, 4.276666119016055), (3, 4.189654742026425), (4, 4.499809670330265), (5, 4.624972813284271), (6, 3.8918202981106265)]</code></pre>
@@ -379,105 +391,119 @@ After: [4.219507705176107, 3.9889840465642745, 4.276666119016055, 4.189654742026
 <p>If it doesn’t load properly, here is the <a href="https://pythontutor.com/render.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">link</a>.</p>
 </section>
 </section>
-<section id="conditional-statements" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="conditional-statements"><span class="header-section-number">2.3</span> Conditional Statements</h2>
-<p>As we iterate through values in a data structure, it is quite common to want to have your code do different things depending on the value. For instance, suppose you are recoding <code>heartrates</code>, and the numerical values should be “low” if it is between 0 and 60, “medium” if it is between 60 and 100, “high” if it is above 100, and “unknown” otherwise (when it is below 0 or other data type).</p>
-<p>Stepping back, we have been working with a <em>linear</em> way of executing code - we have unconditionally executing every line of code in our program. Here, we are create a “control flow” via <strong>conditional statements</strong> in which the your code will run a certain section <em>if</em> some conditions are met.</p>
-<p>Here is how the syntax looks like for conditional statements:</p>
-<pre><code>if &lt;expression1&gt;:
-    block of code 1
-elif &lt;expression2&gt;:
-    block of code 2
-else:
-    block of code 3
-
-block of code 4    </code></pre>
-<p>There are three possible ways the code can run:</p>
-<ol type="1">
-<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>True</code>, then <code>block of code 1</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
-<li>If <code>&lt;expression1&gt;</code> is evaluated as <code>False</code>, then it will ask if <code>&lt;expression2&gt;</code> is <code>True</code> or not. If <code>True</code>, then <code>block of code 2</code> will be run. When done, it will continue to <code>block of code 4</code>.</li>
-<li>If <code>&lt;expression1&gt;</code> and <code>&lt;expression2&gt;</code> are both evaluated as <code>False</code>, then <code>block of code 3</code> is run. When done, it will continue to <code>block of code 4</code>.</li>
-</ol>
-<p>An important takeaway is that <em>only one block of code can be run</em>.</p>
-<p>Let’s see how this apply to the data recoding example. Let’s just assume the data we want to recode is just a single value in a variable <code>rate</code>, not the entire list <code>heartrates</code>:</p>
-<div id="58169cc3" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rate)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"low"</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"medium"</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"high"</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  rate <span class="op">=</span> <span class="st">"unknown"</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="for-loops-on-other-iterable-data-structures" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="for-loops-on-other-iterable-data-structures"><span class="header-section-number">2.3</span> For-Loops on other iterable data structures</h2>
+<section id="tuple" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="tuple"><span class="header-section-number">2.3.1</span> Tuple</h3>
+<p>You can loop through a Tuple just like you did with a List, but remember that you can’t modify it!</p>
+</section>
+<section id="string" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="string"><span class="header-section-number">2.3.2</span> String</h3>
+<p>You can loop through a String by iterating on each letter within the String.</p>
+<div id="b0b3f8de" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"I am hungry"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> text <span class="kw">in</span> message:</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4.219507705176107
-low</code></pre>
+<pre><code>I
+ 
+a
+m
+ 
+h
+u
+n
+g
+r
+y</code></pre>
 </div>
 </div>
-<p>You don’t always need multiple <code>if</code>, <code>elif</code>, <code>else</code> statements when writing conditional statements. In its simplest form, a conditional statement requires only an <code>if</code> clause:</p>
-<div id="8fb0aee8" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, Strings are <strong>immutable</strong>, similar to Tuples. So if you iterate via <code>enumerate()</code>, you won’t be able to modify the original String.</p>
+</section>
+<section id="dictionary" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="dictionary"><span class="header-section-number">2.3.3</span> Dictionary</h3>
+<p>When you loop through a Dictionary, you loop through the Keys of the Dictionary:</p>
+<div id="9565bf99" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sentiment <span class="op">=</span> {<span class="st">'happy'</span>: <span class="dv">8</span>, <span class="st">'sad'</span>: <span class="dv">2</span>, <span class="st">'joy'</span>: <span class="fl">7.5</span>, <span class="st">'embarrassed'</span>: <span class="fl">3.6</span>, <span class="st">'restless'</span>: <span class="fl">4.1</span>, <span class="st">'apathetic'</span>: <span class="fl">3.8</span>, <span class="st">'calm'</span>: <span class="dv">7</span>}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> sentiment:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"key:"</span>, key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>12</code></pre>
+<pre><code>key: happy
+key: sad
+key: joy
+key: embarrassed
+key: restless
+key: apathetic
+key: calm</code></pre>
 </div>
 </div>
-<p>Then, you can add an <code>elif</code> or <code>else</code> statement, if you like. Here’s <code>if</code>-<code>elif</code>:</p>
-<div id="1f3be61e" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">.25</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">1</span>:</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> x</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>.items()</code> method for Dictionary is similar to the <code>enumerate()</code> function: it returns a list of tuples, and within each tuple the first element is a key, and the second element is a value.</p>
+<div id="06d300dd" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sentiment.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>dict_items([('happy', 8), ('sad', 2), ('joy', 7.5), ('embarrassed', 3.6), ('restless', 4.1), ('apathetic', 3.8), ('calm', 7)])</code></pre>
+</div>
+</div>
+<div id="593006f3" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> sentiment.items():</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(key, <span class="st">"corresponds to "</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4.0</code></pre>
+<pre><code>happy corresponds to  8
+sad corresponds to  2
+joy corresponds to  7.5
+embarrassed corresponds to  3.6
+restless corresponds to  4.1
+apathetic corresponds to  3.8
+calm corresponds to  7</code></pre>
 </div>
 </div>
-<p>Here’s <code>if</code>-<code>else</code>. The <code>in</code> statement asks whether an element (102) is found in an iterable data structure <code>heartrates</code>, and returns <code>True</code> if so:</p>
-<div id="da5e835e" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Did not find 102."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ranges" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="ranges"><span class="header-section-number">2.3.4</span> Ranges</h3>
+<p><strong>Ranges</strong> are a collection of sequential numbers, such as:</p>
+<ul>
+<li><p>1, 2, 3, 4, 5</p></li>
+<li><p>1, 3, 5</p></li>
+<li><p>10, 15, 20, 25, 30</p></li>
+</ul>
+<p>It seems natural to treat Ranges as Lists, but the neat thing about them is that only the bare minimum information is stored: the start, end, and step size. This could be a huge reduction in memory…if you need a sequence of numbers between 1 and 1 million, you can either store all 1 million values in a list, or you can just have a Range that holds the start: 1, the end: 1 million, and the step size: 1. That’s a big difference!</p>
+<p>You can create a Range via the following ways:</p>
+<ul>
+<li><p><code>range(stop)</code> which starts at 0 and ends in <code>stop</code> - 1.</p></li>
+<li><p><code>range(start, stop)</code> which starts at <code>start</code> and ends in <code>stop</code> - 1</p></li>
+<li><p><code>range(start, stop, step)</code> which starts at <code>start</code> and ends in <code>stop</code> - 1, with a step size of <code>step</code>.</p></li>
+</ul>
+<p>When you create a Range object, it just tells you what the input values you gave it.</p>
+<div id="d6863a25" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">range</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>range(5, 50, 5)</code></pre>
+</div>
+</div>
+<p>Convert to a list to see its actual values:</p>
+<div id="b91ca683" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>[5, 10, 15, 20, 25, 30, 35, 40, 45]</code></pre>
+</div>
+</div>
+<p>To use Ranges in a For-Loop, it’s straightforward:</p>
+<div id="64cdc3c1" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>, <span class="dv">50</span>, <span class="dv">5</span>):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Did not find 102.</code></pre>
+<pre><code>5
+10
+15
+20
+25
+30
+35
+40
+45</code></pre>
 </div>
 </div>
-<p>Finally, let’s put the data recoding example within a For-Loop:</p>
-<div id="440d5252" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"low"</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"medium"</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"high"</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    heartrates[index] <span class="op">=</span> <span class="st">"unknown"</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['medium', 'low', 'medium', 'medium', 'medium', 'high']</code></pre>
-</div>
-</div>
-<p>Let’s see this in action step by step:</p>
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
-</iframe>
-<p>If it doesn’t load properly, you can find it <a href="https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">here</a></p>
+</section>
 </section>
 <section id="exercises" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.4</span> Exercises</h2>
@@ -919,8 +945,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-Functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-Conditionals.html" class="pagination-link" aria-label="Conditional Statements">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

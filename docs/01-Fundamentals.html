@@ -171,20 +171,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-Functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  <a href="./03-Conditionals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional Statements</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-Iteration_Styles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Iteration Styles</span></span></a>
+  <a href="./04-Functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-Reference_vs_Copy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Reference vs.&nbsp;Copy</span></span></a>
+  <a href="./05-Iteration_Styles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Iteration Styles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Reference_vs_Copy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reference vs.&nbsp;Copy</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -213,7 +219,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#basic-rules-of-dictionaries" id="toc-basic-rules-of-dictionaries" class="nav-link" data-scroll-target="#basic-rules-of-dictionaries"><span class="header-section-number">1.7.1</span> Basic Rules of Dictionaries</a></li>
   <li><a href="#basic-usage-of-dictionaries" id="toc-basic-usage-of-dictionaries" class="nav-link" data-scroll-target="#basic-usage-of-dictionaries"><span class="header-section-number">1.7.2</span> Basic Usage of Dictionaries</a></li>
-  <li><a href="#application-for-data-cleaning" id="toc-application-for-data-cleaning" class="nav-link" data-scroll-target="#application-for-data-cleaning"><span class="header-section-number">1.7.3</span> Application for Data Cleaning</a></li>
+  <li><a href="#dictionary-vs.-list" id="toc-dictionary-vs.-list" class="nav-link" data-scroll-target="#dictionary-vs.-list"><span class="header-section-number">1.7.3</span> Dictionary vs.&nbsp;List</a></li>
+  <li><a href="#application-for-data-cleaning" id="toc-application-for-data-cleaning" class="nav-link" data-scroll-target="#application-for-data-cleaning"><span class="header-section-number">1.7.4</span> Application for Data Cleaning</a></li>
   </ul></li>
   <li><a href="#converting-between-data-types" id="toc-converting-between-data-types" class="nav-link" data-scroll-target="#converting-between-data-types"><span class="header-section-number">1.8</span> Converting between data types</a>
   <ul class="collapse">
@@ -222,7 +229,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#converting-between-data-structures" id="toc-converting-between-data-structures" class="nav-link" data-scroll-target="#converting-between-data-structures"><span class="header-section-number">1.9</span> Converting between data structures</a></li>
   <li><a href="#is-my-variable-a-data-typestructure" id="toc-is-my-variable-a-data-typestructure" class="nav-link" data-scroll-target="#is-my-variable-a-data-typestructure"><span class="header-section-number">1.10</span> Is my variable a data type/structure?</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.11</span> Exercises</a></li>
-  <li><a href="#appendix-why-dictionaries" id="toc-appendix-why-dictionaries" class="nav-link" data-scroll-target="#appendix-why-dictionaries"><span class="header-section-number">1.12</span> Appendix: Why Dictionaries?</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/OTTR_Quarto/edit/main/01-Fundamentals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBvVELBg8lcynKj0TrzMlov1zil-Sbkh9VhMKRcSpeo1xo6g/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -403,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This organizing structure on an object applies to pretty much all Python data types and data structures.</p>
 <p>Let’s see how this applies to the Dataframe:</p>
 <p>Suppose we have the following Dataframe:</p>
-<div id="636aa77a" class="cell" data-execution_count="1">
+<div id="ae03db30" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>simple_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'id'</span>: [<span class="st">"AAA"</span>, <span class="st">"BBB"</span>, <span class="st">"CCC"</span>, <span class="st">"DDD"</span>, <span class="st">"EEE"</span>],</span>
@@ -495,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1.7" class="anchored" data-anchor-id="dictionary"><span class="header-section-number">1.7</span> Dictionary</h2>
 <p>Today, we will introduce a new data structure, called the <strong>Dictionary</strong>. A dictionary is designed as a lookup table, organized in <strong>key-value</strong> pairs. You associate the key with a particular value, and use the key to find the value. You should consider using a dictionary when you are storing a collection of associations. Another way of saying this is that dictionaries are useful for storing and manipulating correspondence relationships.</p>
 <p>For instance, suppose that we want to associate common English words with a sentiment value:</p>
-<div id="60be9ffd" class="cell" data-execution_count="2">
+<div id="3add8d07" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sentiment <span class="op">=</span> {<span class="st">'happy'</span>: <span class="dv">8</span>, <span class="st">'sad'</span>: <span class="dv">2</span>, <span class="st">'joy'</span>: <span class="fl">7.5</span>, <span class="st">'embarrassed'</span>: <span class="fl">3.6</span>, <span class="st">'restless'</span>: <span class="fl">4.1</span>, <span class="st">'apathetic'</span>: <span class="fl">3.8</span>, <span class="st">'calm'</span>: <span class="dv">7</span>}</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sentiment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -509,14 +515,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If we want to find the sentiment value of a word, we can look it up immediately via its key to access its value:</p>
-<div id="8055354b" class="cell" data-execution_count="3">
+<div id="fbac221f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'joy'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>7.5</code></pre>
 </div>
 </div>
 <p>However, we cannot access the nth element of a Dictionary, as we are able to do with Lists and Series:</p>
-<div id="3bf7a186" class="cell" data-execution_count="4">
+<div id="6edfc3a1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sentiment[0] error!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="basic-rules-of-dictionaries" class="level3" data-number="1.7.1">
@@ -535,36 +541,43 @@ duplicated_keys</code></pre>
 <section id="basic-usage-of-dictionaries" class="level3" data-number="1.7.2">
 <h3 data-number="1.7.2" class="anchored" data-anchor-id="basic-usage-of-dictionaries"><span class="header-section-number">1.7.2</span> Basic Usage of Dictionaries</h3>
 <p>You can modify values of a corresponding key in a dictionary:</p>
-<div id="22d6602e" class="cell" data-execution_count="5">
+<div id="f042f94e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'joy'</span>] <span class="op">=</span> sentiment[<span class="st">'joy'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You will get an error if you try to access a key that doesn’t exist:</p>
-<div id="f3e0c9cc" class="cell" data-execution_count="6">
+<div id="226e737c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sentiment['dog']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Alternatively, if you don’t want to run the risk of getting an error, you can specify a default value using the <code>.get()</code> method. Here, we give a default neutral value of 5 if the key doesn’t exist.</p>
-<div id="111ae6e4" class="cell" data-execution_count="7">
+<div id="e3151d77" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sentiment.get(<span class="st">"dog"</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>5</code></pre>
 </div>
 </div>
 <p>If you don’t specify a default value, and the key does not exist, you will get a special <code>None</code> data type.</p>
-<div id="28866103" class="cell" data-execution_count="8">
+<div id="d9a45e3f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sentiment.get(<span class="st">"dog"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>None</code></pre>
 </div>
 </div>
 <p>You can add more key-value pairs via <code>my_dict[new_key] = new_value</code> syntax. If the key already exists, the mapping for that key will simply be updated.</p>
-<div id="56e9749d" class="cell" data-execution_count="9">
+<div id="ffebe184" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sentiment[<span class="st">'dog'</span>] <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="application-for-data-cleaning" class="level3" data-number="1.7.3">
-<h3 data-number="1.7.3" class="anchored" data-anchor-id="application-for-data-cleaning"><span class="header-section-number">1.7.3</span> Application for Data Cleaning</h3>
+<section id="dictionary-vs.-list" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="dictionary-vs.-list"><span class="header-section-number">1.7.3</span> Dictionary vs.&nbsp;List</h3>
+<p>Both data types help you organize values, and they differ how you access the values. You access a list’s values via a numerical index, and you access a dictionary’s values via a key.</p>
+<p><img src="https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme" class="img-fluid"></p>
+<p><img src="https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme" class="img-fluid"></p>
+<p>Source: <a href="https://open.oregonstate.education/computationalbiology/chapter/dictionaries/" class="uri">https://open.oregonstate.education/computationalbiology/chapter/dictionaries/</a></p>
+</section>
+<section id="application-for-data-cleaning" class="level3" data-number="1.7.4">
+<h3 data-number="1.7.4" class="anchored" data-anchor-id="application-for-data-cleaning"><span class="header-section-number">1.7.4</span> Application for Data Cleaning</h3>
 <p>Suppose that you want to do some data recoding. You want to look at the “case_control” column of <code>simple_df</code> and change “case” to “experiment” and “control” to “baseline”. This correspondence relationship can be stored in a dictionary. You can use the <code>.replace()</code> method for Series objects with a dictionary as an input argument.</p>
-<div id="ce6426de" class="cell" data-execution_count="10">
+<div id="f0a43457" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>simple_df.case_control.replace({<span class="st">"case"</span>: <span class="st">"experiment"</span>, <span class="st">"control"</span>: <span class="st">"baseline"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>0    experiment
@@ -587,7 +600,7 @@ Name: case_control, dtype: object</code></pre>
 <section id="data-types" class="level3" data-number="1.8.1">
 <h3 data-number="1.8.1" class="anchored" data-anchor-id="data-types"><span class="header-section-number">1.8.1</span> Data types</h3>
 <p>You can convert any number to a String.</p>
-<div id="5902cf16" class="cell" data-execution_count="11">
+<div id="711c6f5c" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="fl">24.5</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -595,7 +608,7 @@ Name: case_control, dtype: object</code></pre>
 </div>
 </div>
 <p>Let’s try to convert a String to a Float:</p>
-<div id="8f6018ee" class="cell" data-execution_count="12">
+<div id="1fe7ed38" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="st">"24.5"</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -603,16 +616,16 @@ Name: case_control, dtype: object</code></pre>
 </div>
 </div>
 <p>But it is not permissible to convert to an Integer, as we don’t know what to do with the decimals (we comment out code that will error, so that this page will render).</p>
-<div id="b9653f89" class="cell" data-execution_count="13">
+<div id="29e91d70" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#int(age) returns an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And we cannot convert some Strings to any number.</p>
-<div id="d37efcec" class="cell" data-execution_count="14">
+<div id="166292e6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>car <span class="op">=</span> <span class="st">"prius"</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#float(prius) returns an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sometimes, we need to pay attention whether any information is lost in the conversion. Let’s convert Float to Int:</p>
-<div id="6672c4a6" class="cell" data-execution_count="15">
+<div id="bbe78cd1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">98.6</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(temperature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -625,7 +638,7 @@ Name: case_control, dtype: object</code></pre>
 <section id="converting-between-data-structures" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="converting-between-data-structures"><span class="header-section-number">1.9</span> Converting between data structures</h2>
 <p>When we look at a column, it is of the Series data structure.</p>
-<div id="a2a5cbb6" class="cell" data-execution_count="16">
+<div id="f5c23c99" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>simple_df[<span class="st">'measurement1'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>0    2.5
@@ -637,7 +650,7 @@ Name: measurement1, dtype: float64</code></pre>
 </div>
 </div>
 <p>Let’s convert it to a List:</p>
-<div id="92f4ff5d" class="cell" data-execution_count="17">
+<div id="77f1b81d" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>simple_df[<span class="st">'measurement1'</span>].to_list()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>[2.5, 3.5, 9.0, 0.1, 2.2]</code></pre>
@@ -649,21 +662,21 @@ Name: measurement1, dtype: float64</code></pre>
 <section id="is-my-variable-a-data-typestructure" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="is-my-variable-a-data-typestructure"><span class="header-section-number">1.10</span> Is my variable a data type/structure?</h2>
 <p>Often, you need to check whether your variable is a specific data type or structure. From Intro to Python, you learned about the <code>type()</code> function, such as:</p>
-<div id="e03738d4" class="cell" data-execution_count="18">
+<div id="61aeee4d" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(simple_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
 </div>
 </div>
 <p>This is great, but the output of <code>type()</code> can be rather verbose, and is usually useful for printing and testing scenarios. To have a more concise, robust way of checking, we prefer the <code>isinstance()</code> function:</p>
-<div id="cdb3174d" class="cell" data-execution_count="19">
+<div id="caf13d5a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">isinstance</span>(simple_df, pd.DataFrame)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>This directly reference the Object’s type, which is more clear.</p>
-<div id="b7aed462" class="cell" data-execution_count="20">
+<div id="a443a9d1" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">isinstance</span>(simple_df, <span class="bu">list</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>False</code></pre>
@@ -673,77 +686,6 @@ Name: measurement1, dtype: float64</code></pre>
 <section id="exercises" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.11</span> Exercises</h2>
 <p>Exercise for week 1 can be found <a href="https://colab.research.google.com/drive/1nskVV4XFDVjkN_6OIQJDtDettOEr-n5W?usp=sharing">here</a>.</p>
-</section>
-<section id="appendix-why-dictionaries" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="appendix-why-dictionaries"><span class="header-section-number">1.12</span> Appendix: Why Dictionaries?</h2>
-<p>If we didn’t have a tool such as Dictionary, we could have tried to implement the following via Pandas Dataframes:</p>
-<div id="fd68517b" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sentiment_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'word'</span>: [<span class="st">"happy"</span>, <span class="st">"sad"</span>, <span class="st">"joy"</span>, <span class="st">"embarrassed"</span>, <span class="st">"restless"</span>, <span class="st">"apathetic"</span>, <span class="st">"calm"</span>],</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">'sentiment'</span>: [<span class="dv">8</span>, <span class="dv">2</span>, <span class="fl">7.5</span>, <span class="fl">3.6</span>, <span class="fl">4.1</span>, <span class="fl">3.8</span>, <span class="dv">7</span>]})</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>sentiment_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">word</th>
-<th data-quarto-table-cell-role="th">sentiment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>happy</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>sad</td>
-<td>2.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>joy</td>
-<td>7.5</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>embarrassed</td>
-<td>3.6</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>restless</td>
-<td>4.1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>apathetic</td>
-<td>3.8</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>calm</td>
-<td>7.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>But to access a word’s sentiment value, you have to write a complex syntax:</p>
-<div id="117a4dff" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sentiment_df.loc[sentiment_df.word <span class="op">==</span> <span class="st">"joy"</span>, <span class="st">"sentiment"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>2    7.5
-Name: sentiment, dtype: float64</code></pre>
-</div>
-</div>
-<p>Besides the cumbersome syntax, it is not very fast: the program has to find which row “joy” is at. Whereas, in the dictionary data structure, the lookup is immediate. The time it takes for dictionary to take a key and retrieve a value <em>does not depend on the size of the dictionary,</em> whereas it does for the Dataframe implementation.</p>
 
 
 </section>
