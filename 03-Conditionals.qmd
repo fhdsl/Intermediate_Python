@@ -28,6 +28,8 @@ An important takeaway is that *only one block of code can be run*.
 Let's see how this apply to the data recoding example. Let's just assume the data we want to recode is just a single value in a variable `rate`, not the entire list `heartrates`:
 
 ```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+
 rate = heartrates[0]
 print(rate)
 
