@@ -73,7 +73,7 @@ They are the same.
 
 Here is another visual way to think about this:
 
-![If you imagine variables are like boxes, you can\'t make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.](images/references.png)If you imagine variables are like boxes, you can't make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.
+![If you imagine variables are like boxes, you can't make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.](images/references.png)If you imagine variables are like boxes, you can't make sense of assignment in Python; instead, think of variables as sticky notes. Image source: Fluent Python, Chapter 8.
 
 ### An object isn't unique
 
@@ -281,4 +281,4 @@ This behavior is super inconsistent and confusing, as it's hard to predict when 
 
 ## Exercises
 
-Exercise for week 5 can be found [here](https://colab.research.google.com/drive/1re65RfslckVFiQB_utWNyppd3kx0PLPH?usp=sharing).
+Exercise for week 6 can be found [here](https://colab.research.google.com/drive/1re65RfslckVFiQB_utWNyppd3kx0PLPH?usp=sharing).

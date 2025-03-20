@@ -2,8 +2,6 @@
 
 After learning how to use other people's functions, it's time to write our own! We will look at the anatomy of how a function is constructed, and see bunch of examples in action.
 
-![Source: <https://moffett4understandingmath.com/wp-content/uploads/2017/06/function-machine.png>](https://moffett4understandingmath.com/wp-content/uploads/2017/06/function-machine.png){width="300"}
-
 First, we remind ourselves why we write functions in the first place. We write functions for two main, often overlapping, reasons:
 
 1.  Following DRY (Don't Repeat Yourself) principle: If you find yourself repeating similar patterns of code, you should write a function that executes that pattern. This saves time and the risk of mistakes.
@@ -60,9 +58,9 @@ We need to introduce the concept of local and global environments to distinguish
 
 Within a function, all input arguments and any new variables defined are stored in a "**local environment**", and is only accessible within the function's body. The overall environment of the program is called the "**global environment**" and can be also accessed within the function.
 
-The reason of having some of this "privacy" in the local environment is to make functions modular - they are independent little tools that should not interact with the rest of the global environment. Imagine someone writing a tool that they want to give someone else to use, but the tool depends on your environment, vice versa.
+The reason of having some of this "privacy" in the local environment is to make functions modular - they are independent little tools that should not interact with the rest of the global environment. Imagine you writing a function that you want to give someone else to use, but your function depends on your global environment - it would not be portable!
 
-To illustrate the distinguish between a the local and global environment, the following tool allows you to step through Python code execution line-by-line and see the relationship between order of execution, variables, and environments. The "Global frame" refers to the global environment, and "add_numbers" refer to the local environment for the function `add_numbers()`.
+To illustrate the distinction between a the local and global environment, the following tool allows you to step through Python code execution line-by-line and see the relationship between order of execution, variables, and environments. The "Global frame" refers to the global environment, and "add_numbers" refer to the local environment for the function `add_numbers()`.
 
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20num1%20%2B%20num2%0A%20%20return%20result%0A%20%20%0Aadd_numbers%283,%204%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 
@@ -111,4 +109,4 @@ The function did not work as expected because we used hard-coded variables (`x`,
 
 ## Exercises
 
-Exercise for week 3 can be found [here](https://colab.research.google.com/drive/1d07xM-0vCFNVFoJF32yBMvNtUsGjC_n3?usp=sharing).
+Exercise for week 4 can be found [here](https://colab.research.google.com/drive/1d07xM-0vCFNVFoJF32yBMvNtUsGjC_n3?usp=sharing).

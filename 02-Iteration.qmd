@@ -185,7 +185,7 @@ for key, value in sentiment.items():
 
 **Ranges** are a collection of sequential numbers, such as:
 
--    1, 2, 3, 4, 5
+-   1, 2, 3, 4, 5
 
 -   1, 3, 5
 

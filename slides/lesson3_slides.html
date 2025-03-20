@@ -397,6 +397,115 @@
 </div>
 
 </section>
+<section id="more-on-enumerate" class="slide level2">
+<h2>More on <code>enumerate()</code></h2>
+<p>What is <code>enumerate()</code> returning exactly?</p>
+<div id="5db86d1a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb1-2"><a href=""></a><span class="bu">enumerate</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>&lt;enumerate at 0x10896fdc0&gt;</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>It returns a “enumerate” data structure. It doesn’t make a copy of <code>heartrates</code>’ indicies and <code>heartrates</code>’ values to save memory. Rather, this data structure will reference <code>heartrates</code> when you iterate on it:</p>
+<div id="456f6f70" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="cf">for</span> index, value <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb3-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Index:"</span>, index, <span class="st">"   value:"</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>Index: 0    value: 68
+Index: 1    value: 54
+Index: 2    value: 72
+Index: 3    value: 66
+Index: 4    value: 90
+Index: 5    value: 102
+Index: 6    value: 49</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>However, if you want to see its full form, you can convert it to a list:</p>
+<div id="dfd15f4e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="bu">list</span>(<span class="bu">enumerate</span>(heartrates))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>[(0, 68), (1, 54), (2, 72), (3, 66), (4, 90), (5, 102), (6, 49)]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="zip" class="slide level2">
+<h2><code>zip()</code></h2>
+<p>Suppose that you want to loop through two iterable data structures at once, such as systolic and diastolic blood pressure. The <code>zip()</code> function will pair the data structures together as a list of tuples, similar to <code>enumerate()</code>:</p>
+<div id="9819662f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>systolic <span class="op">=</span> [<span class="dv">102</span>, <span class="dv">99</span>, <span class="dv">120</span>, <span class="dv">115</span>, <span class="dv">110</span>]</span>
+<span id="cb7-2"><a href=""></a>diastolic <span class="op">=</span> [<span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">82</span>, <span class="dv">62</span>, <span class="dv">70</span>]</span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a><span class="bu">zip</span>(systolic, diastolic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>&lt;zip at 0x107306e80&gt;</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>It returns a “zip” data structure. It doesn’t make a copy of <code>systolic</code> and <code>diastolic</code> values to save memory. Rather, this data structure will reference them when you iterate on it:</p>
+<div id="c80b7962" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="cf">for</span> s, d <span class="kw">in</span> <span class="bu">zip</span>(systolic, diastolic):</span>
+<span id="cb9-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"s:"</span>, s, <span class="st">"   d:"</span>, d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>s: 102    d: 70
+s: 99    d: 65
+s: 120    d: 82
+s: 115    d: 62
+s: 110    d: 70</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>However, if you want to see its full form, you can convert it to a list:</p>
+<div id="e0692f29" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="bu">list</span>(<span class="bu">zip</span>(systolic, diastolic))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>[(102, 70), (99, 65), (120, 82), (115, 62), (110, 70)]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="unpacking-iterables" class="slide level2">
+<h2>Unpacking iterables</h2>
+<p>When we access elements of an iterable data structure, we usually use the bracket notation:</p>
+<div id="0ff775ea" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>coordinates <span class="op">=</span> [<span class="dv">23</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">34</span>]</span>
+<span id="cb13-2"><a href=""></a>coord_x <span class="op">=</span> coordinates[<span class="dv">0</span>]</span>
+<span id="cb13-3"><a href=""></a>coord_y <span class="op">=</span> coordinates[<span class="dv">1</span>]</span>
+<span id="cb13-4"><a href=""></a>coord_z <span class="op">=</span> coordinates[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="7">
+
+</div>
+<div class="fragment">
+<p>If you want access <em>all elements</em> of a (short) iterable data structure, you can use the following “unpacking” syntax:</p>
+<div id="903b7cb9" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>coord_x, coord_y, coord_z <span class="op">=</span> coordinates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="8">
+
+</div>
+</div>
+<div class="fragment">
+<p>This is what is going on in the For-Loop of <code>enumerate()</code> and <code>zip()</code>.</p>
+</div>
+</section>
 <section id="conditional-statements" class="slide level2 scrollable">
 <h2>Conditional Statements</h2>
 <p>Suppose you are recoding <code>heartrates</code>, and the numerical values should be “low” if it is between 0 and 60, “medium” if it is between 60 and 100, “high” if it is above 100, and “unknown” otherwise (when it is below 0 or other data type).</p>
@@ -431,23 +540,23 @@ block of code 4    </code></pre>
 </section>
 <section id="data-recoding-conditional-statement" class="slide level2">
 <h2>Data Recoding Conditional Statement</h2>
-<div id="258b99a3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
-<span id="cb2-2"><a href=""></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
-<span id="cb2-3"><a href=""></a><span class="bu">print</span>(rate)</span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a><span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
-<span id="cb2-6"><a href=""></a>  rate <span class="op">=</span> <span class="st">"low"</span></span>
-<span id="cb2-7"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb2-8"><a href=""></a>  rate <span class="op">=</span> <span class="st">"medium"</span></span>
-<span id="cb2-9"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb2-10"><a href=""></a>  rate <span class="op">=</span> <span class="st">"high"</span></span>
-<span id="cb2-11"><a href=""></a><span class="cf">else</span>:</span>
-<span id="cb2-12"><a href=""></a>  rate <span class="op">=</span> <span class="st">"unknown"</span></span>
-<span id="cb2-13"><a href=""></a>  </span>
-<span id="cb2-14"><a href=""></a><span class="bu">print</span>(rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c2c35c20" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
+<span id="cb16-2"><a href=""></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
+<span id="cb16-3"><a href=""></a><span class="bu">print</span>(rate)</span>
+<span id="cb16-4"><a href=""></a></span>
+<span id="cb16-5"><a href=""></a><span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb16-6"><a href=""></a>  rate <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb16-7"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb16-8"><a href=""></a>  rate <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb16-9"><a href=""></a><span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb16-10"><a href=""></a>  rate <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb16-11"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb16-12"><a href=""></a>  rate <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb16-13"><a href=""></a>  </span>
+<span id="cb16-14"><a href=""></a><span class="bu">print</span>(rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment" data-execution_count="1">
+<div class="cell fragment" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>68
 medium</code></pre>
@@ -457,32 +566,32 @@ medium</code></pre>
 <section id="variations-of-conditional-statements" class="slide level2">
 <h2>Variations of Conditional Statements</h2>
 <p>If-statement:</p>
-<div id="f08918cc" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb4-5"><a href=""></a>  </span>
-<span id="cb4-6"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6cb6ba47" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb18-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb18-5"><a href=""></a>  </span>
+<span id="cb18-6"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment" data-execution_count="2">
+<div class="cell fragment" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>12</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>If-else if-statement</p>
-<div id="96679147" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>x <span class="op">=</span> <span class="fl">.25</span></span>
-<span id="cb6-2"><a href=""></a></span>
-<span id="cb6-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb6-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb6-5"><a href=""></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">1</span>:</span>
-<span id="cb6-6"><a href=""></a>  x <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> x</span>
-<span id="cb6-7"><a href=""></a>  </span>
-<span id="cb6-8"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="43c3229d" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>x <span class="op">=</span> <span class="fl">.25</span></span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb20-4"><a href=""></a>  x <span class="op">=</span> x <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb20-5"><a href=""></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb20-6"><a href=""></a>  x <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> x</span>
+<span id="cb20-7"><a href=""></a>  </span>
+<span id="cb20-8"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment" data-execution_count="3">
+<div class="cell fragment" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>4.0</code></pre>
 </div>
@@ -490,13 +599,13 @@ medium</code></pre>
 </div>
 <div class="fragment">
 <p>If-else-statement</p>
-<div id="b569ed00" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
-<span id="cb8-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
-<span id="cb8-3"><a href=""></a><span class="cf">else</span>:</span>
-<span id="cb8-4"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Did not find 102."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0e39c77f" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
+<span id="cb22-2"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
+<span id="cb22-3"><a href=""></a><span class="cf">else</span>:</span>
+<span id="cb22-4"><a href=""></a>  <span class="bu">print</span>(<span class="st">"Did not find 102."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment" data-execution_count="4">
+<div class="cell fragment" data-execution_count="12">
 <div class="cell-output cell-output-stdout">
 <pre><code>Found 102.</code></pre>
 </div>
@@ -505,22 +614,22 @@ medium</code></pre>
 </section>
 <section id="data-recoding-with-for-loop" class="slide level2">
 <h2>Data Recoding with For-Loop</h2>
-<div id="dac433df" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
-<span id="cb10-2"><a href=""></a></span>
-<span id="cb10-3"><a href=""></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
-<span id="cb10-4"><a href=""></a>  <span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
-<span id="cb10-5"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"low"</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb10-7"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"medium"</span></span>
-<span id="cb10-8"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb10-9"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"high"</span></span>
-<span id="cb10-10"><a href=""></a>  <span class="cf">else</span>:</span>
-<span id="cb10-11"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"unknown"</span></span>
-<span id="cb10-12"><a href=""></a>    </span>
-<span id="cb10-13"><a href=""></a><span class="bu">print</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bfe1b354" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
+<span id="cb24-2"><a href=""></a></span>
+<span id="cb24-3"><a href=""></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>
+<span id="cb24-4"><a href=""></a>  <span class="cf">if</span> rate <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">60</span>:</span>
+<span id="cb24-5"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"low"</span></span>
+<span id="cb24-6"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">60</span> <span class="kw">and</span> rate <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb24-7"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"medium"</span></span>
+<span id="cb24-8"><a href=""></a>  <span class="cf">elif</span> rate <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb24-9"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"high"</span></span>
+<span id="cb24-10"><a href=""></a>  <span class="cf">else</span>:</span>
+<span id="cb24-11"><a href=""></a>    heartrates[index] <span class="op">=</span> <span class="st">"unknown"</span></span>
+<span id="cb24-12"><a href=""></a>    </span>
+<span id="cb24-13"><a href=""></a><span class="bu">print</span>(heartrates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell fragment" data-execution_count="5">
+<div class="cell fragment" data-execution_count="13">
 <div class="cell-output cell-output-stdout">
 <pre><code>['medium', 'low', 'medium', 'medium', 'medium', 'high']</code></pre>
 </div>
@@ -572,7 +681,7 @@ medium</code></pre>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,

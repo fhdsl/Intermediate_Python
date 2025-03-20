@@ -1,0 +1,92 @@
+---
+title: "W6: Wrap-up"
+format: 
+  revealjs:
+    smaller: true
+    scrollable: true
+    echo: true
+---
+
+## Goals of the course
+
+. . .
+
+-   Continue building *programming fundamentals*: How to use complex data structures, how to iterate repeated tasks, and write your own functions.
+
+. . .
+
+-   Continue exploration of *data science fundamentals*: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.
+
+## What have we covered in 6 weeks?
+
+-   Iterable data structures: Lists, Strings, Dictionaries, Tuples,
+
+    -   Access elements via `[ ]`
+
+    -   For Loops
+
+    -   Length via `len()`
+
+    -   Check for presence of elements via `in`
+
+## What have we covered in 6 weeks?
+
+-   Dictionaries vs Lists
+
+    ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme){width="400"}
+
+    ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme){width="400"}
+
+    -   Access elements via `[ ]` vs. `.get()` method
+
+## What have we covered in 6 weeks?
+
+-   Iteration
+
+    -   For loops
+
+        -   Classic form `for value in my_list:`
+
+        -   Modify the data structure via `for index, value in enumerate(my_list):`
+
+        -   Creating a new list via `new_list.append(element)`
+
+    -   List comprehension
+
+    -   Maps when working with Dataframes
+
+. . .
+
+-   Conditional statements
+
+    -   Within For loops
+
+. . .
+
+-   Writing your own function :)
+
+## What's next?
+
+-   An important lesson I didn't get to: [Reference vs. Copy](https://hutchdatascience.org/Intermediate_Python/06-Reference_vs_Copy.html)
+
+-   [Python for Data Analysis](https://wesmckinney.com/book/)
+
+-   Stay tuned for future classes...
+
+## End of class stickers
+
+![](images/stickers mosaic.png)
+
+## End of class stickers
+
+![](images/student_stickers.jpg){width="300"}
+
+## End of class surveys
+
+[How was the course for you?](https://forms.gle/4LTRGq2aCNhWpPw17)
+
+[Join us for Datathon next Friday?](https://www.addevent.com/event/DT25070870)
+
+## Go over last exercise, and some more
+
+# 

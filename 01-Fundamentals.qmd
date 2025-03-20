@@ -15,7 +15,7 @@ In [Intro to Python](https://hutchdatascience.org/Intro_to_Python/), you learned
 We will be looking at a dataset from Twitter that looks like the following:
 
 | Tweet_ID | Username       | Text                                      | Retweets | Likes | Timestamp           |
-|------------|------------|------------|------------|------------|------------|
+|----------|----------------|-------------------------------------------|----------|-------|---------------------|
 | 1        | julie81        | Party least receive say or single....     | 2        | 25    | 2023-01-30 11:00:51 |
 | 2        | richardhester  | Hotel still Congress may member staff.... | 35       | 29    | 2023-01-02 22:45:58 |
 | 3        | williamsjoseph | Nice be her debate industry that year.... | 51       | 25    | 2023-01-18 11:25:19 |

@@ -202,4 +202,4 @@ for i, value in simple_df.measurement1.items():
 
 ## Exercises
 
-Exercise for week 4 can be found [here](https://colab.research.google.com/drive/1qrfGCF2Bh_7hjqvDg2ASXWllzw0kPw1Q?usp=sharing).
+Exercise for week 5 can be found [here](https://colab.research.google.com/drive/1qrfGCF2Bh_7hjqvDg2ASXWllzw0kPw1Q?usp=sharing).
