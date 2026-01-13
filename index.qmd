@@ -18,6 +18,91 @@ The course is intended for researchers who want to continue learning the fundame
 
 -   **Describe** the difference between copying an object vs. referencing an object and how that could affect variables in a data analysis.
 
+## Instructors
+
+If you need to schedule some time to talk, please schedule with Ted.
+
+-   [Ted Laderas](https://laderast.github.io), Director of Training and Community, Office of the Chief Data Officer
+-   [Emma Bishop](https://github.com/emjbishop), Research Informatics Data Scientist, Office of the Chief Data Officer
+
+## Introductions
+
+In chat, please introduce yourself:
+
+-   Your Name & Your Group
+-   What you want to learn in this course
+-   Favorite Winter activity
+
+## Tentative Schedule
+
+All classes are on Wednesdays from 12:00-1:30 PM PST either online, or in Arnold M1-B406 (The Data Science Lounge). Connection details will be provided. Office hours related to each class day are posted below, and the invite will be sent to you.
+
+| Week | Date | Topic |
+|------|------|-------|
+|1* | Jan 21 | Fundamentals |
+|2 | Jan 28 | Iteration (for loops) |
+|3* | Feb 4 | Conditionals |
+|4 | Feb 11 | Functions |
+|No Class | Feb 18 | Break week |
+|5 | Feb 25 |Iteration Styles |
+|6* | Mar 4 | Last Day of Class |
+
+* = Ted on Campus for class
+
+In class we will be going through the notebooks hosted on Google Classroom. 
+
+Classes will be recorded, and those recordings will be sent to you after each class.
+
+
+## Format of Class
+
+The course will be taught in a hybrid form. Come to M1-B406 to learn in-person, and enjoy the snacks. Or join online via the Teams on your calendar.
+
+We will spend the first 20-25 minutes of each class on catching up on last week's exercises if you haven't had the opportunity to work on them. Followed by that, we will have a short lecture/lab, where we will go through the notebooks for the week.
+
+## First Class Survey
+
+[First Class Survey](https://forms.gle/smj4wFAQufoHsG6h7) - Please fill out. We mostly want to see how confident you are before and after class. We will share these results with everyone (anonymized).
+
+## Weekly Check In
+
+[Weekly Check In Form](https://forms.gle/obwC5GYAA3iPHk5x7) - please fill out to let us know if you have any issues or want to share what you've learned. We look at the answers in aggregate and we anonymize responses (unless you want us to know).
+
+
+## Culture of the course
+
+-   Learning on the job is challenging
+    -   I will move at learner's pace; we are learning together.
+    -   Teach not for mastery, but teach for empowerment to learn effectively.
+
+We sometimes struggle with our data science in isolation, unaware that someone two doors down from us has gone through the same struggle.
+
+-   *We learn and work better with our peers.*
+-   *Know that if you have a question, other people will have it.*
+-   *Asking questions is our way of taking care of others.*
+
+We ask you to follow [Participation Guidelines](https://ocdo.fredhutch.org/dasl/participation-guidelines/) and [Code of Conduct](https://github.com/fhdsl/coc). Be respectful of others and their learning pace in class.
+
+## Badge of completion
+
+![](img/badge.png){width="450"}
+
+We offer a [badge of completion](https://www.credly.com/org/fred-hutch/badge/intermediate-python) when you finish the course!
+
+What it is:
+
+-   A display of what you accomplished in the course, shareable in your professional networks such as LinkedIn, similar to online education services such as Coursera.
+
+What it isn't:
+
+-   Accreditation through an university or degree-granting program.
+
+Requirements:
+
+-   Complete for 4 out of 5 assignments.
+
+
+
 ## Offerings
 
 This course is taught on a regular basis at [Fred Hutch Cancer Center](https://www.fredhutch.org/) through the [Data Science Lab](https://hutchdatascience.org/). Announcements of course offering can be found [here](https://hutchdatascience.org/training/).

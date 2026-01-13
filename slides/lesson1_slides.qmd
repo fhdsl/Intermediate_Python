@@ -5,12 +5,11 @@ format:
     smaller: false
     scrollable: true
     echo: true
-output-location: fragment
 ---
 
 ## Welcome!
 
-Please sign up for Google Classroom ([link](https://classroom.google.com/c/NzQ0NjM1Njg1NTQ4?cjc=cbdp7dy)) if you haven't already.
+Please sign up for Google Classroom ([link](https://classroom.google.com/c/ODIzOTg2OTExNzU5?cjc=qfqni3j4) if you haven't already.
 
 ## Introductions
 
@@ -52,7 +51,7 @@ Please sign up for Google Classroom ([link](https://classroom.google.com/c/NzQ0N
 4.  Iteration styles
 5.  Assignment and References
 6.  Mid-winter break! (for Seattle Public Schools)
-7.  Modules, Wrap-up
+7.  Modules, Wrap-up, Pizza!
 8.  Optional: Data-a-thon Friday March 14, Learning Communities
 
 Full course page here: <https://hutchdatascience.org/Intermediate_Python/>
@@ -122,8 +121,7 @@ There is a special `None` data type that shows up when nothing is returned from 
 
 -   **Dictionary**
 
--   **Tuple\
-    **
+-   **Tuple**
 
 ## Objects in Python
 
