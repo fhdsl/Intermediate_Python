@@ -5,7 +5,6 @@ format:
     smaller: false
     scrollable: true
     echo: true
-output-location: fragment
 ---
 
 ## Welcome!
