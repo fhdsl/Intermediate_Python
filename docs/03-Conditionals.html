@@ -255,7 +255,7 @@ block of code 4    </code></pre>
 </ol>
 <p>An important takeaway is that <em>only one block of code can be run</em>.</p>
 <p>Let’s see how this apply to the data recoding example. Let’s just assume the data we want to recode is just a single value in a variable <code>rate</code>, not the entire list <code>heartrates</code>:</p>
-<div id="180d7c0a" class="cell" data-execution_count="1">
+<div id="b491d26b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>, <span class="dv">49</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> heartrates[<span class="dv">0</span>]</span>
@@ -277,7 +277,7 @@ medium</code></pre>
 </div>
 </div>
 <p>You don’t always need multiple <code>if</code>, <code>elif</code>, <code>else</code> statements when writing conditional statements. In its simplest form, a conditional statement requires only an <code>if</code> clause:</p>
-<div id="5811c4c1" class="cell" data-execution_count="2">
+<div id="4ae71152" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">12</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
@@ -289,7 +289,7 @@ medium</code></pre>
 </div>
 </div>
 <p>Then, you can add an <code>elif</code> or <code>else</code> statement, if you like. Here’s <code>if</code>-<code>elif</code>:</p>
-<div id="bfcb2409" class="cell" data-execution_count="3">
+<div id="378f851e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">.25</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
@@ -303,7 +303,7 @@ medium</code></pre>
 </div>
 </div>
 <p>Here’s <code>if</code>-<code>else</code>. The <code>in</code> statement asks whether an element (102) is found in an iterable data structure <code>heartrates</code>, and returns <code>True</code> if so:</p>
-<div id="be7f1e93" class="cell" data-execution_count="4">
+<div id="47565f81" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">102</span> <span class="kw">in</span> heartrates:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Found 102."</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
@@ -313,7 +313,7 @@ medium</code></pre>
 </div>
 </div>
 <p>Finally, let’s put the data recoding example within a For-Loop:</p>
-<div id="9f94d6e1" class="cell" data-execution_count="5">
+<div id="58cd7e10" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>heartrates <span class="op">=</span> [<span class="dv">68</span>, <span class="dv">54</span>, <span class="dv">72</span>, <span class="dv">66</span>, <span class="dv">90</span>, <span class="dv">102</span>]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rate <span class="kw">in</span> <span class="bu">enumerate</span>(heartrates):</span>

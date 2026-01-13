@@ -250,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Examples of mutable data include: Lists,, Dictionaries, DataFrames, and Series. Examples of immutable data include: Tuples, and actually all the primitive data types, such as String, Integer, Float, Boolean. (If <code>x = 3</code>, then you can reassign <code>x = 4</code>, but you are not changing the actual value of <code>3</code>.)</p>
 <p>There are some interesting properties of mutable objects that we need to pay close attention to, in particular to assigning variables to each other.</p>
 <p>In our style of writing code, we have been modifying our objects as we go, like this:</p>
-<div id="8b7979f3" class="cell" data-execution_count="1">
+<div id="4086997d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a.append(<span class="dv">4</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>However, consider the following pattern in which we assign <code>b</code> to <code>a</code> and then perform the append method on <code>b</code>.</p>
-<div id="91bfd7d9" class="cell" data-execution_count="2">
+<div id="81fcf905" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>b.append(<span class="dv">4</span>)</span>
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Let’s look at <code>a</code> also:</p>
-<div id="d06ccc6c" class="cell" data-execution_count="3">
+<div id="57c004ce" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 4]</code></pre>
@@ -307,10 +307,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol></li>
 </ol>
 <p>We can look at the memory address of our variables via the <code>id()</code> function:</p>
-<div id="45f8c9b3" class="cell" data-execution_count="4">
+<div id="5e93e758" class="cell" data-execution_count="4">
 <div class="sourceCode" id="cb7"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(a), <span class="bu">id</span>(b)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>(4367995776, 4367995776)</code></pre>
+<pre><code>(4359328704, 4359328704)</code></pre>
 </div>
 </div>
 <p>They are the same.</p>
@@ -319,15 +319,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="an-object-isnt-unique" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1"><span class="header-section-number">6.1.1</span> An object isn’t unique</h3>
 <p>Let’s see another example, using Dictionaries this time:</p>
-<div id="d5d9991d" class="cell" data-execution_count="5">
+<div id="8e5c2d70" class="cell" data-execution_count="5">
 <div class="sourceCode" id="cb9"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>charles <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Charles L. Dodgson&#39;</span>, <span class="st">&#39;born&#39;</span>: <span class="dv">1832</span>}</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lewis <span class="op">=</span> charles</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(charles), <span class="bu">id</span>(lewis)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(4367754944, 4367754944)</code></pre>
+<pre><code>(4359337536, 4359337536)</code></pre>
 </div>
 </div>
-<div id="c8caeb3a" class="cell" data-execution_count="6">
+<div id="5b5b7a73" class="cell" data-execution_count="6">
 <div class="sourceCode" id="cb11"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lewis[<span class="st">&#39;balance&#39;</span>] <span class="op">=</span> <span class="dv">950</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>charles</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -336,18 +336,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>As expected, we see that Charles also has a balance of 950, because both variables have the same reference to the same object.</p>
 <p>Now, suppose we create a variable <code>alex</code> with a reference to a dictionary with the <em>same value</em>:</p>
-<div id="a17e8a08" class="cell" data-execution_count="7">
+<div id="a7b2610d" class="cell" data-execution_count="7">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alex <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Charles L. Dodgson&#39;</span>, <span class="st">&#39;born&#39;</span>: <span class="dv">1832</span>, <span class="st">&#39;balance&#39;</span>: <span class="dv">950</span>}</span></code></pre></div>
 </div>
 <p>What do we expect?</p>
-<div id="78b2e040" class="cell" data-execution_count="8">
+<div id="8c567088" class="cell" data-execution_count="8">
 <div class="sourceCode" id="cb14"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(lewis), <span class="bu">id</span>(charles), <span class="bu">id</span>(alex)</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>(4367754944, 4367754944, 4368004352)</code></pre>
+<pre><code>(4359337536, 4359337536, 4359334976)</code></pre>
 </div>
 </div>
 <p>This shows that you can have objects of the same values, that is:</p>
-<div id="ea62aae0" class="cell" data-execution_count="9">
+<div id="6cb706c2" class="cell" data-execution_count="9">
 <div class="sourceCode" id="cb16"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lewis <span class="op">==</span> alex</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>True</code></pre>
@@ -371,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="copying-an-object" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="copying-an-object"><span class="header-section-number">6.1.2</span> Copying an object</h3>
 <p>Sometimes, you want an actual copy of an object, not a reference to the object as we have seen before. Most objects have a <code>.copy()</code> method that will allow you to create a copy of it:</p>
-<div id="95e7d631" class="cell" data-execution_count="10">
+<div id="e69bba8f" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.copy()</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>b.append(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, <code>a</code> and <code>b</code> are distinct!</p>
-<div id="8c38fff9" class="cell" data-execution_count="11">
+<div id="bb6ade86" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a:"</span>, a)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"b:"</span>, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -392,7 +392,7 @@ b: [1, 2, 3, 4]</code></pre>
 <section id="shallow-vs.-deep-copy" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3"><span class="header-section-number">6.1.3</span> Shallow vs. Deep copy</h3>
 <p>There’s a subtle problem with making copies of an object. Recall that you can put objects within lists, such as a list within a list. Well, that list within a list is a reference, so you can get some strange, unexpected situations:</p>
-<div id="d45704ad" class="cell" data-execution_count="12">
+<div id="a992647e" class="cell" data-execution_count="12">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub_list <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;pineapple&quot;</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [sub_list, <span class="dv">1</span>, <span class="dv">2</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -400,7 +400,7 @@ b: [1, 2, 3, 4]</code></pre>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>b.append(<span class="dv">3</span>)</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">0</span>].append(<span class="st">&quot;pear&quot;</span>)</span></code></pre></div>
 </div>
-<div id="f2047300" class="cell" data-execution_count="13">
+<div id="72725a83" class="cell" data-execution_count="13">
 <div class="sourceCode" id="cb22"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;a:&quot;</span>, a)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;b:&quot;</span>, b)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -413,7 +413,7 @@ b: [[&#39;apple&#39;, &#39;pineapple&#39;, &#39;pear&#39;], 1, 2, 3]</code></pre
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=sub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20a.copy%28%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 <p>If it doesn’t load properly, here is the <a href="https://pythontutor.com/render.html#code=sub_list%20%3D%20%5B%22apple%22,%20%22pineapple%22%5D%0Aa%20%3D%20%5Bsub_list,%201,%202%5D%0A%0Ab%20%3D%20a.copy%28%29%0Ab.append%283%29%0Ab%5B0%5D.append%28%22pear%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">link</a>.</p>
 <p>Here is how we use <code>copy.deepcopy(x)</code>:</p>
-<div id="e61d3197" class="cell" data-execution_count="14">
+<div id="a4e1cf92" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sub_list <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"pineapple"</span>]</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [sub_list, <span class="dv">1</span>, <span class="dv">2</span>]</span>
@@ -437,7 +437,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 <section id="notes-on-dataframes" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="notes-on-dataframes"><span class="header-section-number">6.2</span> Notes on Dataframes</h2>
 <p>When we work with Pandas Dataframes, variables are also assigned by reference: suppose we have a small dataframe <code>simple_df</code>:</p>
-<div id="77b9469b" class="cell" data-execution_count="15">
+<div id="7e5285f5" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -448,7 +448,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'measurement3'</span>: [<span class="dv">80</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We assign <code>analysis_df</code> as <code>simple_df</code>, and log-transform the column “measurement1”, and see how it affects both dataframes:</p>
-<div id="6c52d924" class="cell" data-execution_count="16">
+<div id="4a01130f" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>analysis_df <span class="op">=</span> simple_df</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>analysis_df.measurement1 <span class="op">=</span> np.log(analysis_df.measurement1)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analysis_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -461,7 +461,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 4  EEE      control      0.788457         0.003             2</code></pre>
 </div>
 </div>
-<div id="751083d9" class="cell" data-execution_count="17">
+<div id="48688a58" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(simple_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    id case_control  measurement1  measurement2  measurement3
@@ -473,7 +473,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 </div>
 </div>
 <p>To prevent this behavior, we can use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html"><code>.copy()</code></a> method:</p>
-<div id="5edf4722" class="cell" data-execution_count="18">
+<div id="b655e3f6" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>simple_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'id'</span>: [<span class="st">"AAA"</span>, <span class="st">"BBB"</span>, <span class="st">"CCC"</span>, <span class="st">"DDD"</span>, <span class="st">"EEE"</span>],</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'case_control'</span>: [<span class="st">"case"</span>, <span class="st">"case"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>, <span class="st">"control"</span>],</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                               <span class="st">'measurement1'</span>: [<span class="fl">2.5</span>, <span class="fl">3.5</span>, <span class="dv">9</span>, <span class="fl">.1</span>, <span class="fl">2.2</span>],</span>
@@ -493,7 +493,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 </div>
 </div>
 <p>So <code>simple_df</code> does not change:</p>
-<div id="ba70235a" class="cell" data-execution_count="19">
+<div id="5f314e01" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(simple_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    id case_control  measurement1  measurement2  measurement3
@@ -508,7 +508,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="copy-vs.-reference-in-dataframe-operations-and-methods"><span class="header-section-number">6.2.1</span> Copy vs.&nbsp;Reference in Dataframe operations and methods</h3>
 <p>However, some Dataframe operations and methods will automatically give you a copy, while others give you a reference.</p>
 <p>For instance, when we subset via <code>.loc</code>, it returns a copy:</p>
-<div id="374ad573" class="cell" data-execution_count="20">
+<div id="21515546" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>case_df <span class="op">=</span> simple_df.loc[simple_df.case_control <span class="op">==</span> <span class="st">"case"</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>case_df.loc[:, <span class="st">'measurement1'</span>] <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(case_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -518,7 +518,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 1  BBB         case           5.0           0.0             2</code></pre>
 </div>
 </div>
-<div id="fc742e65" class="cell" data-execution_count="21">
+<div id="28a4afaa" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(simple_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    id case_control  measurement1  measurement2  measurement3
@@ -530,7 +530,7 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 </div>
 </div>
 <p>However, if you subset to one specific column, it gives you a reference:</p>
-<div id="b5aef7c6" class="cell" data-execution_count="22">
+<div id="75be5f7a" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> simple_df[<span class="st">"measurement1"</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>m1[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -543,14 +543,14 @@ b: [['apple', 'pineapple', 'pear'], 1, 2, 3]</code></pre>
 Name: measurement1, dtype: float64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/pq/18p2fl6n49dfgzd03mtszm6r0000gn/T/ipykernel_20559/1078013331.py:2: SettingWithCopyWarning: 
+<pre><code>/var/folders/pq/18p2fl6n49dfgzd03mtszm6r0000gn/T/ipykernel_87040/1078013331.py:2: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   m1[0] = 5</code></pre>
 </div>
 </div>
-<div id="95c896c4" class="cell" data-execution_count="23">
+<div id="bb67922e" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(simple_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    id case_control  measurement1  measurement2  measurement3

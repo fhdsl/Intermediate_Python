@@ -20,10 +20,10 @@ The course is intended for researchers who want to continue learning the fundame
 
 ## Instructors
 
-If you need to schedule some time to talk, please schedule with Chris.
+If you need to schedule some time to talk, please schedule with Ted.
 
 -   [Ted Laderas](https://laderast.github.io), Director of Training and Community, Office of the Chief Data Officer
--   [Vivek Sriram](https://viveksriram.com/), Data Scientist, Office of the Chief Data Officer
+-   [Emma Bishop](https://github.com/emjbishop), Research Informatics Data Scientist, Office of the Chief Data Officer
 
 ## Introductions
 
@@ -35,20 +35,24 @@ In chat, please introduce yourself:
 
 ## Tentative Schedule
 
-All classes are on Fridays from 12:00-1:30 PM PST. Connection details will be provided. Office hours related to each class day are posted below, and the invite will be sent to you.
+All classes are on Wednesdays from 12:00-1:30 PM PST either online, or in Arnold M1-B406 (The Data Science Lounge). Connection details will be provided. Office hours related to each class day are posted below, and the invite will be sent to you.
 
-In class we will be going through the Quarto Notebooks that are hosted on Posit.cloud. No knowledge of R is necessary, we'll show you what you need to know in class.
+| Week | Date | Topic |
+|------|------|-------|
+|1* | Jan 21 | Fundamentals |
+|2 | Jan 28 | Iteration (for loops) |
+|3* | Feb 4 | Conditionals |
+|4 | Feb 11 | Functions |
+|No Class | Feb 18 | Break week |
+|5 | Feb 25 |Iteration Styles |
+|6* | Mar 4 | Last Day of Class |
+
+* = Ted on Campus for class
+
+In class we will be going through the notebooks hosted on Google Classroom. 
 
 Classes will be recorded, and those recordings will be sent to you after each class.
 
-| Week       | Date   | Subject                                                                  |
-|----------|----------|-------------------------------------------|
-| Pre-class  | ----   | [Concepts of Databases](concepts.qmd)                                   |
-| 1          | Feb 6| [Intro to SQL; `SHOW TABLES`, `DESCRIBE`, `SELECT`, `WHERE`](week1.qmd) |
-| 2          | Feb 13 | [`JOIN`ing tables, more `WHERE`](week2.qmd)                             |
-| No class! | Feb 20 | Spring Break (No class)                    |
-| 3          | Feb 27 | [Calculating new fields, `GROUP BY`, `CASE WHEN`, `HAVING`](week3.qmd)  |
-| 4          | Mar 6  | [Subqueries/Views, Recap of course / review OMOP queries](week4.qmd)    |
 
 ## Format of Class
 
@@ -78,8 +82,6 @@ We sometimes struggle with our data science in isolation, unaware that someone t
 -   *Asking questions is our way of taking care of others.*
 
 We ask you to follow [Participation Guidelines](https://ocdo.fredhutch.org/dasl/participation-guidelines/) and [Code of Conduct](https://github.com/fhdsl/coc). Be respectful of others and their learning pace in class.
-
-
 
 ## Badge of completion
 
