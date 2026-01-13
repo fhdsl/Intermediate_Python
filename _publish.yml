@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: f98470be-9a15-4cc9-b7d2-e55e12962613
+      url: https://cerulean-palmier-97ffd7.netlify.app
