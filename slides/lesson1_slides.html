@@ -204,7 +204,7 @@
 </section>
 <section id="welcome" class="slide level2">
 <h2>Welcome!</h2>
-<p>Please sign up for Google Classroom (<a href="https://classroom.google.com/c/ODIzOTg2OTExNzU5?cjc=qfqni3j4">link</a> if you haven’t already.</p>
+<p>Please sign up for Google Classroom (<a href="https://classroom.google.com/c/ODIzOTg2OTExNzU5?cjc=qfqni3j4">link</a>) if you haven’t already.</p>
 </section>
 <section id="introductions" class="slide level2">
 <h2>Introductions</h2>
@@ -244,18 +244,63 @@
 <h2><a href="https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing">A Motivating Example</a></h2>
 <p><a href="https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharinghttps://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing">https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing</a></p>
 </section>
-<section id="content-of-the-course" class="slide level2 scrollable">
-<h2>Content of the course</h2>
-<ol type="1">
-<li>Fundamentals and Dictionaries</li>
-<li>Iteration</li>
-<li>Functions</li>
-<li>Iteration styles</li>
-<li>Assignment and References</li>
-<li>Mid-winter break! (for Seattle Public Schools)</li>
-<li>Modules, Wrap-up, Pizza!</li>
-<li>Optional: Data-a-thon Friday March 14, Learning Communities</li>
-</ol>
+<section id="tentative-schedule" class="slide level2">
+<h2>Tentative Schedule</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Date</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1*</td>
+<td>Jan 21</td>
+<td><a href="01-Fundamentals.qmd">Fundamentals</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Jan 28</td>
+<td><a href="02-Iteration.qmd">Iteration (for loops)</a></td>
+</tr>
+<tr class="odd">
+<td>3*</td>
+<td>Feb 4</td>
+<td><a href="03-Conditionals.qmd">Conditionals</a></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Feb 11</td>
+<td><a href="04-Functions.qmd">Functions</a></td>
+</tr>
+<tr class="odd">
+<td>No Class</td>
+<td>Feb 18</td>
+<td>Break week</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Feb 25</td>
+<td><a href="05-Iteration_Styles.qmd">Iteration Styles</a></td>
+</tr>
+<tr class="odd">
+<td>6*</td>
+<td>Mar 4</td>
+<td><a href="06-Reference_vs_Copy.qmd">Reference vs.&nbsp;Copy</a> / Last Day of Class</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>= Ted on Campus for class</li>
+</ul>
+</section>
+<section id="more-about-the-schedule" class="slide level2">
+<h2>More About the Schedule</h2>
+<p>All classes are on Wednesdays from 12:00-1:30 PM PST either online, or in Arnold M1-B406 (The Data Science Lounge). Connection details will be provided. Office hours related to each class day are posted below, and the invite will be sent to you.</p>
+<p>In class we will be going through the notebooks hosted on Google Classroom.</p>
+<p>Classes will be recorded, and those recordings will be sent to you after each class.</p>
 <p>Full course page here: <a href="https://hutchdatascience.org/Intermediate_Python/" class="uri">https://hutchdatascience.org/Intermediate_Python/</a></p>
 </section>
 <section id="format-of-the-course" class="slide level2">
@@ -438,7 +483,7 @@
 <h2>Dictionary</h2>
 <p>A <strong>dictionary</strong> is designed as a lookup table, organized in <strong>key-value</strong> pairs. You associate the key with a particular value, and use the key to find the value.</p>
 <div class="fragment">
-<div id="7b7e440d" class="cell" data-execution_count="1">
+<div id="ce5f920e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>sentiment <span class="op">=</span> {<span class="st">'happy'</span>: <span class="dv">8</span>, <span class="st">'sad'</span>: <span class="dv">2</span>, <span class="st">'joy'</span>: <span class="fl">7.5</span>, <span class="st">'embarrassed'</span>: <span class="fl">3.6</span>, <span class="st">'restless'</span>: <span class="fl">4.1</span>, <span class="st">'apathetic'</span>: <span class="fl">3.8</span>, <span class="st">'calm'</span>: <span class="dv">7</span>}</span>
 <span id="cb1-2"><a href=""></a>sentiment</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -454,7 +499,7 @@
 </div>
 <div class="fragment">
 <p>You use a key to find its corresponding value:</p>
-<div id="a144a640" class="cell" data-execution_count="2">
+<div id="6c8ea957" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>sentiment[<span class="st">'joy'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>7.5</code></pre>
@@ -463,7 +508,7 @@
 </div>
 <div class="fragment">
 <p>You cannot use a numerical index to find values, like you did for Lists!</p>
-<div id="83b7d28b" class="cell" data-execution_count="3">
+<div id="2bf03ed1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co">#sentiment[0]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -484,7 +529,7 @@
 </ul>
 </div>
 <div class="fragment">
-<div id="f480f6d6" class="cell" data-execution_count="4">
+<div id="9ae10012" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>duplicated_keys <span class="op">=</span> {<span class="st">'Student'</span> : <span class="dv">97</span>, <span class="st">'Student'</span>: <span class="dv">88</span>, <span class="st">'Student'</span> : <span class="dv">91</span>}</span>
 <span id="cb6-2"><a href=""></a>duplicated_keys</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -493,12 +538,12 @@
 </div>
 </div>
 <div class="fragment">
-<div id="b025fa77" class="cell" data-execution_count="5">
+<div id="baed7d9c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>child <span class="op">=</span> {<span class="st">"name"</span> : <span class="st">"Emil"</span>, <span class="st">"year"</span> : <span class="dv">2004</span>, <span class="st">"likes"</span>: [<span class="st">"jumping"</span>, <span class="st">"skating"</span>, <span class="st">"laughing"</span>]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
-<div id="f722d433" class="cell" data-execution_count="6">
+<div id="79407544" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>child[<span class="st">"likes"</span>][<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'skating'</code></pre>
@@ -511,26 +556,26 @@
 </section>
 <section id="using-key-to-find-values" class="slide level2">
 <h2>Using key to find values</h2>
-<div id="c73555d8" class="cell" data-execution_count="7">
+<div id="7fedb222" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>sentiment[<span class="st">'joy'</span>] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>7.5</code></pre>
 </div>
 </div>
 <div class="fragment">
-<div id="345a0174" class="cell" data-execution_count="8">
+<div id="ffc517a9" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>sentiment[<span class="st">'joy'</span>] <span class="op">=</span> sentiment[<span class="st">'joy'</span>] <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
 <p>If a key doesn’t exist, you will get an error:</p>
-<div id="fd15e92c" class="cell" data-execution_count="9">
+<div id="3c7cfbaa" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co">#sentiment["dog"]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
 <p>If you don’t want to run the risk of getting an error, you can specify a default value using the <code>.get()</code> method.</p>
-<div id="d34dc435" class="cell" data-execution_count="10">
+<div id="147cfd97" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>sentiment.get(<span class="st">"dog"</span>, <span class="st">"not found"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>'not found'</code></pre>
@@ -538,7 +583,7 @@
 </div>
 </div>
 <div class="fragment">
-<div id="a46bbb1b" class="cell" data-execution_count="11">
+<div id="98c35aa2" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="bu">print</span>(sentiment.get(<span class="st">"dog"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>None</code></pre>
@@ -549,14 +594,14 @@
 <section id="adding-new-key-value-pairs" class="slide level2">
 <h2>Adding new key-value pairs</h2>
 <p>You can add more key-value pairs by defining it directly. If the key already exists, the mapping for that key will simply be updated.</p>
-<div id="eeb903c8" class="cell" data-execution_count="12">
+<div id="6462a199" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>sentiment[<span class="st">'dog'</span>] <span class="op">=</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="application-creating-a-dataframe" class="slide level2">
 <h2>Application: Creating a Dataframe</h2>
 <p>You can create a Dataframe using a Dictionary. The key represent column names, and the value is a List containing the column’s values:</p>
-<div id="a4b3cd3e" class="cell" data-execution_count="13">
+<div id="3d2980fc" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-2"><a href=""></a></span>
 <span id="cb20-3"><a href=""></a>simple_df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>{<span class="st">'id'</span>: [<span class="st">"AAA"</span>, <span class="st">"BBB"</span>, <span class="st">"CCC"</span>, <span class="st">"DDD"</span>, <span class="st">"EEE"</span>],</span>
@@ -645,7 +690,7 @@
 <h2>Application: Data Recoding</h2>
 <p>You want to take “case_control” column of <code>simple_df</code> and change “case” to “experiment” and “control” to “baseline”.</p>
 <p>This correspondence relationship can be stored in a dictionary via <code>.replace()</code> method for Series:</p>
-<div id="bf924f7b" class="cell" data-execution_count="14">
+<div id="08d5fc92" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>simple_df.case_control.replace({<span class="st">"case"</span>: <span class="st">"experiment"</span>, <span class="st">"control"</span>: <span class="st">"baseline"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>0    experiment

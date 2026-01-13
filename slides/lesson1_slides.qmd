@@ -5,11 +5,12 @@ format:
     smaller: false
     scrollable: true
     echo: true
+    standalone: true
 ---
 
 ## Welcome!
 
-Please sign up for Google Classroom ([link](https://classroom.google.com/c/ODIzOTg2OTExNzU5?cjc=qfqni3j4) if you haven't already.
+Please sign up for Google Classroom ([link](https://classroom.google.com/c/ODIzOTg2OTExNzU5?cjc=qfqni3j4)) if you haven't already.
 
 ## Introductions
 
@@ -43,16 +44,30 @@ Please sign up for Google Classroom ([link](https://classroom.google.com/c/ODIzO
 
 [https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing](https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharinghttps://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing)
 
-## Content of the course
+## Tentative Schedule
 
-1.  Fundamentals and Dictionaries
-2.  Iteration
-3.  Functions
-4.  Iteration styles
-5.  Assignment and References
-6.  Mid-winter break! (for Seattle Public Schools)
-7.  Modules, Wrap-up, Pizza!
-8.  Optional: Data-a-thon Friday March 14, Learning Communities
+| Week | Date | Topic |
+|------|------|-------|
+|1* | Jan 21 | [Fundamentals](01-Fundamentals.qmd) |
+|2 | Jan 28 | [Iteration (for loops)](02-Iteration.qmd) |
+|3* | Feb 4 | [Conditionals](03-Conditionals.qmd) |
+|4 | Feb 11 | [Functions](04-Functions.qmd) |
+|No Class | Feb 18 | Break week |
+|5 | Feb 25 | [Iteration Styles](05-Iteration_Styles.qmd) |
+|6* | Mar 4 | [Reference vs. Copy](06-Reference_vs_Copy.qmd) / Last Day of Class |
+
+* = Ted on Campus for class
+
+
+## More About the Schedule
+
+All classes are on Wednesdays from 12:00-1:30 PM PST either online, or in Arnold M1-B406 (The Data Science Lounge). Connection details will be provided. Office hours related to each class day are posted below, and the invite will be sent to you.
+
+
+In class we will be going through the notebooks hosted on Google Classroom. 
+
+Classes will be recorded, and those recordings will be sent to you after each class.
+
 
 Full course page here: <https://hutchdatascience.org/Intermediate_Python/>
 
