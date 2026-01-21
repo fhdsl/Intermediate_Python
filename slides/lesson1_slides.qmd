@@ -210,7 +210,7 @@ What's the difference between a method and a function?
 
 ## Break!
 
-A quick survey to get us started: <https://forms.gle/kUJtevu2XynKQRq4A>
+A quick survey to get us started: <https://forms.gle/cYEWWhk1aagsefPA7>
 
 ## Dictionary
 
@@ -348,4 +348,4 @@ You can do something similar to recode the column names of a Dataframe via the [
 
 ## That's It for Today
 
-Weekly Checkin (use for any questions you might have, pacing, etc.): <https://forms.gle/GTtTEZd8A5SrkM6bA>
+Weekly Checkin (use for any questions you might have, pacing, etc.): <https://forms.gle/FUsPhbs6Nu2eGbCD6>
