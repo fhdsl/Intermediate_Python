@@ -5,6 +5,7 @@ format:
     smaller: false
     scrollable: true
     echo: true
+    standalone: true
 ---
 
 ## Welcome!
@@ -39,9 +40,9 @@ Please sign up for Google Classroom ([link](https://classroom.google.com/c/ODIzO
 
 -   Continue exploration of *data science fundamentals*: how to clean messy data using the programming fundamentals above to a Tidy form for analysis.
 
-## [A Motivating Example](https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing)
+## A Motivating Example
 
-[https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing](https://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharinghttps://colab.research.google.com/drive/1g2ylY3-s_jX2Yf2CGkIdApvgTP4vb0Dw?usp=sharing)
+Week 1 Classwork (in Classroom)
 
 ## Content of the course
 
@@ -195,7 +196,7 @@ What's the difference between a method and a function?
 
 ## Break!
 
-A quick survey to get us started: <https://forms.gle/U6atGeMHdjQuvTK67>
+A quick survey to get us started: <https://forms.gle/kUJtevu2XynKQRq4A>
 
 ## Dictionary
 
@@ -330,3 +331,7 @@ simple_df.case_control.replace({"case": "experiment", "control": "baseline"})
 . . .
 
 You can do something similar to recode the column names of a Dataframe via the [.rename()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html) method.
+
+## That's It for Today
+
+Weekly Checkin (use for any questions you might have, pacing, etc.): <https://forms.gle/GTtTEZd8A5SrkM6bA>
