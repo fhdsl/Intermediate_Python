@@ -1,0 +1,323 @@
+---
+title: "W2: Iteration"
+format: 
+  live-revealjs:
+    smaller: false
+    scrollable: true
+    echo: true
+#    embed-resources: true
+---
+
+{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+
+## List vs. Dictionary
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
+
+
+## Note about Tuples
+
+
+## Note about Reassignment
+
+
+
+## Iterable Data Structures
+
+It turns out that we can iterate over *many* types of data structures in Python:
+
+-   List
+
+. . .
+
+-   Tuple
+
+. . .
+
+-   Dictionary
+
+. . .
+
+-   String (yes, actually!)
+
+. . .
+
+-   DataFrame, Series (but not common)
+
+. . .
+
+-   Ranges (to be introduced in exercises)
+
+## Iterable data structures can...
+
+-   Access elements or subset of the data structure via the bracket `[ ]` operator.
+
+. . .
+
+-   Use the `in`, `not in` statements to check for presence of an element in the data structure.
+
+. . .
+
+-   Examine the length via `len()`.
+
+. . .
+
+-   Iterate through the data structure via a **For-Loop.**
+
+## For Loops
+
+Here is what the syntax looks like:
+
+. . .
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for rate in heartrates:
+  print("Current heartrate:", rate)
+```
+
+. . .
+
+1.  Assign `heartrates` as a list.
+
+. . .
+
+2.  Enter For-Loop: `rate` is assigned to the next element of `heartrates`. If it is the first time, `rate` is assigned as the first element of `heartrates`.
+
+. . .
+
+3.  The the indented section is run, and the `rate` is printed.
+
+. . .
+
+4.  Steps 2 and 3 are repeated until the last element of `heartrates`.
+
+## Indenting Matters
+
+Everything indented under the for loop is run for each element.
+
+The indenting (usually via 4 spaces) is a signal that the code goes together, much like curly brackets in R:
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for rate in heartrates:
+  print("Current heartrate:", rate)
+  print("adding a line")
+```
+
+This drove me crazy when I first encountered it!
+
+## Taking the sum of a list
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+total = 0
+
+for rate in heartrates:
+  total = total + rate
+  print("Current total:", total)
+  
+print("Final total:", total)
+```
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Atotal%20%3D%200%0A%0Afor%20rate%20in%20heartrates%3A%0A%20%20total%20%3D%20total%20%2B%20rate%0A%20%20print%28%22Current%20total%3A%22,%20total%29%0A%20%20%0Aprint%28%22Final%20total%3A%22,%20total%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Atotal%20%3D%200%0A%0Afor%20rate%20in%20heartrates%3A%0A%20%20total%20%3D%20total%20%2B%20rate%0A%20%20print%28%22Current%20total%3A%22,%20total%29%0A%20%20%0Aprint%28%22Final%20total%3A%22,%20total%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Modifying each element while iterating
+
+Sometimes you want to modify each element of an iterable data structure.
+
+. . .
+
+```{python}
+import math
+
+print("Before:", heartrates)
+
+for rate in heartrates:
+  rate = math.log(rate)
+  
+print("After:", heartrates)
+```
+
+. . .
+
+What happened?
+
+. . .
+
+`rate = math.log(rate)` changes the value of rate, but it is not connected to `heartrates` anymore.
+
+. . .
+
+Instead, we need to change `heartrates[index]`, where `index` is an integer that goes through all the indicies of `heartrates`.
+
+## Modifying each element while iterating, take 2
+
+Use `enumerate()` function to get a list of tuples containing index and values:
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+print(list(enumerate(heartrates)))
+```
+
+. . .
+
+```{python}
+for index, value in enumerate(heartrates):
+  print("Index:", index, "   value:", value)
+```
+
+## Modifying each element while iterating, take 2
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+print("Before:", heartrates)
+
+for index, value in enumerate(heartrates):
+  print("Index:", index, "   value:", value)
+  heartrates[index] = math.log(value)
+
+print("After:", heartrates)
+```
+
+. . .
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Conditional Statements
+
+Suppose you are recoding `heartrates`, and the numerical values should be "low" if it is between 0 and 60, "medium" if it is between 60 and 100, "high" if it is above 100, and "unknown" otherwise (when it is below 0 or other data type).
+
+Here is how the syntax looks like:
+
+```         
+if <expression1>:
+    block of code 1
+elif <expression2>:
+    block of code 2
+else:
+    block of code 3
+
+block of code 4    
+```
+
+. . .
+
+There are three possible ways the code can run:
+
+1.  If `<expression1>` is evaluated as `True`, then `block of code 1` will be run. When done, it will continue to `block of code 4`.
+
+. . .
+
+2.  If `<expression1>` is evaluated as `False`, then it will ask if `<expression2>` is `True` or not. If `True`, then `block of code 2` will be run. When done, it will continue to `block of code 4`.
+
+. . .
+
+3.  If `<expression1>` and `<expression2>` are both evaluated as `False`, then `block of code 3` is run. When done, it will continue to `block of code 4`.
+
+. . .
+
+An important takeaway is that *only one block of code can be run*.
+
+## Data Recoding Conditional Statement
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+rate = heartrates[0]
+print(rate)
+
+if rate > 0 and rate <= 60:
+  rate = "low"
+elif rate > 60 and rate <= 100:
+  rate = "medium"
+elif rate > 100:
+  rate = "high"
+else:
+  rate = "unknown"
+  
+print(rate)
+```
+
+## Variations of Conditional Statements
+
+If-statement:
+
+```{python}
+x = -12
+
+if x < 0:
+  x = x * -1
+  
+print(x)
+```
+
+. . .
+
+If-else if-statement
+
+```{python}
+x = .25
+
+if x < 0:
+  x = x * -1
+elif x >= 0 and x < 1:
+  x = 1 / x
+  
+print(x)
+
+```
+
+. . .
+
+If-else-statement
+
+```{python}
+if 102 in heartrates:
+  print("Found 102.")
+else:
+  print("Did not find 102.")
+```
+
+## Data Recoding with For-Loop
+
+```{python}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for index, rate in enumerate(heartrates):
+  if rate > 0 and rate <= 60:
+    heartrates[index] = "low"
+  elif rate > 60 and rate <= 100:
+    heartrates[index] = "medium"
+  elif rate > 100:
+    heartrates[index] = "high"
+  else:
+    heartrates[index] = "unknown"
+    
+print(heartrates)
+```
+
+## Stepping through a for loop
+
+Let's see this in action step by step:
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, you can find it [here](https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
+
+## How's the pace going for you?
+
+<https://forms.gle/cat6UjqYUuPiq8XG7>
