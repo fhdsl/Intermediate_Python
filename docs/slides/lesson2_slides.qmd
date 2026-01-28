@@ -20,13 +20,6 @@ countdown::countdown(minutes=20)
 
 # Some notes from the exercises
 
-## List vs. Dictionary
-
-![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
-
-![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
-
-
 ## Note about Tuples
 
 - I think about tuples as a *read-only* list
@@ -53,6 +46,13 @@ print(sentiments)
 
 
 # Week 2 Material
+
+## List vs. Dictionary
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
+
+![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
+
 
 ## Iterable Data Structures
 
