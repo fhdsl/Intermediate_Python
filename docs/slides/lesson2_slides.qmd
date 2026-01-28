@@ -53,6 +53,10 @@ print(sentiments)
 
 ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
 
+## Iteration and batch processing
+
+- For a collection of items
+- Do something with each item
 
 ## Iterable Data Structures
 
@@ -229,6 +233,17 @@ print("After:", heartrates)
 </iframe>
 
 If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Just for Fun: iterating over a string
+
+Before you run this, what do you think the for loop does?
+
+```{pyodide}
+my_string = "my cat likes cat food"
+
+for s in my_string:
+  print(s)
+```
 
 ## Conditional Statements
 
