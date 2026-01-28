@@ -381,6 +381,10 @@ for index, rate in enumerate(heartrates):
 print(heartrates)
 ```
 
+## What about DataFrames?
+
+- Iterating over rows in an efficent way will require us to write *functions*, so stay tuned!
+
 ## Stepping through a for loop
 
 Let's see this in action step by step:
