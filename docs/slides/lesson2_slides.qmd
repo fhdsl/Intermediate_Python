@@ -131,9 +131,9 @@ for rate in heartrates:
 
 ## Indenting Matters
 
-Everything indented under the for loop is run for each element.
+Everything indented under the for loop is run for each element. The `:` is the signal to Python that everything underneath the for loop
 
-The indenting (usually via 4 spaces) is a signal that the code goes together, much like curly brackets in R:
+The indenting (usually via 2 spaces) is a signal that the code goes together, much like curly brackets in R:
 
 ```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102]
@@ -144,6 +144,30 @@ for rate in heartrates:
 ```
 
 This drove me crazy when I first encountered it!
+
+## Indenting matters
+
+Most editors (including colab) will automatically indent using spaces when you type a `:`
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for rate in heartrates:
+```
+
+## Ending the code block
+
+To end the code block, add a line after it
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for rate in heartrates:
+  print("Current heartrate:", rate)
+  print("adding a line")
+
+print(heartrates)
+```
 
 ## Taking the sum of a list
 
