@@ -10,6 +10,16 @@ format:
 
 {{< include _extensions/r-wasm/live/_knitr.qmd >}}
 
+# 20 minutes of catchup time
+
+```{r}
+countdown::countdown(minutes=20)
+```
+
+# Start Recording
+
+# Some notes from the exercises
+
 ## List vs. Dictionary
 
 ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme)
@@ -19,10 +29,30 @@ format:
 
 ## Note about Tuples
 
+- I think about tuples as a *read-only* list
+- Has order
+- Can be heterogeneous (contain many data types)
+
+```{pyodide}
+read_only = (10, 20, 30)
+print(read_only[1])
+print(read_only[1] + 10)
+```
+
 
 ## Note about Reassignment
 
+```{pyodide}
+sentiments = {"happy":9, "sad":0}
+print(sentiments.get("embarrassed", 0))
 
+sentiments["embarrassed"] = sentiments.get("embarrassed", 0) + 10
+
+print(sentiments)
+```
+
+
+# Week 2 Material
 
 ## Iterable Data Structures
 
@@ -101,7 +131,7 @@ Everything indented under the for loop is run for each element.
 
 The indenting (usually via 4 spaces) is a signal that the code goes together, much like curly brackets in R:
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102]
 
 for rate in heartrates:
@@ -124,6 +154,8 @@ for rate in heartrates:
 print("Final total:", total)
 ```
 
+## Visual Explanation
+
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Atotal%20%3D%200%0A%0Afor%20rate%20in%20heartrates%3A%0A%20%20total%20%3D%20total%20%2B%20rate%0A%20%20print%28%22Current%20total%3A%22,%20total%29%0A%20%20%0Aprint%28%22Final%20total%3A%22,%20total%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 
 </iframe>
@@ -138,6 +170,7 @@ Sometimes you want to modify each element of an iterable data structure.
 
 ```{python}
 import math
+heartrates = [68, 54, 72, 66, 90, 102, 49]
 
 print("Before:", heartrates)
 
@@ -188,7 +221,8 @@ for index, value in enumerate(heartrates):
 print("After:", heartrates)
 ```
 
-. . .
+## A visual explanation
+
 
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=import%20math%0Aheartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102,%2049%5D%0Aprint%28%22Before%3A%22,%20heartrates%29%0A%0Afor%20index,%20m%20in%20enumerate%28heartrates%29%3A%0A%20%20print%28%22Index%3A%22,%20index,%20%22%20%20%20m%3A%22,%20m%29%0A%20%20heartrates%5Bindex%5D%20%3D%20math.log%28m%29%0A%20%20%23heartrates%5Bindex%5D%20%3D%20math.log%28heartrates%5Bindex%5D%29%20%23this%20is%20okay%20also.%0A%20%20%0Aprint%28%22After%3A%22,%20heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 
@@ -233,7 +267,7 @@ An important takeaway is that *only one block of code can be run*.
 
 ## Data Recoding Conditional Statement
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102, 49]
 rate = heartrates[0]
 print(rate)
@@ -254,7 +288,7 @@ print(rate)
 
 If-statement:
 
-```{python}
+```{pyodide}
 x = -12
 
 if x < 0:
@@ -267,7 +301,7 @@ print(x)
 
 If-else if-statement
 
-```{python}
+```{pyodide}
 x = .25
 
 if x < 0:
@@ -283,7 +317,7 @@ print(x)
 
 If-else-statement
 
-```{python}
+```{pyodide}
 if 102 in heartrates:
   print("Found 102.")
 else:
@@ -292,7 +326,7 @@ else:
 
 ## Data Recoding with For-Loop
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102]
 
 for index, rate in enumerate(heartrates):
@@ -320,4 +354,4 @@ If it doesn't load properly, you can find it [here](https://pythontutor.com/rend
 
 ## How's the pace going for you?
 
-<https://forms.gle/cat6UjqYUuPiq8XG7>
+<https://forms.gle/WRi8eNsyQ69cCqge7>
