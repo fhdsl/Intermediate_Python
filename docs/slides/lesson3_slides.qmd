@@ -1,0 +1,240 @@
+---
+title: "W3: Conditionals"
+format: 
+  live-revealjs:
+    smaller: true
+    scrollable: true
+    echo: true
+---
+
+{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+
+# 20 Minutes of Catchup Time
+
+```{r}
+countdown::countdown(minutes=20)
+```
+
+## Multi variable reassignment (unpacking)
+
+Some confusion here:
+
+```{pyodide}
+index, value = (1, 30)
+print(index)
+print(value)
+```
+
+## Looking at enumerate again
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+
+for index, value in enumerate(heartrates):
+  print(index)
+  print(value)
+```
+
+## More on `enumerate()`
+
+What is `enumerate()` returning exactly?
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+enumerate(heartrates)
+```
+
+. . .
+
+It returns a "enumerate" data structure. It doesn't make a copy of `heartrates`' indicies and `heartrates`' values to save memory. Rather, this data structure will reference `heartrates` when you iterate on it:
+
+```{pyodide}
+for index, value in enumerate(heartrates):
+  print("Index:", index, "   value:", value)
+```
+
+. . .
+
+However, if you want to see its full form, you can convert it to a list:
+
+```{pyodide}
+list(enumerate(heartrates))
+```
+
+## `zip()`
+
+Suppose that you want to loop through two iterable data structures at once, such as systolic and diastolic blood pressure. The `zip()` function will pair the data structures together as a list of tuples, similar to `enumerate()`:
+
+```{pyodide}
+systolic = [102, 99, 120, 115, 110]
+diastolic = [70, 65, 82, 62, 70]
+
+zip(systolic, diastolic)
+```
+
+. . .
+
+It returns a "zip" data structure. It doesn't make a copy of `systolic` and `diastolic` values to save memory. Rather, this data structure will reference them when you iterate on it:
+
+```{pyodide}
+for s, d in zip(systolic, diastolic):
+  print("s:", s, "   d:", d)
+```
+
+. . .
+
+However, if you want to see its full form, you can convert it to a list:
+
+```{pyodide}
+list(zip(systolic, diastolic))
+```
+
+## Unpacking iterables
+
+When we access elements of an iterable data structure, we usually use the bracket notation:
+
+```{pyodide}
+coordinates = [23, -3, 34]
+coord_x = coordinates[0]
+coord_y = coordinates[1]
+coord_z = coordinates[2]
+```
+
+. . .
+
+If you want access *all elements* of a (short) iterable data structure, you can use the following "unpacking" syntax:
+
+```{pyodide}
+coord_x, coord_y, coord_z = coordinates
+```
+
+. . .
+
+This is what is going on in the For-Loop of `enumerate()` and `zip()`.
+
+## Conditional Statements
+
+Suppose you are recoding `heartrates`, and the numerical values should be "low" if it is between 0 and 60, "medium" if it is between 60 and 100, "high" if it is above 100, and "unknown" otherwise (when it is below 0 or other data type).
+
+Here is how the syntax looks like:
+
+```         
+if <expression1>:
+    block of code 1
+elif <expression2>:
+    block of code 2
+else:
+    block of code 3
+
+block of code 4    
+```
+
+. . .
+
+There are three possible ways the code can run:
+
+1.  If `<expression1>` is evaluated as `True`, then `block of code 1` will be run. When done, it will continue to `block of code 4`.
+
+. . .
+
+2.  If `<expression1>` is evaluated as `False`, then it will ask if `<expression2>` is `True` or not. If `True`, then `block of code 2` will be run. When done, it will continue to `block of code 4`.
+
+. . .
+
+3.  If `<expression1>` and `<expression2>` are both evaluated as `False`, then `block of code 3` is run. When done, it will continue to `block of code 4`.
+
+. . .
+
+An important takeaway is that *only one block of code can be run*.
+
+## Data Recoding Conditional Statement
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+rate = heartrates[0]
+print(rate)
+
+if rate > 0 and rate <= 60:
+  rate = "low"
+elif rate > 60 and rate <= 100:
+  rate = "medium"
+elif rate > 100:
+  rate = "high"
+else:
+  rate = "unknown"
+  
+print(rate)
+```
+
+## Variations of Conditional Statements
+
+If-statement:
+
+```{pyodide}
+x = -12
+
+if x < 0:
+  x = x * -1
+  
+print(x)
+```
+
+. . .
+
+If-else if-statement
+
+```{pyodide}
+x = .25
+
+if x < 0:
+  x = x * -1
+elif x >= 0 and x < 1:
+  x = 1 / x
+  
+print(x)
+
+```
+
+. . .
+
+If-else-statement
+
+```{pyodide}
+if 102 in heartrates:
+  print("Found 102.")
+else:
+  print("Did not find 102.")
+```
+
+## Data Recoding with For-Loop
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102]
+
+for index, rate in enumerate(heartrates):
+  if rate > 0 and rate <= 60:
+    heartrates[index] = "low"
+  elif rate > 60 and rate <= 100:
+    heartrates[index] = "medium"
+  elif rate > 100:
+    heartrates[index] = "high"
+  else:
+    heartrates[index] = "unknown"
+    
+print(heartrates)
+```
+
+
+## Visual Explanation
+
+Let's see this in action step by step:
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+
+</iframe>
+
+If it doesn't load properly, you can find it [here](https://pythontutor.com/render.html#code=heartrates%20%3D%20%5B68,%2054,%2072,%2066,%2090,%20102%5D%0A%0Afor%20index,%20rate%20in%20enumerate%28heartrates%29%3A%0A%20%20if%20rate%20%3E%200%20and%20rate%20%3C%3D%2060%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22low%22%0A%20%20elif%20rate%20%3E%2060%20and%20rate%20%3C%3D%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22medium%22%0A%20%20elif%20rate%20%3E%20100%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22high%22%0A%20%20else%3A%0A%20%20%20%20heartrates%5Bindex%5D%20%3D%20%22unknown%22%0A%20%20%20%20%0Aprint%28heartrates%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
+
+## How's the pace going for you?
+
+<https://forms.gle/6s8x8h5dDudmeqSu6>
