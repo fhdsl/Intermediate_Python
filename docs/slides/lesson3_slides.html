@@ -208,21 +208,26 @@
 </div>
 
 </section>
-<section>
 <section id="minutes-of-catchup-time" class="title-slide slide level1 center">
 <h1>20 Minutes of Catchup Time</h1>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>countdown<span class="sc">::</span><span class="fu">countdown</span>(<span class="at">minutes=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="countdown" id="timer_8ba5b9db" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_14820868" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </section>
-<section id="multi-variable-reassignment-unpacking" class="slide level2">
-<h2>Multi variable reassignment (unpacking)</h2>
+
+<section>
+<section id="hit-record-in-teams" class="title-slide slide level1 center">
+<h1>Hit Record in Teams</h1>
+
+</section>
+<section id="multi-variable-eassignment-unpacking" class="slide level2">
+<h2>Multi variable eassignment (unpacking)</h2>
 <p>Some confusion here:</p>
 <div class="cell">
 <div>
@@ -235,7 +240,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW5kZXgsIHZhbHVlID0gKDEs
 </div>
 </div>
 <div class="fragment">
-<p>What happens if we don’t assign all positions?</p>
+<p>What happens if we don’t assign a name to all positions?</p>
 <div class="cell">
 <div>
 <div id="pyodide-2" class="exercise-cell">
@@ -322,7 +327,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3lzdG9saWMgPSBbMTAyLCA5
 
 </div>
 <script type="pyodide-8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZm9yIHMsIGQgaW4gemlwKHN5c3RvbGljLCBkaWFzdG9saWMpOlxuICBwcmludChcInM6XCIsIHMsIFwiICAgZDpcIiwgZCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3lzdG9saWMgPSBbMTAyLCA5OSwgMTIwLCAxMTUsIDExMF1cbmRpYXN0b2xpYyA9IFs3MCwgNjUsIDgyLCA2MiwgNzBdXG5cbmZvciBzLCBkIGluIHppcChzeXN0b2xpYywgZGlhc3RvbGljKTpcbiAgcHJpbnQoXCJzOlwiLCBzLCBcIiAgIGQ6XCIsIGQpIn0=
 </script>
 </div>
 </div>
@@ -335,7 +340,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZm9yIHMsIGQgaW4gemlwKHN5
 
 </div>
 <script type="pyodide-9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGlzdCh6aXAoc3lzdG9saWMsIGRpYXN0b2xpYykpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3lzdG9saWMgPSBbMTAyLCA5OSwgMTIwLCAxMTUsIDExMF1cbmRpYXN0b2xpYyA9IFs3MCwgNjUsIDgyLCA2MiwgNzBdXG5cbmxpc3QoemlwKHN5c3RvbGljLCBkaWFzdG9saWMpKSJ9
 </script>
 </div>
 </div>
@@ -403,6 +408,19 @@ block of code 4    </code></pre>
 <p>An important takeaway is that <em>only one block of code can be run</em>.</p>
 </div>
 </section>
+<section id="data-recoding-conditional-statement" class="slide level2">
+<h2>Data Recoding Conditional Statement</h2>
+<div class="cell">
+<div>
+<div id="pyodide-12" class="exercise-cell">
+
+</div>
+<script type="pyodide-12-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaGVhcnRyYXRlcyA9IFs2OCwgNTQsIDcyLCA2NiwgOTAsIDEwMiwgNDldXG5yYXRlID0gaGVhcnRyYXRlc1swXVxucHJpbnQocmF0ZSlcblxuaWYgcmF0ZSA+IDAgYW5kIHJhdGUgPD0gNjA6XG4gIHJhdGUgPSBcImxvd1wiXG5lbGlmIHJhdGUgPiA2MCBhbmQgcmF0ZSA8PSAxMDA6XG4gIHJhdGUgPSBcIm1lZGl1bVwiXG5lbGlmIHJhdGUgPiAxMDA6XG4gIHJhdGUgPSBcImhpZ2hcIlxuZWxzZTpcbiAgcmF0ZSA9IFwidW5rbm93blwiXG4gIFxucHJpbnQocmF0ZSkifQ==
+</script>
+</div>
+</div>
+</section>
 <section id="visually" class="slide level2">
 <h2>Visually</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -417,8 +435,8 @@ block of code 4    </code></pre>
     subgraph decisions [" "]
         direction LR
         C{if value &lt;= 60}
-        E{if value &gt; 60 and value &lt;= 100}
-        G{if value &gt; 100}
+        E{elif value &gt; 60 and value &lt;= 100}
+        G{elif value &gt; 100}
         C --&gt; E
         E --&gt; G
     end
@@ -449,19 +467,6 @@ block of code 4    </code></pre>
 </div>
 </div>
 </section>
-<section id="data-recoding-conditional-statement" class="slide level2">
-<h2>Data Recoding Conditional Statement</h2>
-<div class="cell">
-<div>
-<div id="pyodide-12" class="exercise-cell">
-
-</div>
-<script type="pyodide-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaGVhcnRyYXRlcyA9IFs2OCwgNTQsIDcyLCA2NiwgOTAsIDEwMiwgNDldXG5yYXRlID0gaGVhcnRyYXRlc1swXVxucHJpbnQocmF0ZSlcblxuaWYgcmF0ZSA+IDAgYW5kIHJhdGUgPD0gNjA6XG4gIHJhdGUgPSBcImxvd1wiXG5lbGlmIHJhdGUgPiA2MCBhbmQgcmF0ZSA8PSAxMDA6XG4gIHJhdGUgPSBcIm1lZGl1bVwiXG5lbGlmIHJhdGUgPiAxMDA6XG4gIHJhdGUgPSBcImhpZ2hcIlxuZWxzZTpcbiAgcmF0ZSA9IFwidW5rbm93blwiXG4gIFxucHJpbnQocmF0ZSkifQ==
-</script>
-</div>
-</div>
-</section>
 <section id="variations-of-conditional-statements" class="slide level2">
 <h2>Variations of Conditional Statements</h2>
 <p>If-statement:</p>
@@ -475,8 +480,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieCA9IC0xMlxuXG5pZiB4IDwg
 </script>
 </div>
 </div>
-<div class="fragment">
+</section>
+<section id="conditionals-if-else-if" class="slide level2">
+<h2>Conditionals: if-else if</h2>
 <p>If-else if-statement</p>
+<p>Run the gauntlet:</p>
 <div class="cell">
 <div>
 <div id="pyodide-14" class="exercise-cell">
@@ -487,9 +495,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieCA9IC4yNVxuXG5pZiB4IDwg
 </script>
 </div>
 </div>
-</div>
-<div class="fragment">
+<p>What happens if <code>x &gt; 1</code> (such as 2 or 10)?</p>
+</section>
+<section id="conditionals-if-else" class="slide level2">
+<h2>Conditionals: if-else</h2>
 <p>If-else-statement</p>
+<p>I think of <code>else</code> as the catch all - if none of the conditions are met, then execute code</p>
 <div class="cell">
 <div>
 <div id="pyodide-15" class="exercise-cell">
@@ -498,7 +509,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieCA9IC4yNVxuXG5pZiB4IDwg
 <script type="pyodide-15-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaWYgMTAyIGluIGhlYXJ0cmF0ZXM6XG4gIHByaW50KFwiRm91bmQgMTAyLlwiKVxuZWxzZTpcbiAgcHJpbnQoXCJEaWQgbm90IGZpbmQgMTAyLlwiKSJ9
 </script>
-</div>
 </div>
 </div>
 </section>

@@ -15,6 +15,8 @@ format:
 countdown::countdown(minutes=20)
 ```
 
+# Hit Record in Teams
+
 ## Multi variable eassignment (unpacking)
 
 Some confusion here:
@@ -87,6 +89,9 @@ zip(systolic, diastolic)
 It returns a "zip" data structure. It doesn't make a copy of `systolic` and `diastolic` values to save memory. Rather, this data structure will reference them when you iterate on it:
 
 ```{pyodide}
+systolic = [102, 99, 120, 115, 110]
+diastolic = [70, 65, 82, 62, 70]
+
 for s, d in zip(systolic, diastolic):
   print("s:", s, "   d:", d)
 ```
@@ -96,6 +101,9 @@ for s, d in zip(systolic, diastolic):
 However, if you want to see its full form, you can convert it to a list:
 
 ```{pyodide}
+systolic = [102, 99, 120, 115, 110]
+diastolic = [70, 65, 82, 62, 70]
+
 list(zip(systolic, diastolic))
 ```
 
