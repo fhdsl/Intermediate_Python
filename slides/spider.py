@@ -39,3 +39,11 @@ def create_spider_plot(skill_values, title):
 create_spider_plot([1, 4, 1, 3, 4], "Executives")
 
 create_spider_plot([1,5,2,4,2], "Nurses")
+
+create_spider_plot([1, 3, 2, 3, 5], "Oncologists" )
+
+create_spider_plot([1, 3, 5, 4, 3], "PIs/Researchers")
+
+create_spider_plot([3,5,4,5,3], "Statisticians/Data Scientists")
+
+create_spider_plot([0,0,0,0,0], "Dimensions of AI Training")

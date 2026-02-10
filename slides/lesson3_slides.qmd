@@ -1,18 +1,57 @@
 ---
 title: "W3: Conditionals"
 format: 
-  revealjs:
+  live-revealjs:
     smaller: true
     scrollable: true
     echo: true
-output-location: fragment
 ---
+
+{{< include _extensions/r-wasm/live/_knitr.qmd >}}
+
+# 20 Minutes of Catchup Time
+
+```{r}
+countdown::countdown(minutes=20)
+```
+
+# Hit Record in Teams
+
+## Multi variable unpacking
+
+Some confusion here:
+
+```{pyodide}
+index, value = (1, 30)
+print(index)
+print(value)
+```
+
+. . .
+
+What happens if we don't assign a name to all positions?
+
+```{pyodide}
+index, value = (1, 30, 40)
+print(index)
+print(value)
+```
+
+## Looking at enumerate again
+
+```{pyodide}
+heartrates = [68, 54, 72, 66, 90, 102, 49]
+
+for index, value in enumerate(heartrates):
+  print(index)
+  print(value)
+```
 
 ## More on `enumerate()`
 
 What is `enumerate()` returning exactly?
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102, 49]
 enumerate(heartrates)
 ```
@@ -21,7 +60,7 @@ enumerate(heartrates)
 
 It returns a "enumerate" data structure. It doesn't make a copy of `heartrates`' indicies and `heartrates`' values to save memory. Rather, this data structure will reference `heartrates` when you iterate on it:
 
-```{python}
+```{pyodide}
 for index, value in enumerate(heartrates):
   print("Index:", index, "   value:", value)
 ```
@@ -30,7 +69,7 @@ for index, value in enumerate(heartrates):
 
 However, if you want to see its full form, you can convert it to a list:
 
-```{python}
+```{pyodide}
 list(enumerate(heartrates))
 ```
 
@@ -38,7 +77,7 @@ list(enumerate(heartrates))
 
 Suppose that you want to loop through two iterable data structures at once, such as systolic and diastolic blood pressure. The `zip()` function will pair the data structures together as a list of tuples, similar to `enumerate()`:
 
-```{python}
+```{pyodide}
 systolic = [102, 99, 120, 115, 110]
 diastolic = [70, 65, 82, 62, 70]
 
@@ -49,7 +88,10 @@ zip(systolic, diastolic)
 
 It returns a "zip" data structure. It doesn't make a copy of `systolic` and `diastolic` values to save memory. Rather, this data structure will reference them when you iterate on it:
 
-```{python}
+```{pyodide}
+systolic = [102, 99, 120, 115, 110]
+diastolic = [70, 65, 82, 62, 70]
+
 for s, d in zip(systolic, diastolic):
   print("s:", s, "   d:", d)
 ```
@@ -58,7 +100,10 @@ for s, d in zip(systolic, diastolic):
 
 However, if you want to see its full form, you can convert it to a list:
 
-```{python}
+```{pyodide}
+systolic = [102, 99, 120, 115, 110]
+diastolic = [70, 65, 82, 62, 70]
+
 list(zip(systolic, diastolic))
 ```
 
@@ -66,7 +111,7 @@ list(zip(systolic, diastolic))
 
 When we access elements of an iterable data structure, we usually use the bracket notation:
 
-```{python}
+```{pyodide}
 coordinates = [23, -3, 34]
 coord_x = coordinates[0]
 coord_y = coordinates[1]
@@ -77,7 +122,7 @@ coord_z = coordinates[2]
 
 If you want access *all elements* of a (short) iterable data structure, you can use the following "unpacking" syntax:
 
-```{python}
+```{pyodide}
 coord_x, coord_y, coord_z = coordinates
 ```
 
@@ -120,9 +165,11 @@ There are three possible ways the code can run:
 
 An important takeaway is that *only one block of code can be run*.
 
+
+
 ## Data Recoding Conditional Statement
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102, 49]
 rate = heartrates[0]
 print(rate)
@@ -139,11 +186,50 @@ else:
 print(rate)
 ```
 
+## Visually
+
+```{mermaid}
+%%| echo: false
+flowchart LR
+    B[value]
+    B --> C
+    
+    subgraph decisions [" "]
+        direction LR
+        C{if value <= 60}
+        E{elif value > 60 and value <= 100}
+        G{elif value > 100}
+        C --> E
+        E --> G
+    end
+    
+    subgraph decision1 [" "]
+        direction TB
+        C --> D["`low`"]
+    end
+
+    subgraph decision2 [" "]
+        direction TB
+        E --> F["`medium`"]
+    end
+
+    subgraph decision3 [" "]
+        direction TB
+        G --> H["`fast`"]
+    end
+    
+    style decisions fill:none,stroke:none
+    style decision1 fill:none,stroke:none
+    style decision2 fill:none,stroke:none
+    style decision3 fill:none,stroke:none
+```
+
+
 ## Variations of Conditional Statements
 
 If-statement:
 
-```{python}
+```{pyodide}
 x = -12
 
 if x < 0:
@@ -152,11 +238,13 @@ if x < 0:
 print(x)
 ```
 
-. . .
+## Conditionals: if-else if
 
 If-else if-statement
 
-```{python}
+Run the gauntlet:
+
+```{pyodide}
 x = .25
 
 if x < 0:
@@ -168,11 +256,15 @@ print(x)
 
 ```
 
-. . .
+What happens if `x > 1` (such as 2 or 10)?
+
+## Conditionals: if-else
 
 If-else-statement
 
-```{python}
+I think of `else` as the catch all - if none of the conditions are met, then execute code
+
+```{pyodide}
 if 102 in heartrates:
   print("Found 102.")
 else:
@@ -181,7 +273,7 @@ else:
 
 ## Data Recoding with For-Loop
 
-```{python}
+```{pyodide}
 heartrates = [68, 54, 72, 66, 90, 102]
 
 for index, rate in enumerate(heartrates):
@@ -197,7 +289,8 @@ for index, rate in enumerate(heartrates):
 print(heartrates)
 ```
 
-. . .
+
+## Visual Explanation
 
 Let's see this in action step by step:
 
@@ -209,4 +302,4 @@ If it doesn't load properly, you can find it [here](https://pythontutor.com/rend
 
 ## How's the pace going for you?
 
-<https://forms.gle/cat6UjqYUuPiq8XG7>
+<https://forms.gle/6s8x8h5dDudmeqSu6>
