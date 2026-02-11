@@ -9,11 +9,49 @@ format:
 
 {{< include _extensions/r-wasm/live/_knitr.qmd >}}
 
+# 20 Minutes of Catchup Time
+
+```{r}
+countdown::countdown(minutes=20)
+```
+
+# Hit Record in Teams
+
 ## Announcements
 
 -   No class next week!
-
 -   Come back in two weeks to put all of this knowledge into a data analysis project. And then 🍕 for the final class the week after.
+
+## f-strings
+
+Using an `f""` in front of our string allows us to do variable substitution. Anything in the string that is surrounded by `{}` python will interpret as a variable.
+
+```{pyodide}
+nums = [3,4,5,7]
+for num in nums:
+  print(f"On Number: {num}")
+```
+
+<https://www.geeksforgeeks.org/python/formatted-string-literals-f-strings-python/>
+
+
+
+## Indenting Matters
+
+Anyone spot the mistake here?
+
+```{pyodide}
+total = 0
+nums = [3,4,5,7]
+
+for num in nums:
+  print("On Number " + num)
+
+total = total + num
+
+print(total)
+```
+
 
 ## Why Functions?
 
@@ -25,36 +63,129 @@ format:
 
 2.  Create modular structure and abstraction: You only need to know the function name, inputs, and output to use it, and don't have to worry how it works. Functions can be shared with others to use.
 
-## Anatomy of a function definition
+## Anatomy of a function definition {auto-animate=true}
 
-. . .
+:::: {.columns}
 
-```         
-def <function name>(<input arguments>):
-    """ documentation string """
-    code block
-    return <variable>
+::: {.column width="40%"}
+```{python}
+#| eval: false
+#| code-line-numbers: "1"
+def <function name>(<input arguments>): # <1>
+    """ documentation string """  #<2>
+    code block                    #<3>
+    return <variable>             #<4>
 ```
 
-. . .
+:::
 
-`<function name>` is the function's name you are creating.
+::: {.column width="60%"}
+1. `<function name>` is the function's name you are creating. `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+:::
 
-. . .
+::::
 
-`<input arguments>` specify the input arguments for the function as variable, separated by commas.
 
-. . .
+## Anatomy of a function definition {auto-animate=true}
 
-`""" documentation string """` describes what the function is doing. It is considered optional but [highly recommended](https://peps.python.org/pep-0257/).
+:::: {.columns}
 
-. . .
+::: {.column width="40%"}
+```{python}
+#| eval: false
+#| code-line-numbers: "2"
+def <function name>(<input arguments>): # <1>
+    """ documentation string """  #<2>
+    code block                    #<3>
+    return <variable>             #<4>
+```
 
-`code block` performs the action of the function, typically using the input arguments of the function.
+:::
 
-. . .
+::: {.column width="60%"}
+1. `<function name>` is the function's name you are creating. `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+2. `""" documentation string """` describes what the function is doing. It is considered optional but [highly recommended](https://peps.python.org/pep-0257/).
 
-`return <variable>` as the output of the function.
+:::
+
+::::
+
+
+
+
+## Anatomy of a function definition {auto-animate=true}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{python}
+#| eval: false
+#| code-line-numbers: "3"
+def <function name>(<input arguments>): # <1>
+    """ documentation string """  #<2>
+    code block                    #<3>
+    return <variable>             #<4>
+```
+:::
+
+::: {.column width="60%"}
+1. `<function name>` is the function's name you are creating. `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+2. `""" documentation string """` describes what the function is doing. It is considered optional but [highly recommended](https://peps.python.org/pep-0257/).
+3. `code block` performs the action of the function, typically using the input arguments of the function.
+:::
+
+::::
+
+
+
+
+
+## Anatomy of a function definition {auto-animate=true}
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{python}
+#| eval: false
+#| code-line-numbers: "4"
+def <function name>(<input arguments>): # <1>
+    """ documentation string """  #<2>
+    code block                    #<3>
+    return <variable>             #<4>
+```
+
+:::
+
+::: {.column width="60%"}
+1. `<function name>` is the function's name you are creating. `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+2. `""" documentation string """` describes what the function is doing. It is considered optional but [highly recommended](https://peps.python.org/pep-0257/).
+3. `code block` performs the action of the function, typically using the input arguments of the function.
+4. `return <variable>` as the output of the function.
+:::
+
+::::
+
+
+
+
+
+## Simple example
+
+Here's an simple example to define a function that adds two numbers together:
+
+```{python}
+#| eval: false
+def add_numbers(num1, num2): # <1>
+  """ Adds two input numbers together. """ # <2>
+  result = num1 + num2 # <3>
+  return result      # <4>
+```
+
+1. `<function name>` is the function's name you are creating. `<input arguments>` specify the input arguments for the function as variable, separated by commas.
+2. `""" documentation string """` describes what the function is doing. It is considered optional but [highly recommended](https://peps.python.org/pep-0257/).
+3. `code block` performs the action of the function, typically using the input arguments of the function.
+4. `return <variable>` as the output of the function.
 
 ## Simple example
 
@@ -67,7 +198,7 @@ def add_numbers(num1, num2):
   return result
 ```
 
-. . .
+. . . 
 
 When this code is run, `add_numbers()` is stored in the environment, but the function is never run. To run the function,
 
@@ -100,6 +231,20 @@ The reason of having some of this "privacy" in the local environment is to make 
 </iframe>
 
 If it doesn't load properly, here is the [link](https://pythontutor.com/render.html#code=def%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22%20Adds%20two%20input%20numbers%20together.%20%22%22%22%0A%20%20result%20%3D%20num1%20%2B%20num2%0A%20%20return%20result%0A%20%20%0Aadd_numbers%283,%204%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+## Function variables and scope
+
+Variables defined in a function can't be used outside of a function:
+
+```{pyodide}
+def add_numbers(num1, num2):
+  """ Adds two input numbers together. """
+  result = num1 + num2
+  return result
+
+print(add_numbers(1,4))
+print(result)
+```
 
 
 ## What if You don't return a result?
