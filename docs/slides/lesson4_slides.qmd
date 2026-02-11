@@ -247,6 +247,18 @@ print(result)
 ```
 
 
+## Arguments and Scope
+
+Arguments act as inputs to the function. It's best to act as if the function can't see anything except the inputs to the function.
+
+We can't access the value of our argument outside of calling the function:
+
+```{pyodide}
+add_numbers(num1 = 1, num2 = 4)
+
+num1
+```
+
 ## What if You don't return a result?
 
 What happens if you don't return a value?
@@ -290,7 +302,22 @@ add_numbers(num1 = "My name is ", num2 = "Ted")
 
 Adding strings is defined in Python!
 
-Think about checking for the datatypes for your argument
+## Checking for Inputs
+
+Think about checking for the datatypes for your argument. 
+
+```{pyodide}
+def add_numbers(num1, num2):
+  """ Adds two input numbers together. """
+  if type(num1) is not int:
+    raise TypeError("Expected Int input")
+    
+  result = num1 + num2
+  return result
+
+add_numbers(num1 = "My name is ", num2 = "Ted")
+```
+
 
 ## Function arguments create modularity
 
