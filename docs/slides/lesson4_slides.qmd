@@ -311,7 +311,7 @@ def add_numbers(num1, num2):
   """ Adds two input numbers together. """
   if type(num1) is not int:
     raise TypeError("Expected Int input")
-    
+
   result = num1 + num2
   return result
 
@@ -340,7 +340,7 @@ You will need to use conditional statements within the body of the function.
 
 ```{pyodide}
 ## Write your function here
-function my_abs(x):
+def my_abs(x):
   
 
 print(my_abs(-3))
@@ -357,7 +357,7 @@ Use cases: `my_abs_iterated([3, -9, 2]) = [3, 9, 2]`.
 
 ```{pyodide}
 ##Write your function here
-function my_abs_iterated(x):
+def my_abs_iterated(x):
 
 
 print(my_abs_iterated([3, -9, 2]))
