@@ -1,0 +1,213 @@
+---
+title: "W5: Iteration Styles"
+format: 
+  live-revealjs:
+    smaller: true
+    scrollable: true
+    echo: true
+---
+
+
+## [Last Class Pizza and Code-a-thon](https://forms.gle/95M6NungaXxPxRLFA)
+
+<https://forms.gle/95M6NungaXxPxRLFA>
+
+## Iteration styles
+
+-   For-Loops
+
+-   List Comprehension
+
+-   Maps
+
+## Consider the following pattern
+
+```{pyodide}
+def cool_function(x):
+  return x + 1
+```
+
+. . .
+
+```{pyodide}
+my_list = [3, -35, 98, 2.3, 0, -3]
+
+for i, element in enumerate(my_list):
+  my_list[i] = cool_function(element)
+print(my_list)
+
+```
+
+. . .
+
+```{pyodide}
+my_list = [3, -35, 98, 2.3, 0, -3]
+
+new_list = []
+for element in my_list:
+  new_list.append(cool_function(element))
+print(new_list)  
+```
+
+. . .
+
+"Apply `cool_function()` to every element of `my_list`."
+
+## List Comphrenension
+
+When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
+
+```python         
+[<expression> for <var> in <iterable>]
+   ^^              ^^  
+  Function         for loop
+```
+
+- Notice the `[]` - indicates we're outputting a list
+- <expression> must use <var> as input
+- <var> must iterate over <iterable>
+
+```{pyodide}
+my_list = [3,-35,-98]
+[print(num) for num in my_list]
+```
+
+## Try it out
+
+```{pyodide}
+def cool_function(x):
+  return x + 1
+
+my_list = [3, -35, 98, 2.3, 0, -3]
+
+my_list = [cool_function(element) for element in my_list]
+
+print(my_list)
+```
+
+. . .
+
+```{pyodide}
+my_list = [3, -35, 98, 2.3, 0, -3]
+
+new_list = [cool_function(element) for element in my_list]
+
+print(new_list)
+```
+
+. . .
+
+Step-by-step:
+
+1.  Look at the first member of `my_list`, and assign it as `element`.
+2.  Evaluate `cool_function(element)`, and the output value is stored as the first element of our output list.
+3.  Proceed to the next member of `my_list` and assign it as `element`. Repeat steps 2, 3 until we're done.
+
+## Practice with List Comprehensions
+
+Guess what the following code will do:
+
+```{pyodide}
+my_list = [3, -35, 98, 2.3, 0, -3]
+
+output = [element / 2 for element in my_list]
+```
+
+. . .
+
+```{pyodide}
+fruits = ["apple", "banana", "orange", "guava"]
+
+output = [f.upper() for f in fruits]
+```
+
+. . .
+
+```{pyodide}
+output = [x for x in range(10)]
+```
+
+## Maps
+
+How should we use iteration on the column of a Dataframe?
+
+An extremely common iteration pattern is to apply a function to each element of the column (Series) to transform the data.
+
+But first, perhaps there exist a function already that can be used on the column already:
+
+```{pyodide}
+import pandas as pd
+import numpy as np
+
+simple_df = pd.DataFrame(data={'id': ["AAA", "BBB", "CCC", "DDD", "EEE"],
+                               'case_control': ["case", "case", "control", "control", "control"],
+                               'measurement1': [2.5, 3.5, 9, .1, 2.2],
+                               'measurement2': [0, 0, .5, .24, .003],
+                               'measurement3': [80, 2, 1, 1, 2]})
+
+np.log(simple_df.measurement1)
+```
+
+. . .
+
+`np.log()` takes in a column (Series) as input. But what about functions whose input is a simple data type, such as `cool_function(x)`?
+
+## Maps
+
+A **map** (also known as a **functional**) is a function that takes in an iterable data structure and function as inputs and applies the function on the data structure, element by element. It *maps* your input iterable data structure to an output data structure based on the function.
+
+. . .
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/06/Mapping-steps-loillibe-new.gif)
+
+. . .
+
+![](https://d33wubrfki0l68.cloudfront.net/f0494d020aa517ae7b1011cea4c4a9f21702df8b/2577b/diagrams/functionals/map.png){width="250"}
+
+. . .
+
+```{pyodide}
+simple_df.measurement1.map(cool_function)
+```
+
+## Maps for data recoding
+
+Suppose we want to create cutoffs for the column "measurement1" using the following function:
+
+```{pyodide}
+def measurement1_cutoff_rule(x):
+  if x > 0 and x < 2:
+    return "low"
+  elif x >= 2 and x < 7:
+    return "medium"
+  elif x >= 7:
+    return "high"
+  else:
+    return "unknown"
+```
+
+. . .
+
+We can map this function `measurement1_cutoff_rule()` to each element of "measurement1":
+
+```{pyodide}
+simple_df.measurement1.map(measurement1_cutoff_rule)
+```
+
+## Which iteration method to use?
+
+In order of consideration:
+
+-   When you can, use existing functions and methods that can carry out the iteration task. For example, if you want to compute the mean value of a Dataframe's column, use the `.mean()` method. It will be much more efficient iterating via a For-Loop because it has been optimized.
+
+. . .
+
+-   If you need to use a function on each element of a Dataframe's column, such as data recoding, use the `.map()` method to help with the iteration.
+
+. . .
+
+-   If your desired output is a List and the task of iteration is a single expression, consider writing a List Comprehension.
+
+. . .
+
+-   When working with iterable data structures, For-Loops are the most general purpose.
