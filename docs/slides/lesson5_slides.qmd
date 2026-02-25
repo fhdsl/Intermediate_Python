@@ -7,8 +7,19 @@ format:
     echo: true
 ---
 
+## Catch up Time
+
+```{r}
+countdown::countdown(15)
+
+```
+
 
 ## [Last Class Pizza and Code-a-thon](https://forms.gle/95M6NungaXxPxRLFA)
+
+- Next week is last week of class!
+- If you'd like pizza in person, please use the RSVP
+- Dietary preferences and helps us 
 
 <https://forms.gle/95M6NungaXxPxRLFA>
 
@@ -53,7 +64,32 @@ print(new_list)
 
 "Apply `cool_function()` to every element of `my_list`."
 
-## List Comphrenension
+## List Comprehensions {auto-animate=true}
+
+When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
+
+```python         
+[<expression> for <var> in <iterable>]
+
+```
+
+- Notice the `[]` - indicates we're outputting a list
+
+
+## List Comprehensions {auto-animate=true}
+
+When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
+
+```python         
+[<expression> for <var> in <iterable>]
+                   ^^  
+                   for loop
+```
+
+- Notice the `[]` - indicates we're outputting a list
+- `<var>` must iterate over `<iterable>`
+
+## List Comprehensions {auto-animate=true}
 
 When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
 
@@ -64,13 +100,18 @@ When the final product of a For-Loop is a List and the For-Loop involves a singl
 ```
 
 - Notice the `[]` - indicates we're outputting a list
-- <expression> must use <var> as input
-- <var> must iterate over <iterable>
+- `<var>` must iterate over `<iterable>`
+- `<expression>` must use `<var>` as input
+- Remember, the output is a list!
+
+## List Comprehension in Action
 
 ```{pyodide}
 my_list = [3,-35,-98]
 [print(num) for num in my_list]
 ```
+
+- Returns `[None, None, None]` because the expression didn't return anything
 
 ## Try it out
 
@@ -85,7 +126,7 @@ my_list = [cool_function(element) for element in my_list]
 print(my_list)
 ```
 
-. . .
+## Using Append
 
 ```{pyodide}
 my_list = [3, -35, 98, 2.3, 0, -3]

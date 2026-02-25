@@ -191,6 +191,8 @@
   </style>
   <script type="module" src="lesson5_slides_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="lesson5_slides_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <link href="lesson5_slides_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="lesson5_slides_files/libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -203,8 +205,25 @@
 </div>
 
 </section>
+<section id="catch-up-time" class="slide level2">
+<h2>Catch up Time</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>countdown<span class="sc">::</span><span class="fu">countdown</span>(<span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="countdown" id="timer_5855eb72" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
 <section id="last-class-pizza-and-code-a-thon" class="slide level2">
 <h2><a href="https://forms.gle/95M6NungaXxPxRLFA">Last Class Pizza and Code-a-thon</a></h2>
+<ul>
+<li>Next week is last week of class!</li>
+<li>If you’d like pizza in person, please use the RSVP</li>
+<li>Dietary preferences and helps us</li>
+</ul>
 <p><a href="https://forms.gle/95M6NungaXxPxRLFA" class="uri">https://forms.gle/95M6NungaXxPxRLFA</a></p>
 </section>
 <section id="iteration-styles" class="slide level2">
@@ -217,6 +236,7 @@
 </section>
 <section id="consider-the-following-pattern" class="slide level2">
 <h2>Consider the following pattern</h2>
+<div class="cell">
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
@@ -225,7 +245,9 @@
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNvb2xfZnVuY3Rpb24oeCk6XG4gIHJldHVybiB4ICsgMSJ9
 </script>
 </div>
+</div>
 <div class="fragment">
+<div class="cell">
 <div>
 <div id="pyodide-2" class="exercise-cell">
 
@@ -235,7 +257,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUs
 </script>
 </div>
 </div>
+</div>
 <div class="fragment">
+<div class="cell">
 <div>
 <div id="pyodide-3" class="exercise-cell">
 
@@ -245,21 +269,46 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUs
 </script>
 </div>
 </div>
+</div>
 <div class="fragment">
 <p>“Apply <code>cool_function()</code> to every element of <code>my_list</code>.”</p>
 </div>
 </section>
-<section id="list-comphrenension" class="slide level2">
-<h2>List Comphrenension</h2>
+<section id="list-comprehensions" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">List Comprehensions</h2>
 <p>When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a “<strong>List Comprehension”</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>[<span class="op">&lt;</span>expression<span class="op">&gt;</span> <span class="cf">for</span> <span class="op">&lt;</span>var<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>iterable<span class="op">&gt;</span>]</span>
-<span id="cb1-2"><a href=""></a>   <span class="op">^^</span>              <span class="op">^^</span>  </span>
-<span id="cb1-3"><a href=""></a>  Function         <span class="cf">for</span> loop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a href=""></a>[<span class="op">&lt;</span>expression<span class="op">&gt;</span> <span class="cf">for</span> <span class="op">&lt;</span>var<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>iterable<span class="op">&gt;</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Notice the <code>[]</code> - indicates we’re outputting a list</li>
-<li><expression> must use <var> as input</var></expression></li>
-<li><var> must iterate over <iterable></iterable></var></li>
 </ul>
+</section>
+<section id="list-comprehensions-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">List Comprehensions</h2>
+<p>When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a “<strong>List Comprehension”</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a href=""></a>[<span class="op">&lt;</span>expression<span class="op">&gt;</span> <span class="cf">for</span> <span class="op">&lt;</span>var<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>iterable<span class="op">&gt;</span>]</span>
+<span id="cb3-2" class="hljs-ln-code"><a href=""></a>                   <span class="op">^^</span>  </span>
+<span id="cb3-3" class="hljs-ln-code"><a href=""></a>                   <span class="cf">for</span> loop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Notice the <code>[]</code> - indicates we’re outputting a list</li>
+<li><code>&lt;var&gt;</code> must iterate over <code>&lt;iterable&gt;</code></li>
+</ul>
+</section>
+<section id="list-comprehensions-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">List Comprehensions</h2>
+<p>When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a “<strong>List Comprehension”</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a href=""></a>[<span class="op">&lt;</span>expression<span class="op">&gt;</span> <span class="cf">for</span> <span class="op">&lt;</span>var<span class="op">&gt;</span> <span class="kw">in</span> <span class="op">&lt;</span>iterable<span class="op">&gt;</span>]</span>
+<span id="cb4-2" class="hljs-ln-code"><a href=""></a>   <span class="op">^^</span>              <span class="op">^^</span>  </span>
+<span id="cb4-3" class="hljs-ln-code"><a href=""></a>  Function         <span class="cf">for</span> loop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Notice the <code>[]</code> - indicates we’re outputting a list</li>
+<li><code>&lt;var&gt;</code> must iterate over <code>&lt;iterable&gt;</code></li>
+<li><code>&lt;expression&gt;</code> must use <code>&lt;var&gt;</code> as input</li>
+<li>Remember, the output is a list!</li>
+</ul>
+</section>
+<section id="list-comprehension-in-action" class="slide level2">
+<h2>List Comprehension in Action</h2>
+<div class="cell">
 <div>
 <div id="pyodide-4" class="exercise-cell">
 
@@ -268,9 +317,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUs
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLC0zNSwtOThdXG5bcHJpbnQobnVtKSBmb3IgbnVtIGluIG15X2xpc3RdIn0=
 </script>
 </div>
+</div>
+<ul>
+<li>Returns <code>[None, None, None]</code> because the expression didn’t return anything</li>
+</ul>
 </section>
-<section id="try-it-out" class="slide level2 scrollable">
+<section id="try-it-out" class="slide level2">
 <h2>Try it out</h2>
+<div class="cell">
 <div>
 <div id="pyodide-5" class="exercise-cell">
 
@@ -279,7 +333,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLC0zNSwt
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIGNvb2xfZnVuY3Rpb24oeCk6XG4gIHJldHVybiB4ICsgMVxuXG5teV9saXN0ID0gWzMsIC0zNSwgOTgsIDIuMywgMCwgLTNdXG5cbm15X2xpc3QgPSBbY29vbF9mdW5jdGlvbihlbGVtZW50KSBmb3IgZWxlbWVudCBpbiBteV9saXN0XVxuXG5wcmludChteV9saXN0KSJ9
 </script>
 </div>
-<div class="fragment">
+</div>
+</section>
+<section id="using-append" class="slide level2 scrollable">
+<h2>Using Append</h2>
+<div class="cell">
 <div>
 <div id="pyodide-6" class="exercise-cell">
 
@@ -301,6 +359,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUs
 <section id="practice-with-list-comprehensions" class="slide level2">
 <h2>Practice with List Comprehensions</h2>
 <p>Guess what the following code will do:</p>
+<div class="cell">
 <div>
 <div id="pyodide-7" class="exercise-cell">
 
@@ -309,7 +368,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUs
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXlfbGlzdCA9IFszLCAtMzUsIDk4LCAyLjMsIDAsIC0zXVxuXG5vdXRwdXQgPSBbZWxlbWVudCAvIDIgZm9yIGVsZW1lbnQgaW4gbXlfbGlzdF0ifQ==
 </script>
 </div>
+</div>
 <div class="fragment">
+<div class="cell">
 <div>
 <div id="pyodide-8" class="exercise-cell">
 
@@ -319,7 +380,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJ1aXRzID0gW1wiYXBwbGVc
 </script>
 </div>
 </div>
+</div>
 <div class="fragment">
+<div class="cell">
 <div>
 <div id="pyodide-9" class="exercise-cell">
 
@@ -329,12 +392,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoib3V0cHV0ID0gW3ggZm9yIHgg
 </script>
 </div>
 </div>
+</div>
 </section>
 <section id="maps" class="slide level2">
 <h2>Maps</h2>
 <p>How should we use iteration on the column of a Dataframe?</p>
 <p>An extremely common iteration pattern is to apply a function to each element of the column (Series) to transform the data.</p>
 <p>But first, perhaps there exist a function already that can be used on the column already:</p>
+<div class="cell">
 <div>
 <div id="pyodide-10" class="exercise-cell">
 
@@ -342,6 +407,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoib3V0cHV0ID0gW3ggZm9yIHgg
 <script type="pyodide-10-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBwZFxuaW1wb3J0IG51bXB5IGFzIG5wXG5cbnNpbXBsZV9kZiA9IHBkLkRhdGFGcmFtZShkYXRhPXsnaWQnOiBbXCJBQUFcIiwgXCJCQkJcIiwgXCJDQ0NcIiwgXCJERERcIiwgXCJFRUVcIl0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2Nhc2VfY29udHJvbCc6IFtcImNhc2VcIiwgXCJjYXNlXCIsIFwiY29udHJvbFwiLCBcImNvbnRyb2xcIiwgXCJjb250cm9sXCJdLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICdtZWFzdXJlbWVudDEnOiBbMi41LCAzLjUsIDksIC4xLCAyLjJdLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICdtZWFzdXJlbWVudDInOiBbMCwgMCwgLjUsIC4yNCwgLjAwM10sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ21lYXN1cmVtZW50Myc6IFs4MCwgMiwgMSwgMSwgMl19KVxuXG5ucC5sb2coc2ltcGxlX2RmLm1lYXN1cmVtZW50MSkifQ==
 </script>
+</div>
 </div>
 <div class="fragment">
 <p><code>np.log()</code> takes in a column (Series) as input. But what about functions whose input is a simple data type, such as <code>cool_function(x)</code>?</p>
@@ -357,6 +423,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IHBhbmRhcyBhcyBw
 <p><img data-src="https://d33wubrfki0l68.cloudfront.net/f0494d020aa517ae7b1011cea4c4a9f21702df8b/2577b/diagrams/functionals/map.png" width="250"></p>
 </div>
 <div class="fragment">
+<div class="cell">
 <div>
 <div id="pyodide-11" class="exercise-cell">
 
@@ -366,10 +433,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2ltcGxlX2RmLm1lYXN1cmVt
 </script>
 </div>
 </div>
+</div>
 </section>
 <section id="maps-for-data-recoding" class="slide level2">
 <h2>Maps for data recoding</h2>
 <p>Suppose we want to create cutoffs for the column “measurement1” using the following function:</p>
+<div class="cell">
 <div>
 <div id="pyodide-12" class="exercise-cell">
 
@@ -378,8 +447,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2ltcGxlX2RmLm1lYXN1cmVt
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIG1lYXN1cmVtZW50MV9jdXRvZmZfcnVsZSh4KTpcbiAgaWYgeCA+IDAgYW5kIHggPCAyOlxuICAgIHJldHVybiBcImxvd1wiXG4gIGVsaWYgeCA+PSAyIGFuZCB4IDwgNzpcbiAgICByZXR1cm4gXCJtZWRpdW1cIlxuICBlbGlmIHggPj0gNzpcbiAgICByZXR1cm4gXCJoaWdoXCJcbiAgZWxzZTpcbiAgICByZXR1cm4gXCJ1bmtub3duXCIifQ==
 </script>
 </div>
+</div>
 <div class="fragment">
 <p>We can map this function <code>measurement1_cutoff_rule()</code> to each element of “measurement1”:</p>
+<div class="cell">
 <div>
 <div id="pyodide-13" class="exercise-cell">
 
@@ -387,6 +458,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIG1lYXN1cmVtZW50MV9j
 <script type="pyodide-13-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2ltcGxlX2RmLm1lYXN1cmVtZW50MS5tYXAobWVhc3VyZW1lbnQxX2N1dG9mZl9ydWxlKSJ9
 </script>
+</div>
 </div>
 </div>
 </section>
@@ -656,6 +728,44 @@ W10=
     window._ojs.selfContained = false;
     window._ojs.runtime.interpretFromScriptTags();
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
