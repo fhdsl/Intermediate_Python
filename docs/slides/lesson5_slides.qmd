@@ -23,6 +23,21 @@ countdown::countdown(15)
 
 <https://forms.gle/95M6NungaXxPxRLFA>
 
+## Indenting and Returning
+
+Anyone have any idea what is going on with this code? Why is it returning only a single value?
+
+```{pyodide}
+def my_mean(my_list):
+  """Computes the mean value of `my_list` and returns it."""
+  total = 0
+  for value in my_list:
+    total = total + value
+    return total/len(my_list)
+
+my_mean([1,5,10])
+```
+
 ## Iteration styles
 
 -   For-Loops
