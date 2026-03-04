@@ -83,6 +83,15 @@ format:
 
 -   Stay tuned for future classes...
 
+
+## Machine Learning for Python (Spring Quarter)
+
+> The course covers the framework of machine learning for predictive modeling and model interpretation from a practitioner's perspective. 
+
+> You will be able to implement several popular machine learning techniques based on the question of interest and the dataset at hand. You will then evaluate the model based on their performance and diagnostics to understand its strengths and limitations. 
+
+> Technical mathematics and algorithms will not be emphasized.
+
 ## End of class stickers
 
 ![](images/stickers mosaic.png)
