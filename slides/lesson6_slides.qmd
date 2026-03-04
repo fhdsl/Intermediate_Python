@@ -7,6 +7,14 @@ format:
     echo: true
 ---
 
+# Too Busy, Grabbing Pizza
+
+## Going for Badge Completion
+
+- [Dashboard](https://docs.google.com/spreadsheets/d/1sxEx6am-LoW0dZMMwnnI3huwZSrxVOC73y5TyQuIX9g/edit?usp=sharing)
+- 4 out of 5 exercises needed for completion
+- You have until March 16 End of Day (5 PM PST) to turn in exercises for the badge
+
 ## Goals of the course
 
 . . .
@@ -33,11 +41,13 @@ format:
 
 -   Dictionaries vs Lists
 
-    ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_1_dict_list_indices_values.png#fixme){width="400"}
+    ![](images/dict_list_indices_values.png){width="400"}
 
-    ![](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme){width="400"}
+    ![](images/dict_keys_values.png){width="400"}
 
     -   Access elements via `[ ]` vs. `.get()` method
+
+[Source](https://open.oregonstate.education/app/uploads/sites/6/2016/10/II.8_2_dict_keys_values.png#fixme)
 
 ## What have we covered in 6 weeks?
 
@@ -83,10 +93,7 @@ format:
 
 ## End of class surveys
 
-[How was the course for you?](https://forms.gle/4LTRGq2aCNhWpPw17)
-
-[Join us for Datathon next Friday?](https://www.addevent.com/event/DT25070870)
+- How was the course for you?
+- <https://forms.gle/Z7cZLTA7UPi5dkKXA>
 
 ## Go over last exercise, and some more
-
-# 

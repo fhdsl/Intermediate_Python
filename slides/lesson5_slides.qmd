@@ -1,20 +1,42 @@
 ---
 title: "W5: Iteration Styles"
 format: 
-  revealjs:
+  live-revealjs:
     smaller: true
     scrollable: true
     echo: true
 ---
 
-```{r, message=F, echo=F}
-library(reticulate)
+## Catch up Time
+
+```{r}
+countdown::countdown(15)
 
 ```
 
-## [Last Class Pizza and Code-a-thon](https://forms.gle/qF4nNCY4BfVQ8vYv8)
 
-<https://forms.gle/qF4nNCY4BfVQ8vYv8>
+## [Last Class Pizza and Code-a-thon](https://forms.gle/95M6NungaXxPxRLFA)
+
+- Next week is last week of class!
+- If you'd like pizza in person, please use the RSVP
+- Dietary preferences and helps us 
+
+<https://forms.gle/95M6NungaXxPxRLFA>
+
+## Indenting and Returning
+
+Anyone have any idea what is going on with this code? Why is it returning only a single value?
+
+```{pyodide}
+def my_mean(my_list):
+  """Computes the mean value of `my_list` and returns it."""
+  total = 0
+  for value in my_list:
+    total = total + value
+    return total/len(my_list)
+
+my_mean([1,5,10])
+```
 
 ## Iteration styles
 
@@ -26,14 +48,14 @@ library(reticulate)
 
 ## Consider the following pattern
 
-```{python}
+```{pyodide}
 def cool_function(x):
   return x + 1
 ```
 
 . . .
 
-```{python}
+```{pyodide}
 my_list = [3, -35, 98, 2.3, 0, -3]
 
 for i, element in enumerate(my_list):
@@ -44,7 +66,7 @@ print(my_list)
 
 . . .
 
-```{python}
+```{pyodide}
 my_list = [3, -35, 98, 2.3, 0, -3]
 
 new_list = []
@@ -57,28 +79,76 @@ print(new_list)
 
 "Apply `cool_function()` to every element of `my_list`."
 
-## List Comphrenension
+## List Comprehensions {auto-animate=true}
 
 When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
 
-```         
+```python         
 [<expression> for <var> in <iterable>]
+
 ```
 
-. . .
+- Notice the `[]` - indicates we're outputting a list
 
-```{python}
+
+## List Comprehensions {auto-animate=true}
+
+When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
+
+```python         
+[<expression> for <var> in <iterable>]
+                   ^^  
+                   for loop
+```
+
+- Notice the `[]` - indicates we're outputting a list
+- `<var>` must iterate over `<iterable>`
+
+## List Comprehensions {auto-animate=true}
+
+When the final product of a For-Loop is a List and the For-Loop involves a single expression, it is common to write a short-hand via a "**List Comprehension"**:
+
+```python         
+[<expression> for <var> in <iterable>]
+   ^^              ^^  
+  Function         for loop
+```
+
+- Notice the `[]` - indicates we're outputting a list
+- `<var>` must iterate over `<iterable>`
+- `<expression>` must use `<var>` as input
+- Remember, the output is a list!
+
+## List Comprehension in Action
+
+```{pyodide}
+my_list = [3,-35,-98]
+[print(num) for num in my_list]
+```
+
+- Returns `[None, None, None]` because the expression didn't return anything
+
+## Try it out
+
+```{pyodide}
+def cool_function(x):
+  return x + 1
+
 my_list = [3, -35, 98, 2.3, 0, -3]
 
 my_list = [cool_function(element) for element in my_list]
+
+print(my_list)
 ```
 
-. . .
+## Using Append
 
-```{python}
+```{pyodide}
 my_list = [3, -35, 98, 2.3, 0, -3]
 
 new_list = [cool_function(element) for element in my_list]
+
+print(new_list)
 ```
 
 . . .
@@ -93,7 +163,7 @@ Step-by-step:
 
 Guess what the following code will do:
 
-```{python}
+```{pyodide}
 my_list = [3, -35, 98, 2.3, 0, -3]
 
 output = [element / 2 for element in my_list]
@@ -101,7 +171,7 @@ output = [element / 2 for element in my_list]
 
 . . .
 
-```{python}
+```{pyodide}
 fruits = ["apple", "banana", "orange", "guava"]
 
 output = [f.upper() for f in fruits]
@@ -109,7 +179,7 @@ output = [f.upper() for f in fruits]
 
 . . .
 
-```{python}
+```{pyodide}
 output = [x for x in range(10)]
 ```
 
@@ -121,7 +191,7 @@ An extremely common iteration pattern is to apply a function to each element of 
 
 But first, perhaps there exist a function already that can be used on the column already:
 
-```{python}
+```{pyodide}
 import pandas as pd
 import numpy as np
 
@@ -152,7 +222,7 @@ A **map** (also known as a **functional**) is a function that takes in an iterab
 
 . . .
 
-```{python}
+```{pyodide}
 simple_df.measurement1.map(cool_function)
 ```
 
@@ -160,7 +230,7 @@ simple_df.measurement1.map(cool_function)
 
 Suppose we want to create cutoffs for the column "measurement1" using the following function:
 
-```{python}
+```{pyodide}
 def measurement1_cutoff_rule(x):
   if x > 0 and x < 2:
     return "low"
@@ -176,7 +246,7 @@ def measurement1_cutoff_rule(x):
 
 We can map this function `measurement1_cutoff_rule()` to each element of "measurement1":
 
-```{python}
+```{pyodide}
 simple_df.measurement1.map(measurement1_cutoff_rule)
 ```
 

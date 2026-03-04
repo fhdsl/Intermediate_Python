@@ -1,0 +1,10 @@
+---
+title: "Untitled"
+format: revealjs
+---
+
+# 15 Minutes of Catchup Time
+
+```{r}
+countdown::countdown(minutes=15)
+```
