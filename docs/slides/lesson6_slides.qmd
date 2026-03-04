@@ -9,6 +9,12 @@ format:
 
 # Too Busy, Grabbing Pizza
 
+## Going for Badge Completion
+
+- [Dashboard](https://docs.google.com/spreadsheets/d/1sxEx6am-LoW0dZMMwnnI3huwZSrxVOC73y5TyQuIX9g/edit?usp=sharing)
+- 4 out of 5 exercises needed for completion
+- You have until March 16 End of Day (5 PM PST) to turn in exercises for the badge
+
 ## Goals of the course
 
 . . .
